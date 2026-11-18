@@ -6,20 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yale School of Art | School Overview</title>
     <link rel="icon" type="image/png" href="../assets/blue-school-crest.png" />
-    <link rel="stylesheet" href="../css/light-blue-universal.css" /> <!-- Consistent website elements -->
-    <link rel="stylesheet" href="../css/index.css" /> <!-- Page-specific styles -->
-    <script src="../js/index.js" defer></script> <!-- Page-specific scripts -->
+
+    <!-- Stylesheets & Scripts -->
+    <link rel="stylesheet" href="../css/light-blue-universal.css" /> <!-- Global header, footer, and theme variables -->
+    <link rel="stylesheet" href="../css/index.css" /> <!-- Page-specific layout and gallery styles -->
+    <script src="../js/index.js" defer></script> <!-- Interactive drawers, accordions, and gallery controls -->
 </head>
 
 <body>
     <div class="page">
+
+        <!-- Global Header & Navigation -->
         <header class="topbar">
+            <!-- Top Utility Bar: Brand Wordmark + Desktop Utilities / Mobile Controls -->
             <div class="topbar-inner">
                 <div class="utility-row">
                     <div class="brand" aria-label="Yale School of Art brand">
                         <img class="brand-mark" src="../assets/blue-school-crest.png" alt="Yale School of Art crest" />
                         <div class="brand-name">Yale School of Art</div>
                     </div>
+
+                    <!-- Mobile-Only Action Buttons (Search + Drawer Toggle) -->
+                    <div class="mobile-controls">
+                        <button type="button" class="mobile-icon-btn" id="mobile-search-toggle" aria-expanded="false" aria-controls="search-drawer" aria-label="Toggle search">
+                            <img class="icon" src="../assets/search.svg" alt="" />
+                        </button>
+                        <button type="button" class="mobile-icon-btn" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle navigation menu">
+                            <svg class="menu-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <path class="bar" d="M3 5.5H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="bar" d="M3 10H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="bar" d="M3 14.5H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="cross" d="M4.5 4.5L15.5 15.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="cross" d="M15.5 4.5L4.5 15.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Desktop Utility Navigation -->
                     <nav class="utility-nav" aria-label="Utility navigation">
                         <div class="utility-item">
                             <button type="button" class="utility-link" id="search-toggle" aria-expanded="false" aria-controls="search-drawer">
@@ -37,15 +60,16 @@
                 </div>
             </div>
 
-            <div class="primary-nav-separator" aria-hidden="true"></div>
+            <div class="primary-nav-separator desktop-only" aria-hidden="true"></div>
 
-            <div class="topbar-inner" style="padding-top: 0; padding-bottom: 0;">
+            <!-- Desktop Primary Navigation -->
+            <div class="topbar-inner desktop-only" style="padding-top: 0; padding-bottom: 0;">
                 <nav class="primary-nav" aria-label="Primary navigation">
                     <div class="primary-item active has-dropdown">
                         <a class="primary-link" href="../html/index.html" aria-haspopup="true" aria-expanded="false">
                             <span>About</span>
                             <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </a>
                         <ul class="nav-dropdown" role="menu">
@@ -62,7 +86,7 @@
                         <a class="primary-link" href="../html/programs.html" aria-haspopup="true" aria-expanded="false">
                             <span>Programs</span>
                             <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </a>
                         <ul class="nav-dropdown" role="menu">
@@ -83,6 +107,7 @@
                 </nav>
             </div>
 
+            <!-- Collapsible Site Search Drawer -->
             <div class="search-drawer" id="search-drawer" aria-hidden="true">
                 <div class="search-drawer-clip">
                     <div class="search-drawer-inner">
@@ -96,138 +121,213 @@
                     </div>
                 </div>
             </div>
-        </header>
 
-        <main>
-            <section class="hero" aria-label="School overview hero section">
-            <div class="hero-inner">
-                <p class="eyebrow">About</p>
-                <h1>School Overview</h1>
-                <p class="hero-subtitle">
-                Yale School of Art, a graduate school dedicated to the exploration of art in all its forms — since 1869.
-                </p>
-                <div class="scroll-cue" aria-label="Scroll down">
-                <span class="scroll-cue-label">Scroll</span>
-                <img src="../assets/chevron-down.svg" alt="Scroll down indicator" />
+            <!-- Collapsible Mobile Navigation Drawer -->
+            <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+                <div class="mobile-drawer-clip">
+                    <nav class="mobile-drawer-inner" aria-label="Mobile navigation">
+                        <ul class="mobile-primary-list">
+                            <li class="mobile-accordion">
+                                <div class="mobile-accordion-header">
+                                    <a class="mobile-nav-link active" href="../html/index.html">About</a>
+                                    <button type="button" class="mobile-accordion-btn" aria-expanded="false" aria-label="Toggle About submenu">
+                                        <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="mobile-accordion-panel">
+                                    <ul class="mobile-sublist">
+                                        <li><a class="active" href="../html/index.html">Overview</a></li>
+                                        <li><a href="../html/about-mission.html">Mission Statement</a></li>
+                                        <li><a href="../html/about-history.html">History</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li><a class="mobile-nav-link" href="../html/apply.html">Apply</a></li>
+                            <li><a class="mobile-nav-link" href="../html/calendar.html">Calendar</a></li>
+
+                            <li class="mobile-accordion">
+                                <div class="mobile-accordion-header">
+                                    <a class="mobile-nav-link" href="../html/programs.html">Programs</a>
+                                    <button type="button" class="mobile-accordion-btn" aria-expanded="false" aria-label="Toggle Programs submenu">
+                                        <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="mobile-accordion-panel">
+                                    <ul class="mobile-sublist">
+                                        <li><a href="../html/programs.html">Overview</a></li>
+                                        <li><a href="../html/programs-gd.html">Graphic Design MFA</a></li>
+                                        <li><a href="../html/programs-pp.html">Painting &amp; Printmaking MFA</a></li>
+                                        <li><a href="../html/programs-photography.html">Photography MFA</a></li>
+                                        <li><a href="../html/programs-sculpture.html">Sculpture MFA</a></li>
+                                        <li><a href="../html/programs-usp.html">Undergraduate &amp; Summer Programs</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li><a class="mobile-nav-link" href="../html/news.html">News</a></li>
+                            <li><a class="mobile-nav-link" href="../html/resources.html">Resources</a></li>
+                            <li><a class="mobile-nav-link" href="../html/facilities.html">Facilities</a></li>
+                            <li><a class="mobile-nav-link" href="../html/faculty.html">Faculty</a></li>
+                        </ul>
+
+                        <div class="mobile-drawer-divider" aria-hidden="true"></div>
+
+                        <ul class="mobile-utility-list">
+                            <li><a href="../html/support.html">Support</a></li>
+                            <li><a href="../html/visit.html">Visit</a></li>
+                            <li><a href="../html/contact.html">Contact</a></li>
+                            <li><a href="../html/newsletter.html">Newsletter</a></li>
+                            <li><a href="../html/settings.html">Settings</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            </section>
+        </header>
 
-            <div class="main-wrap">
-            <section class="intro" aria-label="Introduction">
-                <p class="intro-line">
-                The Yale School of Art opened its doors on October 15, 1869, becoming the first art school affiliated with a university of higher learning in the United States.
-                </p>
-                <p class="intro-body">
-                Today, the Yale School of Art is a graduate school that confers Master of Fine Arts degrees in Graphic Design, Painting/Printmaking, Photography, and Sculpture. Artists and designers of significant promise and strong motivation are provided an educational context in which they can explore the potential of their own talents.
-                </p>
-            </section>
-
-            <figure class="gallery-wrapper" aria-label="Studios photo gallery">
-                <div class="gallery">
-                    <div class="gallery-slides">
-                        <img class="gallery-slide active" src="../assets/studio.png" alt="Yale School of Art main interior studio space" />
-                        <img class="gallery-slide" src="../assets/gh-entrance.png" alt="Yale School of Art Green Hall entrance" />
-                        <img class="gallery-slide" src="../assets/exhibition.png" alt="Yale School of Art exhibition space" />
+        <!-- Main Content -->
+        <main>
+            <!-- Page Hero Banner -->
+            <section class="hero" aria-label="School overview hero section">
+                <div class="hero-inner">
+                    <p class="eyebrow">About</p>
+                    <h1>School Overview</h1>
+                    <p class="hero-subtitle">
+                        Yale School of Art, a graduate school dedicated to the exploration of art in all its forms — since 1869.
+                    </p>
+                    <div class="scroll-cue" aria-label="Scroll down">
+                        <span class="scroll-cue-label">Scroll</span>
+                        <img src="../assets/chevron-down.svg" alt="Scroll down indicator" />
                     </div>
+                </div>
+            </section>
 
-                    <div class="gallery-controls">
-                        <button type="button" class="gallery-button" aria-label="Previous photo">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path d="M14.5 5.5L8 12L14.5 18.5" stroke="#00356b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
+            <!-- Editorial Content Wrapper -->
+            <div class="main-wrap">
+                <!-- Founding & Overview Introduction -->
+                <section class="intro" aria-label="Introduction">
+                    <p class="intro-line">
+                        The Yale School of Art opened its doors on October 15, 1869, becoming the first art school affiliated with a university of higher learning in the United States.
+                    </p>
+                    <p class="intro-body">
+                        Today, the Yale School of Art is a graduate school that confers Master of Fine Arts degrees in Graphic Design, Painting/Printmaking, Photography, and Sculpture. Artists and designers of significant promise and strong motivation are provided an educational context in which they can explore the potential of their own talents.
+                    </p>
+                </section>
 
-                        <div class="gallery-meta" aria-label="Photo 1 of 3">
-                            <span class="meta-label">Photo</span>
-                            <span class="meta-counter">1 of 3</span>
+                <!-- Cross-Dissolve Campus Photo Gallery -->
+                <figure class="gallery-wrapper" aria-label="Studios photo gallery">
+                    <div class="gallery">
+                        <div class="gallery-slides">
+                            <img class="gallery-slide active" src="../assets/studio.png" alt="Yale School of Art main interior studio space" />
+                            <img class="gallery-slide" src="../assets/gh-entrance.png" alt="Yale School of Art Green Hall entrance" />
+                            <img class="gallery-slide" src="../assets/exhibition.png" alt="Yale School of Art exhibition space" />
                         </div>
 
-                        <button type="button" class="gallery-button" aria-label="Next photo">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path d="M9.5 5.5L16 12L9.5 18.5" stroke="#00356b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
+                        <div class="gallery-controls">
+                            <button type="button" class="gallery-button" aria-label="Previous photo">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M14.5 5.5L8 12L14.5 18.5" stroke="#00356b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+
+                            <div class="gallery-meta" aria-label="Photo 1 of 3">
+                                <span class="meta-label">Photo</span>
+                                <span class="meta-counter">1 of 3</span>
+                            </div>
+
+                            <button type="button" class="gallery-button" aria-label="Next photo">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M9.5 5.5L16 12L9.5 18.5" stroke="#00356b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="gallery-captions">
-                    <figcaption class="gallery-caption active">
-                        Main interior studio and common workspace at Green Hall, 1156 Chapel Street.
-                    </figcaption>
-                    <figcaption class="gallery-caption">
-                        Green Hall entrance, 1156 Chapel Street.
-                    </figcaption>
-                    <figcaption class="gallery-caption">
-                        Yale School of Art exhibition space.
-                    </figcaption>
-                </div>
-            </figure>
+                    <div class="gallery-captions">
+                        <figcaption class="gallery-caption active">
+                            Main interior studio and common workspace at Green Hall, 1156 Chapel Street.
+                        </figcaption>
+                        <figcaption class="gallery-caption">
+                            Green Hall entrance, 1156 Chapel Street.
+                        </figcaption>
+                        <figcaption class="gallery-caption">
+                            Yale School of Art exhibition space.
+                        </figcaption>
+                    </div>
+                </figure>
 
-            <section class="programs-section" aria-label="Programs and community">
-                <div class="section-label">
-                <div class="section-rule" aria-hidden="true"></div>
-                <span>Programs &amp; Community</span>
-                </div>
+                <!-- Programs & Community Two-Column Grid -->
+                <section class="programs-section" aria-label="Programs and community">
+                    <div class="section-label">
+                        <div class="section-rule" aria-hidden="true"></div>
+                        <span>Programs &amp; Community</span>
+                    </div>
 
-                <div class="programs-grid">
-                <div class="programs-column">
-                    <article class="program-card">
-                    <h2>MFA Programs &amp; Academic Environment</h2>
-                    <p>
-                        The school offers rigorous MFA programs in Graphic Design, Painting/Printmaking, Photography, and Sculpture, fostering a community of critical dialogue and creative exploration.
-                    </p>
-                    <p>
-                        The rich academic environment of Yale along with rigorous, structured coursework rounds out an educational experience designed to prepare students for a lifetime of independent work.
-                    </p>
-                    <p>
-                        The students' primary educational experience at Yale is centered on their own studio activity as supported by the experience, knowledge, and skills gained from rigorous, structured courses.
-                    </p>
-                    </article>
+                    <div class="programs-grid">
+                        <!-- Left Column -->
+                        <div class="programs-column">
+                            <article class="program-card">
+                                <h2>MFA Programs &amp; Academic Environment</h2>
+                                <p>
+                                    The school offers rigorous MFA programs in Graphic Design, Painting/Printmaking, Photography, and Sculpture, fostering a community of critical dialogue and creative exploration.
+                                </p>
+                                <p>
+                                    The rich academic environment of Yale along with rigorous, structured coursework rounds out an educational experience designed to prepare students for a lifetime of independent work.
+                                </p>
+                                <p>
+                                    The students' primary educational experience at Yale is centered on their own studio activity as supported by the experience, knowledge, and skills gained from rigorous, structured courses.
+                                </p>
+                            </article>
 
-                    <article class="program-card">
-                    <h2>Student Experience &amp; Community</h2>
-                    <p>
-                        The graduate student experience is centered on each artist's own studio practice, supported by faculty, visiting artists and critics, and perhaps most importantly, by one another, as they develop a personal studio practice.
-                    </p>
-                    <p>
-                        Yale School of Art values and generates intense critical dialogue through interactions with peers, distinguished visitors, and by a faculty composed of professional artists of national and international renown.
-                    </p>
-                    <p>
-                        Students are routinely exposed to varying aesthetic positions through encounters with faculty members and visitors.
-                    </p>
-                    </article>
-                </div>
+                            <article class="program-card">
+                                <h2>Student Experience &amp; Community</h2>
+                                <p>
+                                    The graduate student experience is centered on each artist's own studio practice, supported by faculty, visiting artists and critics, and perhaps most importantly, by one another, as they develop a personal studio practice.
+                                </p>
+                                <p>
+                                    Yale School of Art values and generates intense critical dialogue through interactions with peers, distinguished visitors, and by a faculty composed of professional artists of national and international renown.
+                                </p>
+                                <p>
+                                    Students are routinely exposed to varying aesthetic positions through encounters with faculty members and visitors.
+                                </p>
+                            </article>
+                        </div>
 
-                <div class="programs-column">
-                    <article class="program-card">
-                    <h2>Creative Development</h2>
-                    <p>
-                        The School is devoted not only to the refinement of visual skills, but also to the cultivation of the mind.
-                    </p>
-                    <p>
-                        Students must bring creative force and imagination to their own development, for these qualities cannot be taught—they can only be stimulated.
-                    </p>
-                    </article>
+                        <!-- Right Column -->
+                        <div class="programs-column">
+                            <article class="program-card">
+                                <h2>Creative Development</h2>
+                                <p>
+                                    The School is devoted not only to the refinement of visual skills, but also to the cultivation of the mind.
+                                </p>
+                                <p>
+                                    Students must bring creative force and imagination to their own development, for these qualities cannot be taught—they can only be stimulated.
+                                </p>
+                            </article>
 
-                    <article class="program-card">
-                    <h2>MFA Degrees</h2>
-                    <p>
-                        The degree of the Master of Fine Arts is only offered by the School of Art, where students remain in residence for a minimum of two years, during which performance is reviewed and academic standing is renewed annually.
-                    </p>
-                    <p>
-                        The degree is conferred by the University upon recommendation of faculty following the completion of all coursework and a thesis presentation.
-                    </p>
-                    <p>
-                        Participation in the MFA program at the Yale School of Art indicates a level of seriousness and commitment to artistic excellence and scholarship; the conferring of the degree implies confidence in the students' ability to maintain dedication to their craft.
-                    </p>
-                    </article>
-                </div>
-                </div>
-            </section>
+                            <article class="program-card">
+                                <h2>MFA Degrees</h2>
+                                <p>
+                                    The degree of the Master of Fine Arts is only offered by the School of Art, where students remain in residence for a minimum of two years, during which performance is reviewed and academic standing is renewed annually.
+                                </p>
+                                <p>
+                                    The degree is conferred by the University upon recommendation of faculty following the completion of all coursework and a thesis presentation.
+                                </p>
+                                <p>
+                                    Participation in the MFA program at the Yale School of Art indicates a level of seriousness and commitment to artistic excellence and scholarship; the conferring of the degree implies confidence in the students' ability to maintain dedication to their craft.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
             </div>
         </main>
 
+        <!-- Editorial Quote Band & Degree Directory -->
         <section class="quote-band" aria-label="Quote and degree list">
             <div class="quote-inner">
                 <blockquote>“Art washes away from the soul the dust of everyday life.”</blockquote>
@@ -257,9 +357,11 @@
             </div>
         </section>
 
+        <!-- Global Footer -->
         <footer class="footer" aria-label="Footer">
             <div class="footer-inner">
                 <div class="footer-grid">
+                    <!-- Brand & Mailing Address -->
                     <div class="footer-brand">
                         <div class="footer-brand-row">
                             <img class="mark" src="../assets/blue-school-crest.png" alt="Yale School of Art crest" />
@@ -272,6 +374,7 @@
                         </div>
                     </div>
 
+                    <!-- Primary Navigation Links -->
                     <div class="footer-column footer-nav-col">
                         <p class="footer-title">Navigation</p>
                         <div class="footer-links">
@@ -280,7 +383,7 @@
                                     <a href="../html/index.html" class="footer-accordion-trigger" aria-expanded="false">
                                         <span>About</span>
                                         <svg class="footer-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </a>
                                     <div class="footer-accordion-panel">
@@ -297,7 +400,7 @@
                                     <a href="../html/programs.html" class="footer-accordion-trigger" aria-expanded="false">
                                         <span>Programs</span>
                                         <svg class="footer-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </a>
                                     <div class="footer-accordion-panel">
@@ -322,6 +425,7 @@
                         </div>
                     </div>
 
+                    <!-- Social Media Channels -->
                     <div class="footer-column">
                         <p class="footer-title">Social Media</p>
                         <p><a href="https://www.instagram.com/yaleschoolofart/" target="_blank" rel="noopener">Instagram</a></p>
@@ -329,6 +433,7 @@
                         <p><a href="https://www.youtube.com/@yaleschoolofart" target="_blank" rel="noopener">YouTube</a></p>
                     </div>
 
+                    <!-- Secondary Utility Links -->
                     <div class="footer-column">
                         <p class="footer-title">Other Links</p>
                         <p><a href="../html/support.html">Support</a></p>
@@ -338,12 +443,15 @@
                     </div>
                 </div>
 
+                <!-- Copyright Bar -->
                 <div class="footer-bottom">
                     <div class="primary-footer-separator" aria-hidden="true"></div>
                     <div class="footer-copy">© <span id="copyright-year">2026</span> Yale School of Art</div>
                 </div>
             </div>
         </footer>
+
     </div>
 </body>
+
 </html>

@@ -1,3 +1,6 @@
+// DOM References & Site Index
+
+// Search Drawer Elements
 const searchToggle = document.getElementById('search-toggle');
 const searchDrawer = document.getElementById('search-drawer');
 const searchClose = document.getElementById('search-close');
@@ -6,6 +9,28 @@ const searchResults = document.getElementById('search-results');
 const searchClear = document.getElementById('search-clear');
 const searchDivider = document.getElementById('search-divider');
 
+// Mobile Navigation Elements
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileSearchToggle = document.getElementById('mobile-search-toggle');
+const mobileDrawer = document.getElementById('mobile-drawer');
+const mobileAccordions = document.querySelectorAll('.mobile-accordion');
+
+// Desktop & Footer Interactive Menus
+const dropdownItems = document.querySelectorAll('.has-dropdown');
+const footerAccordions = document.querySelectorAll('.footer-accordion');
+
+// Gallery Elements
+const slides = document.querySelectorAll('.gallery-slide');
+const captions = document.querySelectorAll('.gallery-caption');
+const galleryMeta = document.querySelector('.gallery-meta');
+const galleryCounter = document.querySelector('.gallery-meta .meta-counter');
+const prevBtn = document.querySelector('.gallery-button[aria-label="Previous photo"]');
+const nextBtn = document.querySelector('.gallery-button[aria-label="Next photo"]');
+
+// Footer Copyright Year
+const copyrightYear = document.getElementById('copyright-year');
+
+// Searchable Site Directory
 const siteIndex = [
     { title: 'School Overview', category: 'About', url: '../html/index.html', keywords: 'about chapel street new haven 1869' },
     { title: 'Mission Statement', category: 'About', url: '../html/about-mission.html', keywords: 'mission purpose values' },
@@ -29,6 +54,8 @@ const siteIndex = [
     { title: 'Settings', category: 'Settings', url: '../html/settings.html', keywords: 'theme preferences accessibility' }
 ];
 
+// Search Drawer
+
 function escapeHtml(str) {
     const div = document.createElement('div');
     div.textContent = str;
@@ -43,8 +70,15 @@ function resetSearchState() {
 }
 
 function toggleSearch(forceClose = false) {
+    if (!searchDrawer || !searchToggle) return;
+
     const isOpen = searchDrawer.classList.contains('open');
     const shouldOpen = forceClose ? false : !isOpen;
+
+    // Close Mobile Menu When Opening Search
+    if (shouldOpen && mobileDrawer?.classList.contains('open')) {
+        toggleMobileMenu(true);
+    }
 
     searchDrawer.classList.toggle('open', shouldOpen);
     searchDrawer.setAttribute('aria-hidden', String(!shouldOpen));
@@ -52,6 +86,9 @@ function toggleSearch(forceClose = false) {
 
     searchToggle.classList.toggle('active', shouldOpen);
     searchToggle.setAttribute('aria-expanded', String(shouldOpen));
+
+    mobileSearchToggle?.classList.toggle('active', shouldOpen);
+    mobileSearchToggle?.setAttribute('aria-expanded', String(shouldOpen));
 
     if (shouldOpen) {
         requestAnimationFrame(() => searchInput.focus());
@@ -66,12 +103,7 @@ if (searchDrawer && searchToggle && searchClose && searchInput) {
     searchToggle.addEventListener('click', () => toggleSearch());
     searchClose.addEventListener('click', () => toggleSearch(true));
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && searchDrawer.classList.contains('open')) {
-            toggleSearch(true);
-        }
-    });
-
+    // Real-Time Site Index Filtering
     searchInput.addEventListener('input', (e) => {
         const rawValue = e.target.value;
         const hasText = rawValue.length > 0;
@@ -101,21 +133,76 @@ if (searchDrawer && searchToggle && searchClose && searchInput) {
     });
 }
 
-const dropdownItems = document.querySelectorAll('.has-dropdown');
-const footerAccordions = document.querySelectorAll('.footer-accordion');
+// Mobile Navigation Drawer
+
+function toggleMobileMenu(forceClose = false) {
+    if (!mobileDrawer || !mobileMenuToggle) return;
+
+    const isOpen = mobileDrawer.classList.contains('open');
+    const shouldOpen = forceClose ? false : !isOpen;
+
+    // Close Search Drawer Before Opening Mobile Menu
+    if (shouldOpen && searchDrawer?.classList.contains('open')) {
+        toggleSearch(true);
+    }
+
+    mobileDrawer.classList.toggle('open', shouldOpen);
+    mobileDrawer.setAttribute('aria-hidden', String(!shouldOpen));
+    mobileDrawer.inert = !shouldOpen;
+
+    mobileMenuToggle.classList.toggle('active', shouldOpen);
+    mobileMenuToggle.setAttribute('aria-expanded', String(shouldOpen));
+    document.body.style.overflow = shouldOpen ? 'hidden' : '';
+}
+
+if (mobileDrawer && mobileMenuToggle) {
+    mobileDrawer.inert = true;
+
+    mobileMenuToggle.addEventListener('click', () => toggleMobileMenu());
+
+    mobileSearchToggle?.addEventListener('click', () => {
+        if (mobileDrawer.classList.contains('open')) {
+            toggleMobileMenu(true);
+        }
+        toggleSearch();
+    });
+
+    // Exclusive Mobile Drawer Accordion Toggles
+    mobileAccordions.forEach(acc => {
+        const btn = acc.querySelector('.mobile-accordion-btn');
+        btn?.addEventListener('click', () => {
+            const willOpen = !acc.classList.contains('open');
+            mobileAccordions.forEach(other => {
+                other.classList.remove('open');
+                other.querySelector('.mobile-accordion-btn')?.setAttribute('aria-expanded', 'false');
+            });
+            acc.classList.toggle('open', willOpen);
+            btn.setAttribute('aria-expanded', String(willOpen));
+        });
+    });
+
+    // Auto-Close Mobile Drawer Above Breakpoint
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1120 && mobileDrawer.classList.contains('open')) {
+            toggleMobileMenu(true);
+        }
+    });
+}
+
+// Desktop Dropdowns & Footer Accordions
 
 dropdownItems.forEach(item => {
     const trigger = item.querySelector('.primary-link');
 
-    // Close search drawer if user hovers/opens a nav dropdown
+    // Close Search Drawer On Dropdown Hover
     item.addEventListener('mouseenter', () => {
         if (searchDrawer?.classList.contains('open')) {
             toggleSearch(true);
         }
     });
 
-    // Support touch / click toggle on devices without hover
-    trigger.addEventListener('click', (e) => {
+    // Touch Device Tap-To-Open Support
+    trigger?.addEventListener('click', (e) => {
         if (window.matchMedia('(hover: none)').matches && !item.classList.contains('open')) {
             e.preventDefault();
             dropdownItems.forEach(d => d.classList.remove('open'));
@@ -128,7 +215,8 @@ dropdownItems.forEach(item => {
 footerAccordions.forEach(accordion => {
     const trigger = accordion.querySelector('.footer-accordion-trigger');
 
-    trigger.addEventListener('click', (e) => {
+    // Touch Device Tap-To-Open Support
+    trigger?.addEventListener('click', (e) => {
         if (window.matchMedia('(hover: none)').matches && !accordion.classList.contains('open')) {
             e.preventDefault();
             footerAccordions.forEach(a => a.classList.remove('open'));
@@ -138,6 +226,44 @@ footerAccordions.forEach(accordion => {
     });
 });
 
+// Cross-Dissolve Campus Gallery
+
+if (slides.length && prevBtn && nextBtn) {
+    let currentSlide = 0;
+
+    function updateGallery(index) {
+        slides[currentSlide].classList.remove('active');
+        captions[currentSlide]?.classList.remove('active');
+
+        currentSlide = (index + slides.length) % slides.length;
+
+        slides[currentSlide].classList.add('active');
+        captions[currentSlide]?.classList.add('active');
+
+        const label = `${currentSlide + 1} of ${slides.length}`;
+        if (galleryCounter) galleryCounter.textContent = label;
+        galleryMeta?.setAttribute('aria-label', `Photo ${label}`);
+    }
+
+    prevBtn.addEventListener('click', () => updateGallery(currentSlide - 1));
+    nextBtn.addEventListener('click', () => updateGallery(currentSlide + 1));
+}
+
+// Global Event Listeners & Utilities
+
+// Close Open Drawers On Escape Key
+document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+
+    if (searchDrawer?.classList.contains('open')) {
+        toggleSearch(true);
+    }
+    if (mobileDrawer?.classList.contains('open')) {
+        toggleMobileMenu(true);
+    }
+});
+
+// Close Open Menus On Outside Click
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.has-dropdown')) {
         dropdownItems.forEach(item => {
@@ -154,35 +280,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-const slides = document.querySelectorAll('.gallery-slide');
-const captions = document.querySelectorAll('.gallery-caption');
-const galleryMeta = document.querySelector('.gallery-meta');
-const galleryCounter = document.querySelector('.gallery-meta .meta-counter');
-const prevBtn = document.querySelector('.gallery-button[aria-label="Previous photo"]');
-const nextBtn = document.querySelector('.gallery-button[aria-label="Next photo"]');
-
-if (slides.length && prevBtn && nextBtn) {
-    let currentSlide = 0;
-
-    function updateGallery(index) {
-        slides[currentSlide].classList.remove('active');
-        captions[currentSlide]?.classList.remove('active');
-
-        currentSlide = (index + slides.length) % slides.length;
-
-        slides[currentSlide].classList.add('active');
-        captions[currentSlide]?.classList.add('active');
-
-        const label = `${currentSlide + 1} of ${slides.length}`;
-        galleryCounter.textContent = label;
-        galleryMeta.setAttribute('aria-label', `Photo ${label}`);
-    }
-
-    prevBtn.addEventListener('click', () => updateGallery(currentSlide - 1));
-    nextBtn.addEventListener('click', () => updateGallery(currentSlide + 1));
-}
-
-const copyrightYear = document.getElementById('copyright-year');
+// Dynamic Copyright Year
 if (copyrightYear) {
     copyrightYear.textContent = new Date().getFullYear();
 }
