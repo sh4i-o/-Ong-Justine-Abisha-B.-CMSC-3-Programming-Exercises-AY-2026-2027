@@ -125,29 +125,43 @@
 
             <figure class="gallery-wrapper" aria-label="Studios photo gallery">
                 <div class="gallery">
-                    <img src="../assets/studio.png" alt="Yale School of Art studio space" />
+                    <div class="gallery-slides">
+                        <img class="gallery-slide active" src="../assets/studio.png" alt="Yale School of Art main interior studio space" />
+                        <img class="gallery-slide" src="../assets/gh-entrance.png" alt="Yale School of Art Green Hall entrance" />
+                        <img class="gallery-slide" src="../assets/exhibition.png" alt="Yale School of Art exhibition space" />
+                    </div>
+
                     <div class="gallery-controls">
-                        <div class="gallery-button" aria-label="Previous photo">
+                        <button type="button" class="gallery-button" aria-label="Previous photo">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M14.5 5.5L8 12L14.5 18.5" stroke="#00356b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                        </div>
+                        </button>
 
                         <div class="gallery-meta" aria-label="Photo 1 of 3">
                             <span class="meta-label">Photo</span>
                             <span class="meta-counter">1 of 3</span>
                         </div>
 
-                        <div class="gallery-button" aria-label="Next photo">
+                        <button type="button" class="gallery-button" aria-label="Next photo">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M9.5 5.5L16 12L9.5 18.5" stroke="#00356b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                        </div>
+                        </button>
                     </div>
                 </div>
-                <figcaption class="gallery-caption">
-                    Main interior studio and common workspace at Green Hall, 1156 Chapel Street.
-                </figcaption>
+
+                <div class="gallery-captions">
+                    <figcaption class="gallery-caption active">
+                        Main interior studio and common workspace at Green Hall, 1156 Chapel Street.
+                    </figcaption>
+                    <figcaption class="gallery-caption">
+                        Green Hall entrance, 1156 Chapel Street.
+                    </figcaption>
+                    <figcaption class="gallery-caption">
+                        Yale School of Art exhibition space.
+                    </figcaption>
+                </div>
             </figure>
 
             <section class="programs-section" aria-label="Programs and community">

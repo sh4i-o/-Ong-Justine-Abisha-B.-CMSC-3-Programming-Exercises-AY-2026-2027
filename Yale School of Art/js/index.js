@@ -60,54 +60,56 @@ function toggleSearch(forceClose = false) {
     }
 }
 
-// Initialize closed state on load
-searchDrawer.inert = true;
+if (searchDrawer && searchToggle && searchClose && searchInput) {
+    searchDrawer.inert = true;
 
-searchToggle.addEventListener('click', () => toggleSearch());
-searchClose.addEventListener('click', () => toggleSearch(true));
+    searchToggle.addEventListener('click', () => toggleSearch());
+    searchClose.addEventListener('click', () => toggleSearch(true));
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && searchDrawer.classList.contains('open')) {
-        toggleSearch(true);
-    }
-});
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && searchDrawer.classList.contains('open')) {
+            toggleSearch(true);
+        }
+    });
 
-searchInput.addEventListener('input', (e) => {
-    const rawValue = e.target.value;
-    const hasText = rawValue.length > 0;
-    searchClear.hidden = !hasText;
-    searchDivider.hidden = !hasText;
+    searchInput.addEventListener('input', (e) => {
+        const rawValue = e.target.value;
+        const hasText = rawValue.length > 0;
+        searchClear.hidden = !hasText;
+        searchDivider.hidden = !hasText;
 
-    const query = rawValue.trim().toLowerCase();
-    if (!query) {
-        searchResults.innerHTML = '';
-        return;
-    }
+        const query = rawValue.trim().toLowerCase();
+        if (!query) {
+            searchResults.innerHTML = '';
+            return;
+        }
 
-    const matches = siteIndex.filter(item =>
-        item.title.toLowerCase().includes(query) ||
-        item.category.toLowerCase().includes(query) ||
-        item.keywords.toLowerCase().includes(query)
-    );
+        const matches = siteIndex.filter(item =>
+            item.title.toLowerCase().includes(query) ||
+            item.category.toLowerCase().includes(query) ||
+            item.keywords.toLowerCase().includes(query)
+        );
 
-    searchResults.innerHTML = matches.length
-        ? matches.map(m => `<li><a href="${m.url}"><strong>${m.title}</strong><span>${m.category} →</span></a></li>`).join('')
-        : `<li style="padding: 10px 14px; color: rgba(0,53,107,0.6);">No results found for "${escapeHtml(rawValue)}"</li>`;
-});
+        searchResults.innerHTML = matches.length
+            ? matches.map(m => `<li><a href="${m.url}"><strong>${m.title}</strong><span>${m.category} →</span></a></li>`).join('')
+            : `<li style="padding: 10px 14px; color: rgba(0,53,107,0.6);">No results found for "${escapeHtml(rawValue)}"</li>`;
+    });
 
-searchClear.addEventListener('click', () => {
-    resetSearchState();
-    searchInput.focus();
-});
+    searchClear.addEventListener('click', () => {
+        resetSearchState();
+        searchInput.focus();
+    });
+}
 
 const dropdownItems = document.querySelectorAll('.has-dropdown');
+const footerAccordions = document.querySelectorAll('.footer-accordion');
 
 dropdownItems.forEach(item => {
     const trigger = item.querySelector('.primary-link');
 
     // Close search drawer if user hovers/opens a nav dropdown
     item.addEventListener('mouseenter', () => {
-        if (searchDrawer.classList.contains('open')) {
+        if (searchDrawer?.classList.contains('open')) {
             toggleSearch(true);
         }
     });
@@ -118,6 +120,19 @@ dropdownItems.forEach(item => {
             e.preventDefault();
             dropdownItems.forEach(d => d.classList.remove('open'));
             item.classList.add('open');
+            trigger.setAttribute('aria-expanded', 'true');
+        }
+    });
+});
+
+footerAccordions.forEach(accordion => {
+    const trigger = accordion.querySelector('.footer-accordion-trigger');
+
+    trigger.addEventListener('click', (e) => {
+        if (window.matchMedia('(hover: none)').matches && !accordion.classList.contains('open')) {
+            e.preventDefault();
+            footerAccordions.forEach(a => a.classList.remove('open'));
+            accordion.classList.add('open');
             trigger.setAttribute('aria-expanded', 'true');
         }
     });
@@ -139,57 +154,26 @@ document.addEventListener('click', (e) => {
     }
 });
 
-const footerAccordions = document.querySelectorAll('.footer-accordion');
-
-footerAccordions.forEach(accordion => {
-    const trigger = accordion.querySelector('.footer-accordion-trigger');
-
-    trigger.addEventListener('click', (e) => {
-        if (window.matchMedia('(hover: none)').matches && !accordion.classList.contains('open')) {
-            e.preventDefault();
-            footerAccordions.forEach(a => a.classList.remove('open'));
-            accordion.classList.add('open');
-            trigger.setAttribute('aria-expanded', 'true');
-        }
-    });
-});
-
-const galleryPhotos = [
-    {
-        src: '../assets/studio.png',
-        alt: 'Yale School of Art main interior studio space',
-        caption: 'Main interior studio and common workspace at Green Hall, 1156 Chapel Street.'
-    },
-    {
-        src: '../assets/studio-photo-2.jpg',
-        alt: 'Yale School of Art critique and exhibition room',
-        caption: 'Critique space and exhibition gallery where MFA students present work in progress.'
-    },
-    {
-        src: '../assets/studio-photo-3.jpg',
-        alt: 'Yale School of Art fabrication and printmaking workshop',
-        caption: 'Shared fabrication, printmaking, and digital production facilities.'
-    }
-];
-
-const galleryImg = document.querySelector('.gallery img');
-const galleryCaption = document.querySelector('.gallery-caption');
+const slides = document.querySelectorAll('.gallery-slide');
+const captions = document.querySelectorAll('.gallery-caption');
 const galleryMeta = document.querySelector('.gallery-meta');
 const galleryCounter = document.querySelector('.gallery-meta .meta-counter');
 const prevBtn = document.querySelector('.gallery-button[aria-label="Previous photo"]');
 const nextBtn = document.querySelector('.gallery-button[aria-label="Next photo"]');
 
-if (galleryImg && prevBtn && nextBtn) {
+if (slides.length && prevBtn && nextBtn) {
     let currentSlide = 0;
 
     function updateGallery(index) {
-        currentSlide = (index + galleryPhotos.length) % galleryPhotos.length;
-        const slide = galleryPhotos[currentSlide];
-        const label = `${currentSlide + 1} of ${galleryPhotos.length}`;
+        slides[currentSlide].classList.remove('active');
+        captions[currentSlide]?.classList.remove('active');
 
-        galleryImg.src = slide.src;
-        galleryImg.alt = slide.alt;
-        galleryCaption.textContent = slide.caption;
+        currentSlide = (index + slides.length) % slides.length;
+
+        slides[currentSlide].classList.add('active');
+        captions[currentSlide]?.classList.add('active');
+
+        const label = `${currentSlide + 1} of ${slides.length}`;
         galleryCounter.textContent = label;
         galleryMeta.setAttribute('aria-label', `Photo ${label}`);
     }
