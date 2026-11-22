@@ -33,7 +33,9 @@
     cursor: zoom-in;
 }
 
-.gallery-slides::after {
+/* Shared "Inspect" Hover Badge (Overview Gallery & History Archival Frames) */
+.gallery-slides::after,
+.history-media-frame::after {
     content: "Inspect";
     position: absolute;
     top: 12px;
@@ -54,7 +56,9 @@
 }
 
 .gallery-slides:hover::after,
-.gallery-slides:focus-visible::after {
+.gallery-slides:focus-visible::after,
+.history-media-frame:hover::after,
+.history-media-frame:focus-visible::after {
     opacity: 1;
     transform: translateY(0);
 }
@@ -65,6 +69,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     opacity: 0;
     transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1);
     pointer-events: none;
@@ -74,6 +79,7 @@
     opacity: 1;
 }
 
+/* Shared Bottom Overlay Controls (Overview Gallery & History Archival Frames) */
 .gallery-controls {
     position: absolute;
     left: 15px;
@@ -83,6 +89,8 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    gap: 8px;
+    pointer-events: none;
 }
 
 .gallery-button {
@@ -96,6 +104,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    pointer-events: auto;
     transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
@@ -122,6 +131,7 @@
     line-height: 1.2;
     letter-spacing: 1px;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .gallery-meta .meta-label {
@@ -132,6 +142,23 @@
     letter-spacing: 0;
     text-transform: none;
     font-weight: 400;
+}
+
+/* Compact Controls Sizing Inside Archival Media Frames */
+.history-media-frame .gallery-controls {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+}
+
+.history-media-frame .gallery-button {
+    width: 44px;
+    height: 36px;
+}
+
+.history-media-frame .gallery-meta {
+    padding: 6px 10px;
+    font-size: 11px;
 }
 
 .gallery-captions {
@@ -451,28 +478,33 @@
     line-height: 1.75;
 }
 
-/* Archival Figures & Grids */
+/* Archival Single Figures & Multi-Photo Carousels */
+.history-media-single,
 .history-media-grid {
     width: 100%;
-    max-width: 820px;
-    margin: 12px auto;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-}
-
-.history-figure {
-    width: 100%;
-    max-width: 400px;
+    max-width: 640px;
     margin: 12px auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.history-media-grid .history-figure {
-    max-width: none;
+.history-media-grid .gallery-captions {
+    margin-top: 0;
+}
+
+/* Uniform sizing for all portrait single figures and portrait carousels */
+.history-media-single:has(.portrait),
+.history-media-grid:has(.portrait) {
+    max-width: 360px;
+}
+
+.history-figure {
+    width: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .history-media-frame {
@@ -485,38 +517,21 @@
     cursor: zoom-in;
 }
 
-.history-media-frame::after {
-    content: "Inspect";
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    padding: 4px 9px;
-    border-radius: 6px;
-    background: var(--blue-badge);
-    color: var(--white);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
-    opacity: 0;
-    transform: translateY(4px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    pointer-events: none;
-}
-
-.history-media-frame:hover::after,
-.history-media-frame:focus-visible::after {
-    opacity: 1;
-    transform: translateY(0);
-}
-
+/* All portrait frames share the exact same 360px x 450px (4 / 5) dimensions */
 .history-media-frame.portrait {
     aspect-ratio: 4 / 5;
 }
 
-.history-media-frame.landscape,
-.history-media-frame.wide {
-    aspect-ratio: 4 / 3;
+/* Single landscape/wide figures wrap natural proportions with zero letterboxing */
+.history-media-single .history-media-frame.landscape,
+.history-media-single .history-media-frame.wide {
+    aspect-ratio: auto;
+}
+
+/* Multi-photo landscape/wide carousels keep a consistent 3 / 2 frame ratio */
+.history-media-grid .history-media-frame.landscape,
+.history-media-grid .history-media-frame.wide {
+    aspect-ratio: 3 / 2;
 }
 
 .history-media-frame.emblem {
@@ -527,21 +542,54 @@
     background: var(--white);
 }
 
-.history-media-frame img {
+.history-media-frame img:not(.history-carousel-slide) {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 20%;
+    height: auto;
+    display: block;
     transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.history-media-frame:hover img {
+/* Ensure single portrait images fill their 4 / 5 frame uniformly */
+.history-media-single .history-media-frame.portrait img:not(.history-carousel-slide) {
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.history-media-frame:hover img:not(.history-carousel-slide) {
     transform: scale(1.02);
 }
 
 .history-media-frame.emblem img {
     height: auto;
     object-fit: contain;
+}
+
+/* Cross-Dissolve Stack for Multi-Photo History Containers */
+.history-carousel-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.history-carousel-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+}
+
+.history-carousel-slide.active {
+    opacity: 1;
+}
+
+.history-media-frame:hover .history-carousel-slide.active {
+    transform: scale(1.02);
 }
 
 .history-figure figcaption {
@@ -644,11 +692,11 @@
 }
 
 .history-lightbox-media {
+    position: relative;
     width: 100%;
     height: 62vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     padding: 12px;
     overflow: hidden;
     border: 1px solid var(--blue-tint-65);
@@ -657,13 +705,22 @@
 }
 
 .history-lightbox-media img {
+    grid-area: 1 / 1;
     display: block;
     max-width: 100%;
-    max-height: 100%;
+    max-height: calc(62vh - 24px);
     width: auto;
     height: auto;
     object-fit: contain;
     border-radius: 4px;
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+}
+
+.history-lightbox-media img.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .history-lightbox-nav {
@@ -692,11 +749,18 @@
 }
 
 .history-lightbox-caption {
-    margin: 0;
+    width: calc(100% - 116px);
+    margin: 0 auto;
     font-size: 14px;
     line-height: 1.55;
     color: var(--muted);
     text-align: center;
+    opacity: 1;
+    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.history-lightbox-caption.is-changing {
+    opacity: 0;
 }
 
 /* ==========================================================================
@@ -711,11 +775,6 @@
     .values-grid {
         grid-template-columns: 1fr;
         gap: 36px;
-    }
-
-    .history-media-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
     }
 
     .history-timeline-inner {
@@ -738,10 +797,18 @@
         height: 52vh;
     }
 
+    .history-lightbox-media img {
+        max-height: calc(52vh - 24px);
+    }
+
     .history-lightbox-nav {
         display: flex;
         width: 100%;
         height: 40px;
+    }
+
+    .history-lightbox-caption {
+        width: 100%;
     }
 
     #lightbox-prev {
