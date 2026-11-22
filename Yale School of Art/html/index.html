@@ -343,6 +343,37 @@
             </div>
         </main>
 
+        <!-- Campus Gallery Lightbox Modal -->
+        <div class="history-lightbox" id="history-lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" aria-hidden="true">
+            <div class="history-lightbox-backdrop" data-lightbox-close></div>
+            <div class="history-lightbox-panel">
+                <div class="history-lightbox-topbar">
+                    <span class="history-lightbox-counter" id="lightbox-counter">1 of 3</span>
+                    <button type="button" class="history-lightbox-close" id="lightbox-close" aria-label="Close image viewer">✕</button>
+                </div>
+
+                <div class="history-lightbox-stage">
+                    <button type="button" class="history-lightbox-nav" id="lightbox-prev" aria-label="Previous image">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M14.5 5.5L8 12L14.5 18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+
+                    <div class="history-lightbox-media">
+                        <img id="lightbox-image" src="" alt="" />
+                    </div>
+
+                    <button type="button" class="history-lightbox-nav" id="lightbox-next" aria-label="Next image">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M9.5 5.5L16 12L9.5 18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="history-lightbox-caption" id="lightbox-caption"></p>
+            </div>
+        </div>
+
         <!-- Editorial Quote Band & Degree Directory -->
         <section class="quote-band" aria-label="Quote and degree list">
             <div class="quote-inner">

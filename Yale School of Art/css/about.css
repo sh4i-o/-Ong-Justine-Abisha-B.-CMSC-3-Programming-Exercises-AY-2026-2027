@@ -30,6 +30,33 @@
     position: relative;
     width: 100%;
     height: 100%;
+    cursor: zoom-in;
+}
+
+.gallery-slides::after {
+    content: "Inspect";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    padding: 4px 9px;
+    border-radius: 6px;
+    background: var(--blue-badge);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+.gallery-slides:hover::after,
+.gallery-slides:focus-visible::after {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .gallery-slide {
@@ -273,14 +300,6 @@
     gap: 12px 20px;
 }
 
-/* Era Sections */
-.history-era {
-    max-width: 1120px;
-    margin: 48px auto 0;
-    scroll-margin-top: 84px;
-    animation: historyEraFade 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
 .history-era-jumps {
     display: flex;
     flex-wrap: wrap;
@@ -361,7 +380,7 @@
 /* Era Sections */
 .history-era {
     max-width: 1120px;
-    margin: 72px auto 0;
+    margin: 48px auto 0;
     scroll-margin-top: 84px;
     animation: historyEraFade 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -537,7 +556,7 @@
     text-align: center;
 }
 
-/* Archival Image Lightbox Modal */
+/* Archival Image Lightbox Modal (Shared across Overview & History) */
 .history-lightbox {
     position: fixed;
     inset: 0;
@@ -696,6 +715,7 @@
 
     .history-media-grid {
         grid-template-columns: 1fr;
+        max-width: 400px;
     }
 
     .history-timeline-inner {

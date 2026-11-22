@@ -128,43 +128,55 @@ function initArchivalLightbox() {
     const lightboxPrev = document.getElementById('lightbox-prev');
     const lightboxNext = document.getElementById('lightbox-next');
 
-    let visibleFigures = [];
-    let activeFigureIndex = 0;
+    let items = [];
+    let activeIndex = 0;
     let lastFocusedTrigger = null;
     let touchStartX = 0;
 
-    function getVisibleFigures() {
-        return Array.from(document.querySelectorAll('.history-figure')).filter(
+    function getLightboxItems() {
+        const historyFigures = Array.from(document.querySelectorAll('.history-figure')).filter(
             (fig) => !fig.closest('[hidden]') && fig.querySelector('img')
         );
+
+        if (historyFigures.length) {
+            return historyFigures.map((fig) => ({
+                element: fig,
+                img: fig.querySelector('img'),
+                caption: fig.querySelector('figcaption')?.textContent.trim() || ''
+            }));
+        }
+
+        const gallerySlides = Array.from(document.querySelectorAll('.gallery-slide'));
+        const galleryCaptions = Array.from(document.querySelectorAll('.gallery-caption'));
+
+        return gallerySlides.map((slide, idx) => ({
+            element: slide,
+            img: slide,
+            caption: galleryCaptions[idx]?.textContent.trim() || ''
+        }));
     }
 
     function renderLightbox(index) {
-        visibleFigures = getVisibleFigures();
-        if (!visibleFigures.length) return;
+        items = getLightboxItems();
+        if (!items.length) return;
 
-        activeFigureIndex = (index + visibleFigures.length) % visibleFigures.length;
-        const figure = visibleFigures[activeFigureIndex];
-        const img = figure.querySelector('img');
-        const caption = figure.querySelector('figcaption');
+        activeIndex = (index + items.length) % items.length;
+        const current = items[activeIndex];
 
-        if (img && lightboxImg) {
-            lightboxImg.src = img.currentSrc || img.getAttribute('src');
-            lightboxImg.alt = img.alt || '';
+        if (current.img && lightboxImg) {
+            lightboxImg.src = current.img.currentSrc || current.img.getAttribute('src');
+            lightboxImg.alt = current.img.alt || '';
         }
         if (lightboxCaption) {
-            lightboxCaption.textContent = caption ? caption.textContent.trim() : '';
+            lightboxCaption.textContent = current.caption;
         }
         if (lightboxCounter) {
-            lightboxCounter.textContent = `${activeFigureIndex + 1} of ${visibleFigures.length}`;
+            lightboxCounter.textContent = `${activeIndex + 1} of ${items.length}`;
         }
     }
 
-    function openLightbox(figureEl, triggerEl) {
-        visibleFigures = getVisibleFigures();
-        const index = Math.max(0, visibleFigures.indexOf(figureEl));
+    function openLightbox(index, triggerEl) {
         lastFocusedTrigger = triggerEl || document.activeElement;
-
         renderLightbox(index);
         lightbox.classList.add('open');
         lightbox.setAttribute('aria-hidden', 'false');
@@ -179,19 +191,39 @@ function initArchivalLightbox() {
         lastFocusedTrigger?.focus();
     }
 
-    document.querySelectorAll('.history-figure .history-media-frame').forEach((frame) => {
-        frame.setAttribute('tabindex', '0');
-        frame.setAttribute('role', 'button');
-        frame.setAttribute('aria-label', 'Inspect archival image in full view');
+    document.querySelectorAll('.history-figure .history-media-frame, .gallery-slides').forEach((trigger) => {
+        trigger.setAttribute('tabindex', '0');
+        trigger.setAttribute('role', 'button');
+        trigger.setAttribute('aria-label', 'Inspect image in full view');
     });
 
-    document.addEventListener('click', (e) => {
-        const frame = e.target.closest('.history-media-frame');
-        if (frame) {
-            const figure = frame.closest('.history-figure');
-            if (figure) openLightbox(figure, frame);
-            return;
+    function handleTriggerActivation(target, e) {
+        if (target.closest('.gallery-controls')) return false;
+
+        const historyFrame = target.closest('.history-media-frame');
+        if (historyFrame) {
+            const figure = historyFrame.closest('.history-figure');
+            items = getLightboxItems();
+            const index = Math.max(0, items.findIndex((item) => item.element === figure));
+            if (e) e.preventDefault();
+            openLightbox(index, historyFrame);
+            return true;
         }
+
+        const galleryArea = target.closest('.gallery-slides');
+        if (galleryArea) {
+            const slides = Array.from(document.querySelectorAll('.gallery-slide'));
+            const activeIdx = Math.max(0, slides.findIndex((s) => s.classList.contains('active')));
+            if (e) e.preventDefault();
+            openLightbox(activeIdx, galleryArea);
+            return true;
+        }
+
+        return false;
+    }
+
+    document.addEventListener('click', (e) => {
+        if (handleTriggerActivation(e.target)) return;
 
         if (e.target.closest('[data-lightbox-close]') || e.target.closest('#lightbox-close')) {
             closeLightbox();
@@ -199,23 +231,19 @@ function initArchivalLightbox() {
     });
 
     document.addEventListener('keydown', (e) => {
-        const focusedFrame = document.activeElement?.closest('.history-media-frame');
-        if (focusedFrame && (e.key === 'Enter' || e.key === ' ')) {
-            e.preventDefault();
-            const figure = focusedFrame.closest('.history-figure');
-            if (figure) openLightbox(figure, focusedFrame);
-            return;
+        if ((e.key === 'Enter' || e.key === ' ') && document.activeElement) {
+            if (handleTriggerActivation(document.activeElement, e)) return;
         }
 
         if (!lightbox.classList.contains('open')) return;
 
         if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') renderLightbox(activeFigureIndex - 1);
-        if (e.key === 'ArrowRight') renderLightbox(activeFigureIndex + 1);
+        if (e.key === 'ArrowLeft') renderLightbox(activeIndex - 1);
+        if (e.key === 'ArrowRight') renderLightbox(activeIndex + 1);
     });
 
-    lightboxPrev?.addEventListener('click', () => renderLightbox(activeFigureIndex - 1));
-    lightboxNext?.addEventListener('click', () => renderLightbox(activeFigureIndex + 1));
+    lightboxPrev?.addEventListener('click', () => renderLightbox(activeIndex - 1));
+    lightboxNext?.addEventListener('click', () => renderLightbox(activeIndex + 1));
 
     lightbox.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
@@ -225,7 +253,7 @@ function initArchivalLightbox() {
         if (window.visualViewport && window.visualViewport.scale > 1) return;
         const deltaX = e.changedTouches[0].screenX - touchStartX;
         if (Math.abs(deltaX) > 40) {
-            renderLightbox(deltaX < 0 ? activeFigureIndex + 1 : activeFigureIndex - 1);
+            renderLightbox(deltaX < 0 ? activeIndex + 1 : activeIndex - 1);
         }
     }, { passive: true });
 }
