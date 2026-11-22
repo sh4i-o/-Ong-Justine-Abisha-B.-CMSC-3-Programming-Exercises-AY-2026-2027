@@ -1,4 +1,6 @@
+// ==========================================================================
 // DOM References & Site Index
+// ==========================================================================
 
 // Search Drawer Elements
 const searchToggle = document.getElementById('search-toggle');
@@ -54,7 +56,9 @@ const siteIndex = [
     { title: 'Settings', category: 'Settings', url: '../html/settings.html', keywords: 'theme preferences accessibility' }
 ];
 
+// ==========================================================================
 // Search Drawer
+// ==========================================================================
 
 function escapeHtml(str) {
     const div = document.createElement('div');
@@ -133,7 +137,9 @@ if (searchDrawer && searchToggle && searchClose && searchInput) {
     });
 }
 
+// ==========================================================================
 // Mobile Navigation Drawer
+// ==========================================================================
 
 function toggleMobileMenu(forceClose = false) {
     if (!mobileDrawer || !mobileMenuToggle) return;
@@ -189,7 +195,9 @@ if (mobileDrawer && mobileMenuToggle) {
     });
 }
 
+// ==========================================================================
 // Desktop Dropdowns & Footer Accordions
+// ==========================================================================
 
 dropdownItems.forEach(item => {
     const trigger = item.querySelector('.primary-link');
@@ -226,30 +234,9 @@ footerAccordions.forEach(accordion => {
     });
 });
 
-// Cross-Dissolve Campus Gallery
-
-if (slides.length && prevBtn && nextBtn) {
-    let currentSlide = 0;
-
-    function updateGallery(index) {
-        slides[currentSlide].classList.remove('active');
-        captions[currentSlide]?.classList.remove('active');
-
-        currentSlide = (index + slides.length) % slides.length;
-
-        slides[currentSlide].classList.add('active');
-        captions[currentSlide]?.classList.add('active');
-
-        const label = `${currentSlide + 1} of ${slides.length}`;
-        if (galleryCounter) galleryCounter.textContent = label;
-        galleryMeta?.setAttribute('aria-label', `Photo ${label}`);
-    }
-
-    prevBtn.addEventListener('click', () => updateGallery(currentSlide - 1));
-    nextBtn.addEventListener('click', () => updateGallery(currentSlide + 1));
-}
-
+// ==========================================================================
 // Global Event Listeners & Utilities
+// ==========================================================================
 
 // Close Open Drawers On Escape Key
 document.addEventListener('keydown', (e) => {

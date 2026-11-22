@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yale School of Art | History</title>
+    <link rel="icon" type="image/png" href="../assets/blue-school-crest.png" />
+
+    <!-- Stylesheets & Scripts -->
+    <link rel="stylesheet" href="../css/style.css" /> <!-- Global Layout, Theme Variables, and Shared Shell -->
+    <link rel="stylesheet" href="../css/about.css" /> <!-- About Pages (Overview, Mission Statement, History) -->
+    <script src="../js/script.js" defer></script> <!-- Global Interactive Functionality -->
+    <script src="../js/about.js" defer></script> <!-- About Pages (Overview, Mission Statement, History) -->
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- Global Header & Navigation -->
+        <header class="topbar">
+            <!-- Top Utility Bar: Brand Wordmark + Desktop Utilities / Mobile Controls -->
+            <div class="topbar-inner">
+                <div class="utility-row">
+                    <div class="brand" aria-label="Yale School of Art brand">
+                        <img class="brand-mark" src="../assets/blue-school-crest.png" alt="Yale School of Art crest" />
+                        <div class="brand-name">Yale School of Art</div>
+                    </div>
+
+                    <!-- Mobile-Only Action Buttons (Search + Drawer Toggle) -->
+                    <div class="mobile-controls">
+                        <button type="button" class="mobile-icon-btn" id="mobile-search-toggle" aria-expanded="false" aria-controls="search-drawer" aria-label="Toggle search">
+                            <img class="icon" src="../assets/search.svg" alt="" />
+                        </button>
+                        <button type="button" class="mobile-icon-btn" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle navigation menu">
+                            <svg class="menu-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <path class="bar" d="M3 5.5H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="bar" d="M3 10H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="bar" d="M3 14.5H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="cross" d="M4.5 4.5L15.5 15.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="cross" d="M15.5 4.5L4.5 15.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Desktop Utility Navigation -->
+                    <nav class="utility-nav" aria-label="Utility navigation">
+                        <div class="utility-item">
+                            <button type="button" class="utility-link" id="search-toggle" aria-expanded="false" aria-controls="search-drawer">
+                                <img class="icon" src="../assets/search.svg" alt="Search" />
+                                <span>Search</span>
+                            </button>
+                        </div>
+                        <div class="utility-item"><a class="utility-link" href="../html/support.html">Support</a></div>
+                        <div class="utility-item"><a class="utility-link" href="../html/visit.html">Visit</a></div>
+                        <div class="utility-item"><a class="utility-link" href="../html/contact.html">Contact</a></div>
+                        <div class="utility-item"><a class="utility-link" href="../html/newsletter.html">Newsletter</a></div>
+                        <div class="utility-divider" aria-hidden="true"></div>
+                        <div class="utility-item">
+                            <a class="utility-link" href="../html/settings.html">
+                                <svg class="utility-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="3" />
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                                </svg>
+                                <span>Settings</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="primary-nav-separator desktop-only" aria-hidden="true"></div>
+
+            <!-- Desktop Primary Navigation -->
+            <div class="topbar-inner desktop-only" style="padding-top: 0; padding-bottom: 0;">
+                <nav class="primary-nav" aria-label="Primary navigation">
+                    <div class="primary-item active has-dropdown">
+                        <a class="primary-link" href="../html/index.html" aria-haspopup="true" aria-expanded="false">
+                            <span>About</span>
+                            <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <ul class="nav-dropdown" role="menu">
+                            <li role="none"><a role="menuitem" href="../html/index.html">Overview</a></li>
+                            <li role="none"><a role="menuitem" href="../html/about-mission.html">Mission Statement</a></li>
+                            <li role="none"><a role="menuitem" class="active" href="../html/about-history.html">History</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="primary-item"><a class="primary-link" href="../html/apply.html">Apply</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/calendar.html">Calendar</a></div>
+
+                    <div class="primary-item has-dropdown">
+                        <a class="primary-link" href="../html/programs.html" aria-haspopup="true" aria-expanded="false">
+                            <span>Programs</span>
+                            <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <ul class="nav-dropdown" role="menu">
+                            <li role="none"><a role="menuitem" href="../html/programs.html">Overview</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-gd.html">Graphic Design MFA</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-pp.html">Painting &amp; Printmaking MFA</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-photography.html">Photography MFA</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-sculpture.html">Sculpture MFA</a></li>
+                            <li class="dropdown-divider" role="separator"></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-usp.html">Undergraduate &amp; Summer Programs</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="primary-item"><a class="primary-link" href="../html/news.html">News</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/resources.html">Resources</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/facilities.html">Facilities</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/faculty.html">Faculty</a></div>
+                </nav>
+            </div>
+
+            <!-- Collapsible Site Search Drawer -->
+            <div class="search-drawer" id="search-drawer" aria-hidden="true">
+                <div class="search-drawer-clip">
+                    <div class="search-drawer-inner">
+                        <div class="search-input-wrap">
+                            <input type="text" id="site-search-input" placeholder="Search programs, faculty, admissions, events..." autocomplete="off" />
+                            <button type="button" id="search-clear" hidden>Clear</button>
+                            <span class="search-input-divider" id="search-divider" hidden></span>
+                            <button type="button" id="search-close" aria-label="Close search">✕</button>
+                        </div>
+                        <ul class="search-results" id="search-results"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collapsible Mobile Navigation Drawer -->
+            <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+                <div class="mobile-drawer-clip">
+                    <nav class="mobile-drawer-inner" aria-label="Mobile navigation">
+                        <ul class="mobile-primary-list">
+                            <li class="mobile-accordion">
+                                <div class="mobile-accordion-header">
+                                    <a class="mobile-nav-link active" href="../html/index.html">About</a>
+                                    <button type="button" class="mobile-accordion-btn" aria-expanded="false" aria-label="Toggle About submenu">
+                                        <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="mobile-accordion-panel">
+                                    <ul class="mobile-sublist">
+                                        <li><a href="../html/index.html">Overview</a></li>
+                                        <li><a href="../html/about-mission.html">Mission Statement</a></li>
+                                        <li><a class="active" href="../html/about-history.html">History</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li><a class="mobile-nav-link" href="../html/apply.html">Apply</a></li>
+                            <li><a class="mobile-nav-link" href="../html/calendar.html">Calendar</a></li>
+
+                            <li class="mobile-accordion">
+                                <div class="mobile-accordion-header">
+                                    <a class="mobile-nav-link" href="../html/programs.html">Programs</a>
+                                    <button type="button" class="mobile-accordion-btn" aria-expanded="false" aria-label="Toggle Programs submenu">
+                                        <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="mobile-accordion-panel">
+                                    <ul class="mobile-sublist">
+                                        <li><a href="../html/programs.html">Overview</a></li>
+                                        <li><a href="../html/programs-gd.html">Graphic Design MFA</a></li>
+                                        <li><a href="../html/programs-pp.html">Painting &amp; Printmaking MFA</a></li>
+                                        <li><a href="../html/programs-photography.html">Photography MFA</a></li>
+                                        <li><a href="../html/programs-sculpture.html">Sculpture MFA</a></li>
+                                        <li><a href="../html/programs-usp.html">Undergraduate &amp; Summer Programs</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li><a class="mobile-nav-link" href="../html/news.html">News</a></li>
+                            <li><a class="mobile-nav-link" href="../html/resources.html">Resources</a></li>
+                            <li><a class="mobile-nav-link" href="../html/facilities.html">Facilities</a></li>
+                            <li><a class="mobile-nav-link" href="../html/faculty.html">Faculty</a></li>
+                        </ul>
+
+                        <div class="mobile-drawer-divider" aria-hidden="true"></div>
+
+                        <ul class="mobile-utility-list">
+                            <li><a href="../html/support.html">Support</a></li>
+                            <li><a href="../html/visit.html">Visit</a></li>
+                            <li><a href="../html/contact.html">Contact</a></li>
+                            <li><a href="../html/newsletter.html">Newsletter</a></li>
+                            <li>
+                                <a class="mobile-utility-icon-link" href="../html/settings.html">
+                                    <svg class="utility-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="3" />
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                                    </svg>
+                                    <span>Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Page Hero Banner -->
+            <section class="hero" aria-label="School history hero section">
+                <div class="hero-inner">
+                    <p class="eyebrow">About</p>
+                    <h1>History</h1>
+                    <p class="hero-subtitle">
+                        Yale School of Art, a graduate school dedicated to the exploration of art in all its forms — since 1869.
+                    </p>
+                    <div class="scroll-cue" aria-label="Scroll down">
+                        <span class="scroll-cue-label">Scroll</span>
+                        <img src="../assets/chevron-down.svg" alt="Scroll down indicator" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Editorial Content Wrapper -->
+            <div class="main-wrap">
+                <!-- Sticky Era Timeline & Filter Bar -->
+                <nav class="history-timeline-bar" id="history-timeline" aria-label="Historical eras navigation">
+                    <div class="history-timeline-inner">
+                        <div class="history-era-jumps" role="group" aria-label="Jump to historical era">
+                            <a href="#era-origins" class="history-jump-link active" data-era-target="era-origins">
+                                <span class="jump-num">I</span>
+                                <span class="jump-title">Origins</span>
+                                <span class="jump-years">1832–1871</span>
+                            </a>
+                            <a href="#era-curriculum" class="history-jump-link" data-era-target="era-curriculum">
+                                <span class="jump-num">II</span>
+                                <span class="jump-title">Expansion</span>
+                                <span class="jump-years">1908–1962</span>
+                            </a>
+                            <a href="#era-campus" class="history-jump-link" data-era-target="era-campus">
+                                <span class="jump-num">III</span>
+                                <span class="jump-title">Campus Growth</span>
+                                <span class="jump-years">1959–2000</span>
+                            </a>
+                        </div>
+
+                        <div class="history-filter-group" role="group" aria-label="Filter visible eras">
+                            <button type="button" class="history-filter-btn active" data-era-filter="all" aria-pressed="true">All Eras</button>
+                            <button type="button" class="history-filter-btn" data-era-filter="era-origins" aria-pressed="false">Era I</button>
+                            <button type="button" class="history-filter-btn" data-era-filter="era-curriculum" aria-pressed="false">Era II</button>
+                            <button type="button" class="history-filter-btn" data-era-filter="era-campus" aria-pressed="false">Era III</button>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Era I: The Origins of Yale School of Art -->
+                <section class="history-era" id="era-origins" aria-labelledby="era-origins-heading">
+                    <header class="history-era-header">
+                        <div class="section-rule" aria-hidden="true"></div>
+                        <div class="history-era-title-group">
+                            <h2 id="era-origins-heading">I: The Origins of Yale School of Art</h2>
+                            <p class="history-era-dates">1832–1871</p>
+                        </div>
+                    </header>
+
+                    <div class="history-flow">
+                        <p class="history-lead">
+                            The study of the visual arts at Yale began in 1832 with the opening of the Trumbull Gallery, one of the first—and long the only gallery—connected with an American college.
+                            Trumbull Gallery was founded by patriot and artist Colonel John Trumbull, one-time aide-de-camp to General Washington, with the help of the celebrated scientist Professor Benjamin Silliman.
+                        </p>
+
+                        <!-- Two-Column Portrait Grid -->
+                        <div class="history-media-grid">
+                            <figure class="history-figure">
+                                <div class="history-media-frame portrait">
+                                    <img src="../assets/john-trumbull.png" alt="Self-Portrait, oil on canvas, by American painter John Trumbull" />
+                                </div>
+                                <figcaption>
+                                    Self-Portrait, oil on canvas, by the American painter John Trumbull, 29 3/4 in. x 24 9/16 in. Yale University Art Gallery, gift of Marshall H. Clyde Jr. Courtesy of Yale University.
+                                </figcaption>
+                            </figure>
+
+                            <figure class="history-figure">
+                                <div class="history-media-frame portrait">
+                                    <img src="../assets/augustus-street.png" alt="Portrait of Augustus Russell Street by artist Nathaniel Jocelyn, ca. 1840–50" />
+                                </div>
+                                <figcaption>
+                                    Augustus Russell Street (1791–1866), BA 1812, ca. 1840–50. By artist Nathaniel Jocelyn (American, 1796–1881). Courtesy of Yale University Art Gallery.
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <p class="history-copy">
+                            A series of related events led to the establishment of the Yale School of Art, the first art school connected with an institution of higher learning in the country: A successful art exhibition held in 1858 under the direction of the College Librarian, Daniel Coit Gilman, led to the establishment of an art school in 1864.
+                        </p>
+                        <p class="history-copy">
+                            Endowed by Augustus Russell Street, a native of New Haven and graduate of Yale’s class of 1812, the Yale School of the Fine Arts opened in 1869.
+                        </p>
+
+                        <!-- Studio Painting Class -->
+                        <figure class="history-figure">
+                            <div class="history-media-frame wide">
+                                <img src="../assets/painting-class.png" alt="Archival photograph of a Yale studio painting class with male and female students, circa 1900" />
+                            </div>
+                            <figcaption>
+                                Studio painting class, with both male and female students and a woman figure as a subject of study, circa 1900. Courtesy of Yale University.
+                            </figcaption>
+                        </figure>
+
+                        <p class="history-copy">
+                            This new educational program was placed in the hands of an art council. Members included painter-inventor Samuel F. B. Morse, a graduate of Yale College. The school offered classes in drawing, painting, sculpture, and art history under its first director, then dean, American painter John Ferguson Weir.
+                        </p>
+
+                        <!-- Street Hall -->
+                        <figure class="history-figure">
+                            <div class="history-media-frame wide">
+                                <img src="../assets/street-hall.png" alt="Exterior view of Street Hall, the High Victorian brownstone Art Building designed by Peter B. Wight" />
+                            </div>
+                            <figcaption>
+                                Constructed between 1864 and 1866, the High Victorian-style brownstone Art Building, named Street Hall in 1928, was designed by Peter B. Wight. Courtesy of Yale University.
+                            </figcaption>
+                        </figure>
+
+                        <p class="history-copy">
+                            Street Hall is named after Augustus Street, who also endowed the building, which housed the collections of the old Trumbull Gallery. The collection grew in 1871 following the acquisition of the Jarves Collection of early Italian paintings.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Era II: The Curriculum Expands -->
+                <section class="history-era" id="era-curriculum" aria-labelledby="era-curriculum-heading">
+                    <header class="history-era-header">
+                        <div class="section-rule" aria-hidden="true"></div>
+                        <div class="history-era-title-group">
+                            <h2 id="era-curriculum-heading">II: The Curriculum Expands</h2>
+                            <p class="history-era-dates">1908–1962</p>
+                        </div>
+                    </header>
+
+                    <div class="history-flow">
+                        <p class="history-lead">
+                            As time passed, Yale School of Art began to add additional departments to the school: Architectural instruction began in 1908; in 1916, Everett Victor Meeks began directing the Architecture department. Drama was added in 1925 under the direction of George Pierce Baker. The School occupied its own building and functioned as a separate department of the School until it became an independent school in 1955.
+                        </p>
+
+                        <!-- Coat of Arms -->
+                        <figure class="history-figure history-figure-emblem">
+                            <div class="history-media-frame emblem">
+                                <img src="../assets/ysoa-shield.png" alt="Coat of arms for Yale University School of Art designed by Juanita Dugdale in 1982" />
+                            </div>
+                            <figcaption>
+                                Coat of arms for Yale University School of Art, New Haven, Connecticut, 1982. Two Twelve Associates, Inc., Designer, Juanita Dugdale.
+                            </figcaption>
+                        </figure>
+
+                        <p class="history-copy">
+                            Yale School of Art has a storied architectural history that extends well beyond the Trumbull Gallery and Street Hall: Egerton Swartwout built and opened a new art gallery in 1928 through the generosity of Edward S. Harkness. The gallery was connected to Street Hall by a bridge above High Street, and Street Hall was therefore used for art instruction, while the Architecture program was moved to Weir Hall, as designed by George Douglas Miller.
+                        </p>
+
+                        <!-- Chapel Street -->
+                        <figure class="history-figure">
+                            <div class="history-media-frame landscape">
+                                <img src="../assets/ysofa-building.png" alt="Yale School of the Fine Arts building viewed from Chapel Street, circa 1868–1874" />
+                            </div>
+                            <figcaption>
+                                Yale School of the Fine Arts building from Chapel Street, c. 1868–1874. Courtesy of Yale University.
+                            </figcaption>
+                        </figure>
+
+                        <p class="history-copy">
+                            In 1953, Louis I. Kahn and Douglas Orr collaborated on the design of a large addition to the art gallery, which was funded by the family of James Alexander Campbell and an extended group of patrons. While several floors were initially used by the School of Art, the space was soon overtaken by the rapid expansion of the gallery’s collections. Designed by Paul Rudolph, the Art and Architecture building was opened in 1963 under the chairmanship of Ward Cheney and funded by many friends of the arts at Yale.
+                        </p>
+
+                        <!-- Louis Kahn Building -->
+                        <figure class="history-figure">
+                            <div class="history-media-frame landscape">
+                                <img src="../assets/lk-building.png" alt="Yale University Art Gallery addition designed by Louis I. Kahn" />
+                            </div>
+                            <figcaption>
+                                Yale University Art Gallery, Louis Kahn Building.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <!-- Era III: The Campus Grows -->
+                <section class="history-era" id="era-campus" aria-labelledby="era-campus-heading">
+                    <header class="history-era-header">
+                        <div class="section-rule" aria-hidden="true"></div>
+                        <div class="history-era-title-group">
+                            <h2 id="era-campus-heading">III: The Campus Grows</h2>
+                            <p class="history-era-dates">1959–2000</p>
+                        </div>
+                    </header>
+
+                    <div class="history-flow">
+                        <p class="history-lead">
+                            As the School continued to grow and change, new programs moved to other buildings on campus. The School of Art and Architecture was made a fully graduate professional school in 1959. In 1969, the School was constituted as two faculties, each with its own dean. Two separate schools were established by the President and Fellows in 1972: the School of Art and the School of Architecture. Both schools shared the Rudolph Building (now Rudolph Hall) until the year 2000.
+                        </p>
+
+                        <!-- Paul Rudolph Building -->
+                        <figure class="history-figure">
+                            <div class="history-media-frame wide">
+                                <img src="../assets/art-arch-building.png" alt="Yale University School of Art and Architecture building designed by Paul Rudolph, opened in 1963" />
+                            </div>
+                            <figcaption>
+                                Yale University School of Art and Architecture designed by Paul Rudolph and opened in 1963. Photo: Michael Marsland.
+                            </figcaption>
+                        </figure>
+
+                        <p class="history-copy">
+                            The Department of Sculpture was housed at 14 Mansfield Street in Hammond Hall, a large building formerly used for mechanical engineering, while Graphic Design was located in an old Yale fraternity building at 212 York Street.
+                        </p>
+
+                        <!-- Art and Architecture Building 1963-1973 -->
+                        <figure class="history-figure">
+                            <div class="history-media-frame wide">
+                                <img src="../assets/art-arch-interior.png" alt="Interior view of the Yale Art and Architecture Building, circa 1963–1973" />
+                            </div>
+                            <figcaption>
+                                Yale Art and Architecture Building, c. 1963–1973.
+                            </figcaption>
+                        </figure>
+
+                        <p class="history-copy">
+                            Additional classrooms and graduate painting studios were located at 215 Park Street. Street Hall was assigned to the University Department of the History of Art. The arts at Yale—Architecture, Art, the Art Gallery, the Center for British Art, the History of Art, the School of Drama, and the Repertory Theatre—thus occupied a group of buildings stretching along and near Chapel Street for almost three blocks.
+                        </p>
+
+                        <!-- Swartout and Street Hall Renovation -->
+                        <figure class="history-figure">
+                            <div class="history-media-frame wide">
+                                <img src="../assets/yuag.png" alt="Yale University Art Gallery Swartwout and Street Hall Renovation" />
+                            </div>
+                            <figcaption>
+                                Yale University Art Gallery, Swartwout and Street Hall Renovation. Photo: Christopher Gardner.
+                            </figcaption>
+                        </figure>
+
+                        <p class="history-copy">
+                            The University had long planned to extend the schools further up Chapel Street, a strategic initiative that was finally executed at the turn of the 21st century. In September of 2000, a new renovation of 1156 Chapel Street was opened; it included the addition of an adjoining building at 353 Crown Street.
+                        </p>
+
+                        <!-- Exterior view of 1156 Chapel St. -->
+                        <figure class="history-figure">
+                            <div class="history-media-frame wide">
+                                <img src="../assets/gh-side.png" alt="Exterior view of Green Hall at 1156 Chapel Street" />
+                            </div>
+                            <figcaption>
+                                Exterior view of 1156 Chapel St. Image courtesy of TenBerke Architects.
+                            </figcaption>
+                        </figure>
+
+                        <p class="history-copy">
+                            Deborah Berke designed the building, which was named after Yale College graduate Holcombe T. Green, Junior, who provided a generous gift to the project; Marion Rand, wife of late Graphic Design professor Paul Rand, also made a major contribution to the new complex, thus making its construction possible. The new art buildings housed most of the School of Art, save for Sculpture; it also featured an experimental theater for the School of Drama.
+                        </p>
+
+                        <!-- Chapel & Crown Street Interiors Two-Column Grid -->
+                        <div class="history-media-grid">
+                            <figure class="history-figure">
+                                <div class="history-media-frame landscape">
+                                    <img src="../assets/gd-atrium.png" alt="Interior view of the Graphic Design atrium at 1156 Chapel Street" />
+                                </div>
+                                <figcaption>
+                                    Interior view of 1156 Chapel St., Graphic Design atrium. Image courtesy of TenBerke Architects.
+                                </figcaption>
+                            </figure>
+
+                            <figure class="history-figure">
+                                <div class="history-media-frame landscape">
+                                    <img src="../assets/pp-interior.png" alt="Interior view of the Painting and Printmaking program at 353 Crown Street" />
+                                </div>
+                                <figcaption>
+                                    Interior view of the Painting/Printmaking program at 353 Crown St. Image courtesy of TenBerke Architects.
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <p class="history-copy">
+                            Kieran Timberlake designed two new buildings for the School of Art: 36 Edgewood Avenue, as well as an adjacent building, the new School of Art gallery at 32 Edgewood Avenue. Having been housed in Hammond Hall since 1973, the Sculpture department moved into 36 Edgewood Avenue in 2009.
+                        </p>
+
+                        <!-- Edgewood Avenue Two-Column Grid -->
+                        <div class="history-media-grid">
+                            <figure class="history-figure">
+                                <div class="history-media-frame landscape">
+                                    <img src="../assets/sp-interior.png" alt="Interior view of the Sculpture and Photography programs at 36 Edgewood Avenue" />
+                                </div>
+                                <figcaption>
+                                    Interior view of the Sculpture and Photography programs at 36 Edgewood Ave. © Peter Aaron/OTTO.
+                                </figcaption>
+                            </figure>
+
+                            <figure class="history-figure">
+                                <div class="history-media-frame landscape">
+                                    <img src="../assets/edgewood-gallery.png" alt="Exterior view of 32 Edgewood Gallery on the left and 36 Edgewood Avenue on the right" />
+                                </div>
+                                <figcaption>
+                                    Exterior view of 32 Edgewood Gallery (left) and 36 Edgewood Ave. (right). © Peter Aaron/OTTO.
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Archival Image Lightbox Modal -->
+        <div class="history-lightbox" id="history-lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" aria-hidden="true">
+            <div class="history-lightbox-backdrop" data-lightbox-close></div>
+            <div class="history-lightbox-panel">
+                <div class="history-lightbox-topbar">
+                    <span class="history-lightbox-counter" id="lightbox-counter">1 of 13</span>
+                    <button type="button" class="history-lightbox-close" id="lightbox-close" aria-label="Close archival image viewer">✕</button>
+                </div>
+
+                <div class="history-lightbox-stage">
+                    <button type="button" class="history-lightbox-nav" id="lightbox-prev" aria-label="Previous archival image">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M14.5 5.5L8 12L14.5 18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+
+                    <div class="history-lightbox-media">
+                        <img id="lightbox-image" src="" alt="" />
+                    </div>
+
+                    <button type="button" class="history-lightbox-nav" id="lightbox-next" aria-label="Next archival image">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M9.5 5.5L16 12L9.5 18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="history-lightbox-caption" id="lightbox-caption"></p>
+            </div>
+        </div>
+
+        <!-- Editorial Quote Band & Degree Directory -->
+        <section class="quote-band" aria-label="Quote and degree list">
+            <div class="quote-inner">
+                <blockquote>“Art washes away from the soul the dust of everyday life.”</blockquote>
+                <div class="quote-author">Pablo Picasso</div>
+
+                <div class="degree-list" aria-label="MFA degrees">
+                    <a class="degree" href="../html/programs-gd.html">
+                        <div class="name">Graphic Design</div>
+                        <div class="label">MFA</div>
+                    </a>
+
+                    <a class="degree" href="../html/programs-pp.html">
+                        <div class="name">Painting/Printmaking</div>
+                        <div class="label">MFA</div>
+                    </a>
+
+                    <a class="degree" href="../html/programs-photography.html">
+                        <div class="name">Photography</div>
+                        <div class="label">MFA</div>
+                    </a>
+
+                    <a class="degree" href="../html/programs-sculpture.html">
+                        <div class="name">Sculpture</div>
+                        <div class="label">MFA</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Footer -->
+        <footer class="footer" aria-label="Footer">
+            <div class="footer-inner">
+                <div class="footer-grid">
+                    <!-- Brand & Mailing Address -->
+                    <div class="footer-brand">
+                        <div class="footer-brand-row">
+                            <img class="mark" src="../assets/blue-school-crest.png" alt="Yale School of Art crest" />
+                            <div class="footer-brand-name">Yale School of Art</div>
+                        </div>
+                        <div class="footer-address">
+                            <div>1156 Chapel Street</div>
+                            <div>POB 208339</div>
+                            <div>New Haven, CT 06520-8339</div>
+                        </div>
+                    </div>
+
+                    <!-- Primary Navigation Links -->
+                    <div class="footer-column footer-nav-col">
+                        <p class="footer-title">Navigation</p>
+                        <div class="footer-links">
+                            <div class="footer-links-column">
+                                <div class="footer-accordion">
+                                    <a href="../html/index.html" class="footer-accordion-trigger" aria-expanded="false">
+                                        <span>About</span>
+                                        <svg class="footer-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="footer-accordion-panel">
+                                        <ul class="footer-sublinks">
+                                            <li><a href="../html/index.html">Overview</a></li>
+                                            <li><a href="../html/about-mission.html">Mission Statement</a></li>
+                                            <li><a href="../html/about-history.html">History</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p><a href="../html/apply.html">Apply</a></p>
+                                <p><a href="../html/calendar.html">Calendar</a></p>
+                                <div class="footer-accordion">
+                                    <a href="../html/programs.html" class="footer-accordion-trigger" aria-expanded="false">
+                                        <span>Programs</span>
+                                        <svg class="footer-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="footer-accordion-panel">
+                                        <ul class="footer-sublinks">
+                                            <li><a href="../html/programs.html">Overview</a></li>
+                                            <li><a href="../html/programs-gd.html">Graphic Design MFA</a></li>
+                                            <li><a href="../html/programs-pp.html">Painting &amp; Printmaking MFA</a></li>
+                                            <li><a href="../html/programs-photography.html">Photography MFA</a></li>
+                                            <li><a href="../html/programs-sculpture.html">Sculpture MFA</a></li>
+                                            <li><a href="../html/programs-usp.html">Undergraduate &amp; Summer Programs</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="footer-links-column">
+                                <p><a href="../html/news.html">News</a></p>
+                                <p><a href="../html/resources.html">Resources</a></p>
+                                <p><a href="../html/facilities.html">Facilities</a></p>
+                                <p><a href="../html/faculty.html">Faculty</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Channels -->
+                    <div class="footer-column">
+                        <p class="footer-title">Social Media</p>
+                        <p>
+                            <a class="footer-social-link" href="https://www.instagram.com/yaleschoolofart/?hl=en" target="_blank" rel="noopener">
+                                <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                                </svg>
+                                <span>Instagram</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a class="footer-social-link" href="https://www.facebook.com/YaleSchoolofArt" target="_blank" rel="noopener">
+                                <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 8h-2a3 3 0 0 0-3 3v11" />
+                                    <path d="M8.5 13.5H15.5" />
+                                </svg>
+                                <span>Facebook</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a class="footer-social-link" href="https://www.youtube.com/@yaleschoolofart1869" target="_blank" rel="noopener">
+                                <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                                </svg>
+                                <span>YouTube</span>
+                            </a>
+                        </p>
+                    </div>
+
+                    <!-- Secondary Utility Links -->
+                    <div class="footer-column">
+                        <p class="footer-title">Other Links</p>
+                        <p><a href="../html/support.html">Support</a></p>
+                        <p><a href="../html/visit.html">Visit</a></p>
+                        <p><a href="../html/contact.html">Contact</a></p>
+                        <p><a href="../html/newsletter.html">Newsletter</a></p>
+                    </div>
+                </div>
+
+                <!-- Copyright Bar -->
+                <div class="footer-bottom">
+                    <div class="primary-footer-separator" aria-hidden="true"></div>
+                    <div class="footer-copy">© <span id="copyright-year">2026</span> Yale School of Art</div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
