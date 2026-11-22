@@ -8,8 +8,8 @@
     <link rel="icon" type="image/png" href="../assets/blue-school-crest.png" />
 
     <!-- Stylesheets & Scripts -->
-    <link rel="stylesheet" href="../css/style.css" /> <!-- Global Header, Footer, and Theme Variables -->
-    <link rel="stylesheet" href="../css/light-blue-universal.css" /> <!-- Page-specific Layout and Gallery Styles -->
+    <link rel="stylesheet" href="../css/style.css" /> <!-- Global Layout, Theme Variables, and Overview Styles -->
+    <link rel="stylesheet" href="../css/light-blue-universal.css" /> <!-- Shared Light-Blue Page Styles -->
     <script src="../js/script.js" defer></script> <!-- Global Interactive Functionality -->
 </head>
 
@@ -246,7 +246,7 @@
                         <div class="gallery-controls">
                             <button type="button" class="gallery-button" aria-label="Previous photo">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path d="M14.5 5.5L8 12L14.5 18.5" stroke="#00356b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.5 5.5L8 12L14.5 18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </button>
 
@@ -257,7 +257,7 @@
 
                             <button type="button" class="gallery-button" aria-label="Next photo">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path d="M9.5 5.5L16 12L9.5 18.5" stroke="#00356b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M9.5 5.5L16 12L9.5 18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </button>
                         </div>
@@ -350,22 +350,22 @@
                 <div class="quote-author">Pablo Picasso</div>
 
                 <div class="degree-list" aria-label="MFA degrees">
-                    <a class="degree" href="programs-gd.html">
+                    <a class="degree" href="../html/programs-gd.html">
                         <div class="name">Graphic Design</div>
                         <div class="label">MFA</div>
                     </a>
 
-                    <a class="degree" href="programs-pp.html">
+                    <a class="degree" href="../html/programs-pp.html">
                         <div class="name">Painting/Printmaking</div>
                         <div class="label">MFA</div>
                     </a>
 
-                    <a class="degree" href="programs-photography.html">
+                    <a class="degree" href="../html/programs-photography.html">
                         <div class="name">Photography</div>
                         <div class="label">MFA</div>
                     </a>
 
-                    <a class="degree" href="programs-sculpture.html">
+                    <a class="degree" href="../html/programs-sculpture.html">
                         <div class="name">Sculpture</div>
                         <div class="label">MFA</div>
                     </a>
@@ -457,7 +457,9 @@
                         <p>
                             <a class="footer-social-link" href="https://www.facebook.com/YaleSchoolofArt" target="_blank" rel="noopener">
                                 <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 8h-2a3 3 0 0 0-3 3v11" />
+                                    <path d="M8.5 13.5H15.5" />
                                 </svg>
                                 <span>Facebook</span>
                             </a>

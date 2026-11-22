@@ -486,6 +486,11 @@ button.utility-link {
     background: var(--blue-tint-08);
 }
 
+.search-results .search-empty {
+    padding: 10px 14px;
+    color: var(--blue-tint-65);
+}
+
 /* Hero Banner */
 .hero {
     position: relative;
@@ -655,6 +660,7 @@ h1 {
     border: 1px solid var(--blue);
     border-radius: 8px;
     background: var(--white-tint-95);
+    color: var(--blue);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1172,13 +1178,13 @@ blockquote {
         padding: 13px 4px;
         font-family: 'Inter', 'Segoe UI', sans-serif;
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 1.5;
         color: var(--blue);
     }
 
     .mobile-nav-link.active {
-        font-weight: 700;
+        font-weight: 600;
     }
 
     /* Mobile Drawer Accordions */
@@ -1261,7 +1267,7 @@ blockquote {
         display: block;
         padding: 8px 4px;
         font-size: 15px;
-        font-weight: 500;
+        font-weight: 400;
         color: var(--blue);
     }
 

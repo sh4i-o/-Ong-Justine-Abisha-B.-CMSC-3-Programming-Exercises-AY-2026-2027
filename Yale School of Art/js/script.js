@@ -124,7 +124,7 @@ if (searchDrawer && searchToggle && searchClose && searchInput) {
 
         searchResults.innerHTML = matches.length
             ? matches.map(m => `<li><a href="${m.url}"><strong>${m.title}</strong><span>${m.category} →</span></a></li>`).join('')
-            : `<li style="padding: 10px 14px; color: rgba(0,53,107,0.6);">No results found for "${escapeHtml(rawValue)}"</li>`;
+            : `<li class="search-empty">No results found for "${escapeHtml(rawValue)}"</li>`;
     });
 
     searchClear.addEventListener('click', () => {
