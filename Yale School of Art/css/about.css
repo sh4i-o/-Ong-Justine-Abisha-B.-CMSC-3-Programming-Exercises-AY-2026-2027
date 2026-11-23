@@ -463,26 +463,20 @@
     gap: 24px;
 }
 
-.history-lead {
-    margin: 0;
-    color: var(--blue);
-    font-size: 16px;
-    line-height: 1.75;
-    font-weight: 500;
-}
-
+.history-lead,
 .history-copy {
     margin: 0;
     color: var(--muted);
     font-size: 16px;
     line-height: 1.75;
+    font-weight: 400;
 }
 
 /* Archival Single Figures & Multi-Photo Carousels */
 .history-media-single,
 .history-media-grid {
     width: 100%;
-    max-width: 640px;
+    max-width: 700px;
     margin: 12px auto;
     display: flex;
     flex-direction: column;
@@ -493,8 +487,13 @@
     margin-top: 0;
 }
 
-/* Uniform sizing for all portrait single figures and portrait carousels */
 .history-media-single:has(.portrait),
+.history-media-grid:has(.portrait) {
+    max-width: 360px;
+}
+
+.history-media-single:has(.portrait),
+.history-media-single:has(.emblem),
 .history-media-grid:has(.portrait) {
     max-width: 360px;
 }
@@ -517,21 +516,15 @@
     cursor: zoom-in;
 }
 
-/* All portrait frames share the exact same 360px x 450px (4 / 5) dimensions */
 .history-media-frame.portrait {
     aspect-ratio: 4 / 5;
 }
 
-/* Single landscape/wide figures wrap natural proportions with zero letterboxing */
 .history-media-single .history-media-frame.landscape,
-.history-media-single .history-media-frame.wide {
-    aspect-ratio: auto;
-}
-
-/* Multi-photo landscape/wide carousels keep a consistent 3 / 2 frame ratio */
+.history-media-single .history-media-frame.wide,
 .history-media-grid .history-media-frame.landscape,
 .history-media-grid .history-media-frame.wide {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 2 / 1;
 }
 
 .history-media-frame.emblem {
@@ -549,11 +542,20 @@
     transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Ensure single portrait images fill their 4 / 5 frame uniformly */
-.history-media-single .history-media-frame.portrait img:not(.history-carousel-slide) {
+.history-media-single 
+.history-media-frame.portrait img:not(.history-carousel-slide) {
     height: 100%;
     object-fit: cover;
     object-position: center 20%;
+}
+
+.history-media-single 
+.history-media-frame.landscape img:not(.history-carousel-slide),
+.history-media-single 
+.history-media-frame.wide img:not(.history-carousel-slide) {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .history-media-frame:hover img:not(.history-carousel-slide) {
