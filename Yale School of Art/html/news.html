@@ -236,11 +236,12 @@
                     <!-- Heading & Connected Filter Control Bar -->
                     <div class="cn-toolbar" id="news-toolbar">
                         <div class="news-heading-group">
-                            <h2 class="news-active-heading" id="news-active-heading">All news</h2>
+                            <h2 class="news-active-heading" id="news-active-heading">All News</h2>
                             <span class="news-count-label" id="news-count-label"></span>
                         </div>
 
                         <div class="cn-filter-controls">
+                            <span class="cn-active-filter-summary" id="news-active-summary" hidden></span>
                             <button type="button" class="cn-filter-toggle" id="news-filter-toggle" aria-expanded="false" aria-controls="news-filter-panel">
                                 <span>Filters</span>
                                 <span class="cn-filter-badge" id="news-filter-count" hidden>0</span>
@@ -251,19 +252,32 @@
                         </div>
                     </div>
 
-                    <!-- Collapsible Connected Filter Drawer (Shared with Calendar) -->
+                    <!-- Collapsible Connected Filter Drawer (Aligned with Calendar & art.yale.edu/news) -->
                     <div class="cn-filter-drawer" id="news-filter-panel" aria-hidden="true">
                         <div class="cn-filter-drawer-clip">
                             <div class="cn-filter-drawer-inner">
                                 <div class="cn-filter-row">
+                                    <span class="cn-filter-label">Sort</span>
+                                    <div class="cn-pill-group" role="group" aria-label="Sort news by date" data-filter-type="sort">
+                                        <button type="button" class="cn-pill active" data-value="newest" aria-pressed="true">Newest First</button>
+                                        <button type="button" class="cn-pill" data-value="oldest" aria-pressed="false">Oldest First</button>
+                                    </div>
+                                </div>
+
+                                <div class="cn-filter-row">
                                     <span class="cn-filter-label">Category</span>
                                     <div class="cn-pill-group" role="group" aria-label="Filter news by category" data-filter-type="category">
-                                        <button type="button" class="cn-pill active" data-value="all" aria-pressed="true">All News</button>
-                                        <button type="button" class="cn-pill" data-value="Exhibition" aria-pressed="false">Exhibitions</button>
-                                        <button type="button" class="cn-pill" data-value="Announcement" aria-pressed="false">Announcements</button>
-                                        <button type="button" class="cn-pill" data-value="Faculty & Alumni" aria-pressed="false">Faculty &amp; Alumni</button>
-                                        <button type="button" class="cn-pill" data-value="Visiting Artists" aria-pressed="false">Visiting Artists</button>
-                                        <button type="button" class="cn-pill" data-value="Publications" aria-pressed="false">Publications</button>
+                                        <button type="button" class="cn-pill active" data-value="all" aria-pressed="true">All</button>
+                                        <button type="button" class="cn-pill" data-value="Announcements" aria-pressed="false">Announcements</button>
+                                        <button type="button" class="cn-pill" data-value="Awards" aria-pressed="false">Awards</button>
+                                        <button type="button" class="cn-pill" data-value="New Faculty" aria-pressed="false">New Faculty</button>
+                                        <button type="button" class="cn-pill" data-value="Fundraising" aria-pressed="false">Fundraising</button>
+                                        <button type="button" class="cn-pill" data-value="Field Trips" aria-pressed="false">Field Trips</button>
+                                        <button type="button" class="cn-pill" data-value="In The World" aria-pressed="false">In The World</button>
+                                        <button type="button" class="cn-pill" data-value="Administration Updates" aria-pressed="false">Administration Updates</button>
+                                        <button type="button" class="cn-pill" data-value="Recap" aria-pressed="false">Recap</button>
+                                        <button type="button" class="cn-pill" data-value="MFA Graduates" aria-pressed="false">MFA Graduates</button>
+                                        <button type="button" class="cn-pill" data-value="Jobs" aria-pressed="false">Jobs</button>
                                     </div>
                                 </div>
 
@@ -271,11 +285,12 @@
                                     <span class="cn-filter-label">Department</span>
                                     <div class="cn-pill-group" role="group" aria-label="Filter news by department" data-filter-type="department">
                                         <button type="button" class="cn-pill active" data-value="all" aria-pressed="true">All Departments</button>
-                                        <button type="button" class="cn-pill" data-value="Graphic Design" aria-pressed="false">Graphic Design</button>
+                                        <button type="button" class="cn-pill" data-value="Interdisciplinary" aria-pressed="false">Interdisciplinary</button>
                                         <button type="button" class="cn-pill" data-value="Painting/Printmaking" aria-pressed="false">Painting/Printmaking</button>
+                                        <button type="button" class="cn-pill" data-value="Graphic Design" aria-pressed="false">Graphic Design</button>
                                         <button type="button" class="cn-pill" data-value="Photography" aria-pressed="false">Photography</button>
                                         <button type="button" class="cn-pill" data-value="Sculpture" aria-pressed="false">Sculpture</button>
-                                        <button type="button" class="cn-pill" data-value="All School" aria-pressed="false">All School</button>
+                                        <button type="button" class="cn-pill" data-value="Undergraduate" aria-pressed="false">Undergraduate</button>
                                     </div>
                                 </div>
 

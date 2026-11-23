@@ -513,6 +513,7 @@
 /* Selected Day / Events Today Panel */
 .cal-selected-panel {
     margin-top: 44px;
+    scroll-margin-top: 156px;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -639,7 +640,7 @@
 }
 
 .news-card:hover,
-.news-card:focus-within {
+.news-card:has(:focus-visible) {
     border-color: var(--blue);
     box-shadow: 0 8px 24px rgba(0, 53, 107, 0.1);
     transform: translateY(-2px);
@@ -665,7 +666,7 @@
 }
 
 .news-card:hover .news-card-media img,
-.news-card:focus-within .news-card-media img {
+.news-card:has(:focus-visible) .news-card-media img {
     transform: scale(1.03);
 }
 
@@ -911,11 +912,24 @@
         font-size: 21px;
     }
 
+    .cal-selected-panel {
+        scroll-margin-top: 96px;
+    }
+
     /* Bottom Row: Today & Filters cleanly spaced */
     #calendar-toolbar .cn-filter-controls {
         width: 100%;
         justify-content: space-between;
         margin-left: 0;
+    }
+
+    .cn-filter-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .cn-filter-label {
+        padding-top: 0;
     }
 
     .cal-cell {
