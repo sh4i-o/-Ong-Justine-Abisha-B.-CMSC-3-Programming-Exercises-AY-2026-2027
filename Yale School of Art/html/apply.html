@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yale School of Art | Apply</title>
+    <link rel="icon" type="image/png" href="../assets/blue-school-crest.png" />
+
+    <!-- Stylesheets & Scripts -->
+    <link rel="stylesheet" href="../css/style.css" /> <!-- Global Layout, Theme Variables, and Shared Shell -->
+    <link rel="stylesheet" href="../css/utility.css" /> <!-- Utility Pages (Apply, Support, Visit, Contact, Newsletter, Settings) -->
+    <script src="../js/script.js" defer></script> <!-- Global Interactive Functionality -->
+    <script src="../js/utility.js" defer></script> <!-- Utility Pages Interactive Functionality -->
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- Global Header & Navigation -->
+        <header class="topbar">
+            <!-- Top Utility Bar: Brand Wordmark + Desktop Utilities / Mobile Controls -->
+            <div class="topbar-inner">
+                <div class="utility-row">
+                    <div class="brand" aria-label="Yale School of Art brand">
+                        <img class="brand-mark" src="../assets/blue-school-crest.png" alt="Yale School of Art crest" />
+                        <div class="brand-name">Yale School of Art</div>
+                    </div>
+
+                    <!-- Mobile-Only Action Buttons (Search + Drawer Toggle) -->
+                    <div class="mobile-controls">
+                        <button type="button" class="mobile-icon-btn" id="mobile-search-toggle" aria-expanded="false" aria-controls="search-drawer" aria-label="Toggle search">
+                            <img class="icon" src="../assets/search.svg" alt="" />
+                        </button>
+                        <button type="button" class="mobile-icon-btn" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle navigation menu">
+                            <svg class="menu-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <path class="bar" d="M3 5.5H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="bar" d="M3 10H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="bar" d="M3 14.5H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="cross" d="M4.5 4.5L15.5 15.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="cross" d="M15.5 4.5L4.5 15.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Desktop Utility Navigation -->
+                    <nav class="utility-nav" aria-label="Utility navigation">
+                        <div class="utility-item">
+                            <button type="button" class="utility-link" id="search-toggle" aria-expanded="false" aria-controls="search-drawer">
+                                <img class="icon" src="../assets/search.svg" alt="Search" />
+                                <span>Search</span>
+                            </button>
+                        </div>
+                        <div class="utility-item"><a class="utility-link" href="../html/support.html">Support</a></div>
+                        <div class="utility-item"><a class="utility-link" href="../html/visit.html">Visit</a></div>
+                        <div class="utility-item"><a class="utility-link" href="../html/contact.html">Contact</a></div>
+                        <div class="utility-item"><a class="utility-link" href="../html/newsletter.html">Newsletter</a></div>
+                        <div class="utility-divider" aria-hidden="true"></div>
+                        <div class="utility-item">
+                            <a class="utility-link" href="../html/settings.html">
+                                <svg class="utility-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="3" />
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                                </svg>
+                                <span>Settings</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="primary-nav-separator desktop-only" aria-hidden="true"></div>
+
+            <!-- Desktop Primary Navigation -->
+            <div class="topbar-inner desktop-only" style="padding-top: 0; padding-bottom: 0;">
+                <nav class="primary-nav" aria-label="Primary navigation">
+                    <div class="primary-item has-dropdown">
+                        <a class="primary-link" href="../html/index.html" aria-haspopup="true" aria-expanded="false">
+                            <span>About</span>
+                            <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <ul class="nav-dropdown" role="menu">
+                            <li role="none"><a role="menuitem" href="../html/index.html">Overview</a></li>
+                            <li role="none"><a role="menuitem" href="../html/about-mission.html">Mission Statement</a></li>
+                            <li role="none"><a role="menuitem" href="../html/about-history.html">History</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="primary-item active"><a class="primary-link" href="../html/apply.html" aria-current="page">Apply</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/calendar.html">Calendar</a></div>
+
+                    <div class="primary-item has-dropdown">
+                        <a class="primary-link" href="../html/programs.html" aria-haspopup="true" aria-expanded="false">
+                            <span>Programs</span>
+                            <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <ul class="nav-dropdown" role="menu">
+                            <li role="none"><a role="menuitem" href="../html/programs.html">Overview</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-gd.html">Graphic Design MFA</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-pp.html">Painting &amp; Printmaking MFA</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-photography.html">Photography MFA</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-sculpture.html">Sculpture MFA</a></li>
+                            <li class="dropdown-divider" role="separator"></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-usp.html">Undergraduate &amp; Summer Programs</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="primary-item"><a class="primary-link" href="../html/news.html">News</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/resources.html">Resources</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/facilities.html">Facilities</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/faculty.html">Faculty</a></div>
+                </nav>
+            </div>
+
+            <!-- Collapsible Site Search Drawer -->
+            <div class="search-drawer" id="search-drawer" aria-hidden="true">
+                <div class="search-drawer-clip">
+                    <div class="search-drawer-inner">
+                        <div class="search-input-wrap">
+                            <input type="text" id="site-search-input" placeholder="Search programs, faculty, admissions, events..." autocomplete="off" />
+                            <button type="button" id="search-clear" hidden>Clear</button>
+                            <span class="search-input-divider" id="search-divider" hidden></span>
+                            <button type="button" id="search-close" aria-label="Close search">✕</button>
+                        </div>
+                        <ul class="search-results" id="search-results"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collapsible Mobile Navigation Drawer -->
+            <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+                <div class="mobile-drawer-clip">
+                    <nav class="mobile-drawer-inner" aria-label="Mobile navigation">
+                        <ul class="mobile-primary-list">
+                            <li class="mobile-accordion">
+                                <div class="mobile-accordion-header">
+                                    <a class="mobile-nav-link" href="../html/index.html">About</a>
+                                    <button type="button" class="mobile-accordion-btn" aria-expanded="false" aria-label="Toggle About submenu">
+                                        <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="mobile-accordion-panel">
+                                    <ul class="mobile-sublist">
+                                        <li><a href="../html/index.html">Overview</a></li>
+                                        <li><a href="../html/about-mission.html">Mission Statement</a></li>
+                                        <li><a href="../html/about-history.html">History</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li><a class="mobile-nav-link active" href="../html/apply.html" aria-current="page">Apply</a></li>
+                            <li><a class="mobile-nav-link" href="../html/calendar.html">Calendar</a></li>
+
+                            <li class="mobile-accordion">
+                                <div class="mobile-accordion-header">
+                                    <a class="mobile-nav-link" href="../html/programs.html">Programs</a>
+                                    <button type="button" class="mobile-accordion-btn" aria-expanded="false" aria-label="Toggle Programs submenu">
+                                        <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="mobile-accordion-panel">
+                                    <ul class="mobile-sublist">
+                                        <li><a href="../html/programs.html">Overview</a></li>
+                                        <li><a href="../html/programs-gd.html">Graphic Design MFA</a></li>
+                                        <li><a href="../html/programs-pp.html">Painting &amp; Printmaking MFA</a></li>
+                                        <li><a href="../html/programs-photography.html">Photography MFA</a></li>
+                                        <li><a href="../html/programs-sculpture.html">Sculpture MFA</a></li>
+                                        <li><a href="../html/programs-usp.html">Undergraduate &amp; Summer Programs</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li><a class="mobile-nav-link" href="../html/news.html">News</a></li>
+                            <li><a class="mobile-nav-link" href="../html/resources.html">Resources</a></li>
+                            <li><a class="mobile-nav-link" href="../html/facilities.html">Facilities</a></li>
+                            <li><a class="mobile-nav-link" href="../html/faculty.html">Faculty</a></li>
+                        </ul>
+
+                        <div class="mobile-drawer-divider" aria-hidden="true"></div>
+
+                        <ul class="mobile-utility-list">
+                            <li><a href="../html/support.html">Support</a></li>
+                            <li><a href="../html/visit.html">Visit</a></li>
+                            <li><a href="../html/contact.html">Contact</a></li>
+                            <li><a href="../html/newsletter.html">Newsletter</a></li>
+                            <li>
+                                <a class="mobile-utility-icon-link" href="../html/settings.html">
+                                    <svg class="utility-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="3" />
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                                    </svg>
+                                    <span>Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Page Hero Banner -->
+            <section class="hero apply-hero" aria-label="Application hero section">
+                <div class="hero-inner">
+                    <p class="eyebrow">Apply</p>
+                    <h1>Application</h1>
+                    <p class="hero-subtitle">
+                        Applying to the Yale School of Art requires careful preparation and dedication.
+                    </p>
+                    <div class="scroll-cue" aria-label="Scroll down">
+                        <span class="scroll-cue-label">Scroll</span>
+                        <img src="../assets/chevron-down.svg" alt="Scroll down indicator" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Editorial Content Wrapper -->
+            <div class="main-wrap">
+
+                <!-- Admissions Welcome Two-Column Feature + YouTube Embed -->
+                <section class="apply-welcome-section" aria-label="Admissions welcome and video">
+                    <div class="apply-welcome-copy">
+                        <h2>Admissions Welcome</h2>
+                        <p>
+                            We welcome prospective applicants to explore our graduate MFA community. Crafting a strong submission takes focused effort and thoughtful preparation—watch our admissions overview video for insight into how the committee reviews work and what to expect throughout the cycle.
+                        </p>
+                    </div>
+
+                    <div class="apply-video-wrapper" aria-label="2026 Admissions Virtual Visit video">
+                        <div class="apply-video-frame">
+                            <iframe
+                                src="https://www.youtube.com/embed/YFGtYwihJiw?rel=0"
+                                title="2026 Admissions Virtual Visit: MFA Program, Admission + Financial Aid Overview"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sticky Section Jump & Filter Bar -->
+                <nav class="apply-nav-bar" id="apply-nav-bar" aria-label="Application section navigation">
+                    <div class="apply-nav-inner">
+                        <div class="apply-section-jumps">
+                            <a class="apply-jump-link active" href="#how-to-apply" data-apply-target="how-to-apply">
+                                <span class="jump-num">I</span>
+                                <span class="jump-title">How to Apply</span>
+                            </a>
+                            <a class="apply-jump-link" href="#cost-of-attendance" data-apply-target="cost-of-attendance">
+                                <span class="jump-num">II</span>
+                                <span class="jump-title">Cost of Attendance</span>
+                            </a>
+                            <a class="apply-jump-link" href="#financial-aid" data-apply-target="financial-aid">
+                                <span class="jump-num">III</span>
+                                <span class="jump-title">Financial Aid</span>
+                            </a>
+                            <a class="apply-jump-link" href="#applying-for-financial-aid" data-apply-target="applying-for-financial-aid">
+                                <span class="jump-num">IV</span>
+                                <span class="jump-title">Applying for Aid</span>
+                            </a>
+                        </div>
+
+                        <div class="apply-filter-group" role="group" aria-label="Filter application sections">
+                            <button type="button" class="apply-filter-btn active" data-apply-filter="all" aria-pressed="true">All</button>
+                            <button type="button" class="apply-filter-btn" data-apply-filter="how-to-apply" aria-pressed="false">Apply</button>
+                            <button type="button" class="apply-filter-btn" data-apply-filter="cost-of-attendance" aria-pressed="false">Cost</button>
+                            <button type="button" class="apply-filter-btn" data-apply-filter="financial-aid" aria-pressed="false">Aid</button>
+                            <button type="button" class="apply-filter-btn" data-apply-filter="applying-for-financial-aid" aria-pressed="false">Aid Process</button>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Section 1: How to Apply -->
+                <section class="apply-section" id="how-to-apply" aria-label="How to apply">
+                    <div class="section-label">
+                        <div class="section-rule" aria-hidden="true"></div>
+                        <span>How to Apply</span>
+                    </div>
+
+                    <div class="apply-flow">
+                        <p class="apply-lead">
+                            Carefully review the sections below which outline guidelines, instructions, and materials required for applying to Yale. 
+                            While this information is detailed and extensive, it is provided to advise our applicants in submitting an application that best presents their work and background to the committee.
+                        </p>
+
+                        <div class="apply-block">
+                            <h3>Steps for Applying</h3>
+                            <ul class="apply-list">
+                                <li>Complete your application through the application portal, as detailed below.</li>
+                                <li>Pay the application fee through the application portal.</li>
+                                <li>Be sure to request letters of support early in the process to allow individuals to write thoughtfully and submit them in a timely way.</li>
+                                <li>After you’ve applied, consult the application portal for updated information. Finalists will be asked to interview online, via the Zoom meeting platform, as detailed below.</li>
+                            </ul>
+                        </div>
+
+                        <div class="apply-block">
+                            <h3>For Your Information</h3>
+                            <p>
+                                These guidelines, deadlines, and educational requirements, as well as those for international students, will help you better understand the process of applying to the Yale School of Art.
+                            </p>
+                            <ul class="apply-accordion-list">
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">General Guidelines</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>The Yale School of Art is one of 14 professional schools at the University, and a separate unit from the Yale Graduate School of Arts and Sciences (GSAS). It is not possible to apply to the MFA program by using the Yale Graduate School of Arts and Sciences’s website.</li>
+                                                <li>Yale has one admission cycle annually, admitting a new cohort of students to the fall semester only.</li>
+                                                <li>Applicants will be notified in early February of preliminary admission decisions. At that time, finalists are invited to interview with the admission committee.</li>
+                                                <li>Final offers of admission are sent in early March.</li>
+                                                <li>Offers of admission are valid for the year the application is made. Yale does not practice deferred admission.</li>
+                                                <li>Applicants who choose not to enroll are welcome to reapply for admission in a future year.</li>
+                                                <li>Admissions committees are steered by faculty members from the Yale School of Art and supported by our admissions team. The acceptance rate for Fall 2025 admission was 5%.</li>
+                                                <li>Yale School of Art practices “need blind” admission, wherein candidate financial need or ability is never disclosed to the admissions committee.</li>
+                                                <li>Yale School of Art does not offer campus tours or personalized portfolio reviews.</li>
+                                                <li>Applicants are asked not to directly contact faculty or students seeking portfolio advice.</li>
+                                                <li>Additional questions may be directed to <a class="apply-inline-link" href="mailto:art.admissions@yale.edu">art.admissions@yale.edu</a>.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Deadlines</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>The application for the 2027-2028 academic year will open in October 2026; it is due January 10, 2027 at 11:59PM, after which the general admissions portal will be closed. The admissions committee reviews applications shortly after the application deadline has passed.</li>
+                                                <li>Notifications of Financial Aid award will be sent shortly following notification of admission for those who have met the filing deadline.</li>
+                                                <li>The deadline to declare intent to enroll in the Yale School of Art is April 15th. Offers of admission include an official reply form.</li>
+                                                <li>Note that late arrival of materials—letters of recommendation, in particular—may result in an applicant’s exclusion from the first round of admissions reviews.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Educational Requirements</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Standard educational requirements for the Yale School of Art include a bachelor’s degree from an accredited college or university or a diploma from a four-year accredited art school.</li>
+                                                <li>Each area of study features its own specific entrance requirements as outlined below.</li>
+                                                <li>Graduate Record Examination (GRE) scores are not required for admission. International students should refer to English proficiency exam and additional entrance requirements as defined below.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Requirements for International Students</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>International students must use the legal name listed on their passport on all application materials.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">English Proficiency Requirements</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <p class="apply-accordion-lead">
+                                                Graduate-level English proficiency is necessary for entry to and successful completion of the MFA degree program. Non-native English speakers can demonstrate proficiency in one of two ways:
+                                            </p>
+                                            <ol class="apply-ordered-list">
+                                                <li>
+                                                    Test of English as a Foreign Language - required for international applicants whose undergraduate degree instruction was not English. Yale accepts the following test types:
+                                                    <ol class="apply-alpha-list" type="a">
+                                                        <li>Test of English as a Foreign Language (TOEFL IBT, recommended score: 100 or higher. TOEFL code: 3982)</li>
+                                                        <li>The International English Language Testing System (IELTS, recommended score: 7 or higher)</li>
+                                                        <li>Duolingo English Test (recommended score: 120 or higher).</li>
+                                                    </ol>
+                                                </li>
+                                                <li>
+                                                    Test requirement is waived if undergraduate degree was conferred by college/university program where English (non-ESL) is the primary language of instruction.
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="apply-block">
+                            <h3>Submitting Materials</h3>
+                            <p>
+                                Please follow instructions carefully while submitting the materials outlined here.
+                            </p>
+                            <ul class="apply-accordion-list">
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Application Form</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Please submit your application through the Slate portal.</li>
+                                                <li>Note that the application form opens in early October and closes on January 10, 2027.</li>
+                                                <li>You may check your application’s status within the portal following the deadline.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Fee</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>The cost to apply is a $100 non-refundable application fee.</li>
+                                                <li>
+                                                    Applicants may pay the fee in the 
+                                                    <a class="apply-inline-link" href="https://apply.art.yale.edu/apply/" target="_blank" rel="noopener noreferrer">application portal</a>.
+                                                </li>
+                                                <li>Fee waivers are not available due to Yale School of Art’s “need-blind” admissions practice.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Statement and Curriculum Vitae</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Please write a one-page statement, in English, that describes your current practice, interests and influences, lived experiences relative to your work and research, and goals for graduate study at Yale at this time.</li>
+                                                <li>Please include your most recent resume or Curriculum Vitae (CV).</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Letters of Recommendation</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Request recommendation letters as far in advance as possible to allow your references lead time to write thoughtfully about you and submit their letter by January 10.</li>
+                                                <li>Please include letters from three references, ideally practicing or teaching in your area of interest.</li>
+                                                <li>Seek letters of support from those familiar with your practice, community values, and potential for growth in Yale School of Art’s program.</li>
+                                                <li>Though the submission portal for references will remain open, late submissions risk possible exclusion from the first round of reviews.</li>
+                                                <li>Applicants can view the receipt status of reference letters and send reminders on the application status page.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="apply-block">
+                            <h3>About Our Application Platform</h3>
+                            <p>
+                                The admissions committee uses <a class="apply-inline-link" href="https://apply.art.yale.edu/apply/" target="_blank" rel="noopener noreferrer">Slate</a> to manage your application, including the portfolio review process. 
+                                The following tips, including those on file management and technical specifications, will help you understand the interface and use it to your best advantage.
+                            </p>
+                            <ul class="apply-accordion-list">
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Formatting</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>The platform sequences your work chronologically by year, from the oldest to the most recent. This cannot be changed.</li>
+                                                <li>Do not format images in a presentation program (e.g. Powerpoint, Keynote) as they will not display within the Slate system.</li>
+                                                <li>Each image should be labeled with a title, date, medium, and a brief description of the work; titles are limited to 30 characters and descriptions, to one brief sentence.</li>
+                                                <li>Please do not include your name in the title of the work or its description.</li>
+                                                <li>Please avoid composite shots as they make work difficult to see and understand.</li>
+                                                <li>When preparing books or pamphlets, please include several shots showing primary images or make a short video showing a range of spreads.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">File Management</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Media files must not exceed 5MB in size.</li>
+                                                <li>Documents uploaded must not exceed 75 pages.</li>
+                                                <li>Video files should not exceed 2 minutes in length. Do not use video as a means of showing additional still works. Do not include captions, titles, or credits in video files.</li>
+                                                <li>Longer videos may be hosted independently (i.e. on Vimeo or your own website) with a link included at the end of your statement.</li>
+                                                <li>Note that the committee will not review extensively long video work.</li>
+                                                <li>The following file types are supported by Slate:
+                                                    <ul class="apply-sublist">
+                                                        <li>Video: .3g2, .3gp, .avi, .m2v, .m4v, .mkv, .mov, .mpeg, .mpg, .mp4, .mxf, .webm, .wmv</li>
+                                                        <li>Audio: .aac, .m4a, .mka, .mp3, .oga, .ogg, .wav</li>
+                                                        <li>Slide: .bmp, .jpg, .jpeg, .png, .tif, .tiff</li>
+                                                        <li>Do not use .gif files</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Resume and Statement</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>The Resume or CV should not exceed 2 pages.</li>
+                                                <li>The statement should not exceed 1 page.</li>
+                                                <li>Applicants to the Painting/Printmaking program should refer to “representative work” in the portfolio in their statements to align with the Slate system; applicants to other programs are not required to make this reference.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="apply-block">
+                            <h3>Portfolio Requirements</h3>
+                            <p>
+                                Each area of study features its own portfolio requirements. 
+                                Familiarizing yourself with them will help you create a portfolio that features your work to your best advantage.
+                            </p>
+                            <ul class="apply-accordion-list">
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Graphic Design</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Upload up to twenty (20) still images and/or videos (but not only videos) that represent your strongest work, with an emphasis on recent work from the last few years.</li>
+                                                <li>Video clips should not exceed 3 in number and should be no more than 2 minutes each.</li>
+                                                <li>The portfolio submissions should emphasize self-initiated projects.</li>
+                                                <li>If client-based projects or collaborative works are presented, use the comments section to clarify your role in the process.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Painting/Printmaking</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Upload a total of sixteen (16) still images and/or moving image files.</li>
+                                                <li>Only work completed within the last two years should be included, and at least half (8) should be work made in the last twelve months.</li>
+                                                <li>As the admissions committee is concerned with scale and the tactility of the work, paintings and drawings should be photographed showing the edge of the work.</li>
+                                                <li>Paintings and drawings must not be digitally masked in black or any other color to the edges of the work.</li>
+                                                <li>Three-dimensional works should also show the surrounding space and context. Do not include detailed photos of work in your portfolio unless you consider them absolutely necessary.</li>
+                                                <li>Under no circumstances should more than two detail shots be included.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Photography</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Upload a total of twenty (20) still images and/or moving image files.</li>
+                                                <li>A significant number of the images should represent work done within the last twelve months.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Sculpture</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Upload a total of twenty (20) still images and/or time-based files.</li>
+                                                <li>A significant number of the images should represent work done within the last twelve months.</li>
+                                                <li>Three-dimensional works should show the surrounding space and context.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="apply-block">
+                            <h3>Next Steps</h3>
+                            <p>
+                                Familiarize yourself with the final steps of the application process so that you may track your progress.
+                            </p>
+                            <ul class="apply-accordion-list">
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Track Your Application</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>
+                                                    Applicants may track the status of their application in the <a class="apply-inline-link" href="https://apply.art.yale.edu/apply/" target="_blank" rel="noopener noreferrer">application portal</a>, on the admissions status page.
+                                                </li>
+                                                <li>Applicants may track the receipt of supporting materials such as letters of recommendation.</li>
+                                                <li>Our office is unable to provide application status checks or confirm the receipt of items by phone or by email.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Finalist Interviews</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>The interview is an important component of the final selection process. Detailed instructions will be included in the invitation to interview.</li>
+                                                <li>Applicants who have advanced to final candidacy for admission will be notified in early February.</li>
+                                                <li>Candidates are required to submit official transcripts to the School of Art.</li>
+                                                <li>Candidates are asked to prepare supplemental portfolio materials to be presented digitally during the interview: Sculpture and Graphic Design candidates will be required to share their work via screenshare, while Painting and Printmaking and Photography students may submit files in advance via Dropbox.</li>
+                                                <li>Individual interviews will be scheduled for mid-late February, depending on the program.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <aside class="apply-footnotes apply-statement-box" aria-label="Yale University's Nondiscrimination and Title IX Statements">
+                            <p class="apply-statement-heading">
+                                Yale University’s Nondiscrimination and Title IX Statements
+                            </p>
+
+                            <p class="apply-note">
+                                Yale University’s Nondiscrimination and Title IX statements may be found on the University’s 
+                                <a class="apply-inline-link" href="https://titleix.yale.edu/" target="_blank" rel="noopener noreferrer">website</a>. 
+                                Further questions or concerns about Nondiscrimination and Title IX may be directed to:
+                            </p>
+
+                            <div class="apply-contact-block">
+                                <p class="apply-contact-title">Yale School of Art</p>
+                                <p>1156 Chapel Street</p>
+                                <p>New Haven, CT 06511</p>
+                                <p><a class="apply-inline-link" href="tel:+12034322602">(203) 432-2602</a></p>
+                            </div>
+
+                            <div class="apply-contact-block">
+                                <p class="apply-contact-title">Dannika Kemp Avent, MAIOP, MSID</p>
+                                <p class="apply-contact-role"><em>Director of Community Wellness</em></p>
+                                <p>She/Her/Hers</p>
+                                <p>Deputy Title IX Coordinator</p>
+                                <p>Discrimination Harassment Resources Coordinator</p>
+                            </div>
+                        </aside>
+                    </div>
+                </section>
+
+                
+
+                <!-- Section 2: Cost of Attendance -->
+                <section class="apply-section" id="cost-of-attendance" aria-label="Cost of attendance">
+                    <div class="section-label">
+                        <div class="section-rule" aria-hidden="true"></div>
+                        <span>Cost of Attendance</span>
+                    </div>
+
+                    <div class="apply-flow">
+                        <p class="apply-lead">
+                            The estimated cost of attendance (COA) refers to the total expenses a student is expected to incur - both Direct and Indirect - when attending the Yale School of Art. 
+                            The School considers the following expenses when determining the estimated COA for the 2026-2027 academic year:
+                        </p>
+
+                        <ul class="apply-list">
+                            <li>Tuition: $50,198</li>
+                            <li>Yale Health Insurance: $3,764*</li>
+                            <li>Housing and Meals: $18,200</li>
+                            <li>Course Materials and Supplies: $5,950</li>
+                            <li>Personal/Miscellaneous Expenses: $1,300</li>
+                            <li>Transportation: $450</li>
+                        </ul>
+
+                        <p class="apply-total">Total Cost of Attendance = $79,862**</p>
+
+                        <aside class="apply-footnotes" aria-label="Cost of attendance footnotes">
+                            <p class="apply-note">
+                                *Students may receive a waiver of the $3,764 Yale Health Insurance fee from Yale Health upon evidence that they have valid and sufficient alternative hospitalization coverage. 
+                                Further information regarding health insurance waivers can be found on the <a class="apply-inline-link" href="https://yalehealth.yale.edu/topic/waiving-yale-health-hospitalization-specialty-care-coverage" target="_blank" rel="noopener noreferrer">Yale Health website</a>.
+                            </p>
+
+                            <p class="apply-note">
+                                **Students who borrow federal loans are charged a loan origination fee, which increases their overall cost of attendance. For the 2025–2026 academic year, the average federal loan fee for SoA borrowers was $164. 
+                                These fees are not billed to students’ Yale accounts; instead, the federal government deducts the fee from the borrowed loan amount at the time the loan is originated. 
+                                For more details about federal loan rates and fees, please visit the <a class="apply-inline-link" href="https://studentaid.gov/understand-aid/types/loans/interest-rates" target="_blank" rel="noopener noreferrer">Federal Student Aid website</a>.
+                            </p>
+                        </aside>
+
+                        <p>
+                            Direct Costs (Tuition and Yale Health Insurance) are fixed and billed by the University. 
+                            Indirect Costs (Housing and Meals, Course Materials and Supplies, Personal/Miscellaneous, and Transportation) are not billed by the University and are estimated out-of-pocket expenses the School expects students to pay for over the nine-month academic year. 
+                            It is expected that students will spend the greater part of their time in academic work; therefore, it is assumed that students’ lifestyles will be appropriate for a full-time student. 
+                            To this end, students should be prepared to economize during their time here.
+                        </p>
+
+                        <p>
+                            Course materials and supply costs can vary based on the program, year, and students’ needs.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Section 3: Financial Aid -->
+                <section class="apply-section" id="financial-aid" aria-label="Financial aid">
+                    <div class="section-label">
+                        <div class="section-rule" aria-hidden="true"></div>
+                        <span>Financial Aid</span>
+                    </div>
+
+                    <div class="apply-flow">
+                        <p class="apply-lead">
+                            The Financial Aid process for the Yale School of Art’s graduate MFA program functions cyclically with each academic year. 
+                            Students are responsible for submitting different Financial Aid-related information depending on where they are in the Financial Aid process.
+                        </p>
+
+                        <div class="apply-block">
+                            <h3>Scholarships</h3>
+                            <p>
+                                All scholarships at the School of Art are need-based and do not need to be repaid. 
+                                In accordance with University policy, financial assistance is determined only after admission and is awarded solely on the basis of demonstrated financial need and the resources available within the Yale School of Art. 
+                                There are no scholarships based on merit or any criteria other than financial need. If an admitted student’s demonstrated financial need remains unmet after accounting for loan and work-study offers, the School covers this gap with a need-based scholarship. 
+                                For scholarship-eligible first-year students, the maximum scholarship amount cannot exceed the cost of tuition.
+                            </p>
+                        </div>
+
+                        <div class="apply-block">
+                            <h3>Loans</h3>
+                            <p>
+                                Admitted students with financial aid eligibility will have a portion of their financial need met with a loan offer. 
+                                U.S. citizens and permanent residents are eligible for a Federal Direct Unsubsidized Loan. 
+                                Non-U.S. citizens and non-permanent residents are eligible for the Yale Student Loan. 
+                                Private Loans are also available to qualified student borrowers through private lenders, such as banks, online lenders, and credit unions. 
+                                Creditworthy U.S. citizens may apply for private loans without a co-signer, and international students typically need a creditworthy U.S. Citizen/Permanent Resident co-signer to apply. 
+                                For private loan options, visit <a class="apply-inline-link" href="https://www.elmselect.com/v4/school/156/program/5/program-detail" target="_blank" rel="noopener noreferrer">ELM Select</a>.
+                            </p>
+                        </div>
+
+                        <div class="apply-block">
+                            <h3>Work-Study &amp; Part-Time Employment</h3>
+                            <p>
+                                Work-study as part of your financial aid award indicates eligibility for a job within Yale. 
+                                There are a number of jobs within the School of Art (admissions, labs, studio crews, etc.) that generally involve four to six hours a week during the regular academic year only, and students are paid directly. 
+                                Work-study positions available within the School of Art may be limited, and not all MFA students will necessarily be offered a job within the School. 
+                                As a result, we recommend that students consider work-study opportunities outside of the School of Art within the University, using the Yale Student Employment Office's 
+                                <a class="apply-inline-link" href="https://www.yalestudentjobs.org/" target="_blank" rel="noopener noreferrer">online student job search</a>.
+                            </p>
+                        </div>
+
+                        <div class="apply-block">
+                            <h3>Teaching Assistant Positions</h3>
+                            <p class="apply-subnote"><em>(Returning/Second-Year Students ONLY)</em></p>
+                            <p>
+                                School of Art faculty select Teaching Assistants each year from the second-year class. 
+                                Pay is a flat rate for the term and is determined by the class’s number of hours and sections. 
+                                At the time they are assigned, Teaching Assistantships are not determined through financial need. 
+                                Teaching Assistants normally receive an appointment for one term.
+                            </p>
+                        </div>
+
+                        <div class="apply-block">
+                            <h3>Veterans' Benefits</h3>
+                            <p>
+                                Please refer to our <a class="apply-inline-link" href="https://financialaid.yale.edu/veteransatyale" target="_blank" rel="noopener noreferrer">University Financial Aid website</a> for more information on Veterans’ Benefits.
+                            </p>
+                        </div>
+
+                        <div class="apply-block">
+                            <h3>Other Resources</h3>
+                            <ul class="apply-accordion-list">
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Billing &amp; Refunds Resources</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li><a class="apply-inline-link" href="https://student-accounts.yale.edu/understanding-your-bill/tuition-due-dates" target="_blank" rel="noopener noreferrer">Tuition Due Dates and Billing</a></li>
+                                                <li><a class="apply-inline-link" href="https://student-accounts.yale.edu/refunds" target="_blank" rel="noopener noreferrer">Requesting a Student Account Refund</a></li>
+                                                <li><a class="apply-inline-link" href="https://student-accounts.yale.edu/paying-your-bill/payment-options" target="_blank" rel="noopener noreferrer">Payment Options</a></li>
+                                                <li><a class="apply-inline-link" href="https://student-accounts.yale.edu/paying-your-bill/yale-payment-plan" target="_blank" rel="noopener noreferrer">Yale Payment Plan</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Student Accounts Policies</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>No degrees will be conferred, and no transcripts will be furnished until all fees due the University are paid in full. In addition, transcripts will not be furnished to any student or former student who is in default on the payment of a student loan.</li>
+                                                <li>The University may withhold registration and certain University privileges from students who have not paid their term fees or made satisfactory payment arrangements by the day of registration. To avoid delay at registration, students must ensure that payments reach Student Financial Services by the due dates.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Housing &amp; Dining</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>The Yale Housing Office has dormitory and apartment units available for graduate and professional students. Dormitories are single-occupancy and two-bedroom units of varying sizes and prices. Unfurnished apartments consisting of efficiencies and one, two, and three-bedroom apartments for singles and families are also available. Family housing is available in Whitehall and Esplanade Apartments. The Housing website (housing.yale.edu) is the venue for graduate housing information and includes dates, procedures, facility descriptions, floor plans, and rates. Applications for the new academic year are available beginning April 23 and can be submitted directly from the website.</li>
+                                                <li>The Yale Housing Office also manages the Off Campus Living listing service (<a class="apply-inline-link" href="mailto:offcampusliving.yale.edu">offcampusliving.yale.edu</a>; 203.436.2881), which is the exclusive Yale service for providing off-campus rental and sales listings. This secure system allows members of the Yale community to search rental listings, review landlord/property ratings, and search for a roommate in the New Haven area. On-campus housing is limited, and members of the community should consider off-campus options. Yale University discourages the use of Craigslist and other third-party nonsecure websites for off-campus housing searches.</li>
+                                                <li>Yale Hospitality has tailored its services to meet the particular needs of graduate and professional school students by offering meal plan options that allow flexibility and value. For up-to-date information on all options, costs, and residential and retail dining locations, visit <a class="apply-inline-link" href="mailto:hospitality.yale.edu">hospitality.yale.edu</a>. Inquiries concerning food services should be addressed to Yale Hospitality, 246 Church Street, PO Box 208261, New Haven CT 06520-8261; e-mail, <a class="apply-inline-link" href="mailto:offcampusliving.yale.edu">yale.dining@yale.edu</a>; tel., 203.432.0420.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="apply-block">
+                            <h3>Questions</h3>
+                            <p>
+                                Email Financial Aid at <a class="apply-inline-link" href="mailto:artfinancialaid@yale.edu">artfinancialaid@yale.edu</a> with any questions.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 4: Applying for Financial Aid -->
+                <section class="apply-section" id="applying-for-financial-aid" aria-label="Applying for financial aid">
+                    <div class="section-label">
+                        <div class="section-rule" aria-hidden="true"></div>
+                        <span>Applying for Financial Aid</span>
+                    </div>
+
+                    <div class="apply-flow">
+                        <p class="apply-lead">
+                            This guide is designed to help you navigate the financial aid process at the Yale School of Art, which functions cyclically with each academic year and differs depending on individual circumstance. 
+                            We recommend that only those who are notified as finalists (invited to interview) begin the application process for financial aid.
+                        </p>
+
+                        <p>
+                            Find the details and timeline pertaining to your financial aid application by identifying the type of student applicant you are below. 
+                        </p>
+
+                        <div class="apply-block">
+                            <h3>Prospective Students</h3>
+                            <p>
+                                Prospective students are those who have completed or are in the process of completing an admissions application, and have not received a formal acceptance from the School of Art.
+                            </p>
+                            <ul class="apply-accordion-list">
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Policies &amp; Deadlines</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>The financial aid application deadline for prospective students is March 1.</li>
+                                                <li><em>IMPORTANT: Parental information must be included on your financial aid application.</em> The Yale School of Art requires all financial aid applicants to submit parental information on their CSS Profile in order to be considered for financial aid. Only in extreme cases is this information waived. If you feel you have an extreme case for which parental information should be waived, please use the Special Circumstances section of your CSS Profile to elaborate. If you are admitted to the School, additional documentation will be required to consider a waiver of parental information.</li>
+                                                <li>Instances for which parental information is waived include: deceased parents, documented abuse that has resulted in estrangement or court-ordered separation, extreme estrangement parent(s) are not reachable without going through severe measures, or abandonment that resulted in adoption, foster, or other family care.</li>
+                                                <li>Unwillingness, age, marital status, and other standards of dependency are not conditions for which the School of Art waives the requirement of parental data.</li>
+                                                <li>Admitted students who submit Financial Aid applications after March 1 may be delayed in receiving an award letter. Admitted students receiving financial aid will need to provide Financial Aid Verification documents by April 15. See the Incoming Students section below for more information. Students not admitted to the School of Art are not required to submit income and asset verification documentation.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Domestic Applicants</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>U.S. Citizen and Permanent Resident applicants seeking financial aid must complete the <a class="apply-inline-link" href="https://cssprofile.collegeboard.org/" target="_blank" rel="noopener noreferrer">CSS Profile</a> (Yale School of Art’s CSS Code is 3807) and the <a class="apply-inline-link" href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank" rel="noopener noreferrer">Free Application for Federal Student Aid (FAFSA)</a>. Yale’s FAFSA School Code is 001426.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">International Applicants</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>International applicants seeking financial aid must complete the <a class="apply-inline-link" href="https://cssprofile.collegeboard.org/" target="_blank" rel="noopener noreferrer">CSS Profile</a>. Yale School of Art's CSS Code is 3807.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Financial Aid Timeline</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>August + September: Gather necessary admissions and financial aid application information.</li>
+                                                <li>October: Apply for admissions and apply for financial aid by completing a <a class="apply-inline-link" href="https://cssprofile.collegeboard.org/" target="_blank" rel="noopener noreferrer">CSS Profile</a> (all students) and <a class="apply-inline-link" href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank" rel="noopener noreferrer">FAFSA</a> (domestic students).</li>
+                                                <li>November - July: Await admissions decision. <em>Accepted / Admitted students should continue to the Incoming Students section below.</em></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="apply-block">
+                            <h3>Incoming Students</h3>
+                            <p>
+                                Incoming students are those who have completed and submitted an Admissions application for the current year and have received a formal acceptance from the School of Art.
+                            </p>
+                            <ul class="apply-accordion-list">
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Policies &amp; Deadlines</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Applicants who are accepted for admission and have correctly completed their financial aid application by the March 1 deadline will receive a provisional financial aid determination shortly after their notification of admission. Students who are admitted to the school but did not submit a financial aid application by the March 1 deadline can still apply for financial aid after receiving their admission offer.</li>
+                                                <li>All provisional financial aid awards are subject to final review through our Financial Aid Verification process outlined below. Financial Aid Verification is only required for financial aid recipients who accept their offer of admission to the School. Admitted students who enroll at the School must reapply for financial aid each academic year. The financial aid application deadline for Returning Students is May 1.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Financial Aid Verification</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>After admission to the School, students who have been awarded financial aid are required to submit documents for verification. The School reserves the right to adjust a student’s financial aid award if the actual income or asset information of the parent(s), student, or spouse is different from the original information included on the financial aid application(s).</li>
+                                                    <li>The deadline to submit Financial Aid Verification documents for admitted students is May 15.</li>
+                                                    <li>For U.S. citizens or permanent residents, this process includes the submission of the student’s 2025 federal tax return and current bank statement, and the parent 2025 federal tax return and current bank statement.</li>
+                                                    <li>For international students, this process includes the submission of certified and translated student and parent 2025 tax documents from their home country, and student and parent current bank statements.</li>
+                                                    <li>All documents can be uploaded to our secure website below using your NetID and Password. A NetID will be issued to you after accepting the School’s admission offer.</li>
+                                                    <li><a class="apply-inline-link" href="https://secure.its.yale.edu/cas/login?service=https%3A%2F%2Fauth.yale.edu%2Fidp%2FAuthn%2FExternal%3Fconversation%3De1s1%26entityId%3Dnextgensso.com" target="_blank" rel="noopener noreferrer">School of Art Financial Upload</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Financial Aid Timeline</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>March: Admissions acceptances released and initial financial aid offer letters posted for accepted students who have completed the <a class="apply-inline-link" href="https://cssprofile.collegeboard.org/" target="_blank" rel="noopener noreferrer">CSS Profile</a> &amp; <a class="apply-inline-link" href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank" rel="noopener noreferrer">FAFSA</a> (if applicable).</li>
+                                                <li>April: Review financial aid offer and make enrollment decision for fall term.</li>
+                                                <li>May: Finalize enrollment with Admissions and Registrar's Offices and submit Financial Aid Verification documents by May 15.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="apply-block">
+                            <h3>Returning Students</h3>
+                            <p>
+                                Returning students are those currently enrolled at the School of Art who receive financial aid and plan to continue their studies for the next academic year.
+                            </p>
+                            <ul class="apply-accordion-list">
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Policies &amp; Deadlines</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Returning students must reapply for financial aid annually. The financial aid application deadline for Returning Students is May 1.</li>
+                                                <li>Enrolled students interested in Federal or Yale Student Loans must submit <a class="apply-inline-link" href="https://secure.its.yale.edu/cas/login?service=https%3A%2F%2Fauth.yale.edu%2Fidp%2FAuthn%2FExternal%3Fconversation%3De1s1%26entityId%3Dnextgensso.com" target="_blank" rel="noopener noreferrer">SoA's Loan Request Form</a> to request a Federal or Yale Student Loan.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Domestic Students</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>U.S. Citizens and Permanent Resident returning students reapplying for financial aid must complete the <a class="apply-inline-link" href="https://cssprofile.collegeboard.org/" target="_blank" rel="noopener noreferrer">CSS Profile</a> and the <a class="apply-inline-link" href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank" rel="noopener noreferrer">Free Application for Federal Student Aid (FAFSA)</a>. Yale School of Art’s CSS Code is 3807. Yale’s FAFSA School Code is 001426.</li>
+                                                <li>Financial Aid Verification documents are required when reapplying for financial aid. For U.S. citizens or permanent residents, this process includes the submission of the student’s 2025 federal tax return and current bank statement, and the parent 2025 federal tax return and current bank statement.</li>
+                                                <li>All Financial Aid Verification documents can be uploaded to our secure website below using your NetID and Password.</li>
+                                                <li><a class="apply-inline-link" href="https://secure.its.yale.edu/cas/login?service=https%3A%2F%2Fauth.yale.edu%2Fidp%2FAuthn%2FExternal%3Fconversation%3De1s1%26entityId%3Dnextgensso.com" target="_blank" rel="noopener noreferrer">School of Art Financial Upload</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">International Students</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>All returning international students reapplying for financial aid must complete the <a class="apply-inline-link" href="https://cssprofile.collegeboard.org/" target="_blank" rel="noopener noreferrer">CSS Profile</a>. Yale School of Art’s CSS Code is 3807.</li>
+                                                <li>Financial Aid Verification documents are required when reapplying for financial aid.  For international students, this process includes the submission of certified and translated student and parent 2025 tax documents from their home country, and student and parent current bank statements.</li>
+                                                <li>All Financial Aid Verification documents can be uploaded to our secure website below using your NetID and Password.</li>
+                                                <li><a class="apply-inline-link" href="https://secure.its.yale.edu/cas/login?service=https%3A%2F%2Fauth.yale.edu%2Fidp%2FAuthn%2FExternal%3Fconversation%3De1s1%26entityId%3Dnextgensso.com" target="_blank" rel="noopener noreferrer">School of Art Financial Upload</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Financial Aid Timeline</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>October 1 - May 1: Submit Financial Aid Requirements:
+                                                    <ul class="apply-sublist">
+                                                        <li>Complete <a class="apply-inline-link" href="https://cssprofile.collegeboard.org/" target="_blank" rel="noopener noreferrer">CSS Profile</a> and <a class="apply-inline-link" href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank" rel="noopener noreferrer">FAFSA</a> (if applicable)</li>
+                                                        <li><a class="apply-inline-link" href="https://secure.its.yale.edu/cas/login?service=https%3A%2F%2Fauth.yale.edu%2Fidp%2FAuthn%2FExternal%3Fconversation%3De1s1%26entityId%3Dnextgensso.com" target="_blank" rel="noopener noreferrer">Upload</a> Financial Aid Verification documents</li>
+                                                    </ul>
+                                                </li>
+                                                <li>May: Financial aid offers are posted to Yale Hub for returning students who have correctly completed their financial aid application by May 1.</li>
+                                                <li>June: Review award letter.
+                                                    <ul class="apply-sublist">
+                                                        <li>Loan Applicants: Submit a Loan Request Form or apply for a private loan for the upcoming academic year.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>July: Review fall semester bill in Yale Pay, and make arrangements for payment.</li>
+                                                <li>August: Confirm all outstanding Financial Aid and/or University holds are cleared prior to the start of classes.
+                                                    <ul class="apply-sublist">
+                                                        <li>Submit a refund request through Yale Hub, if eligible.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>September: Review expenses, finances, and personal budget as classes begin.</li>
+                                                <li>November: Review spring semester bill in Yale Pay, and make arrangements for payment.</li>
+                                                <li>April + May: Graduating students who have borrowed a Federal or Yale Student Loan during their time at SoA must complete Exit Counseling prior to graduation.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="apply-block">
+                            <h3>Financial Aid Policies</h3>
+                            <ul class="apply-accordion-list">
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">General Information</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Financial aid, defined as work-study, education loans, and need-based scholarship, is designed to assist students in financing their education. In conformity with University policy, financial aid is awarded solely on the basis of financial need and available resources within the Yale School of Art. There are no scholarships based on merit or any criteria other than financial need. The School determines financial need annually in accordance with institutional and federal methodologies.</li>
+                                                <li>Students are encouraged to plan their finances with the utmost care so that they are prepared to cover their direct and indirect costs throughout the academic year.</li>
+                                                <li>Individuals in default of a federal student loan will not be granted a financial aid award until complete rehabilitation of such is provided to the School. In addition, financial aid in any form is contingent upon the student’s maintaining satisfactory academic progress.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Outside Aid</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>All students are encouraged to seek additional funding beyond what is available from the School of Art. In order to comply with federal regulations as well as University policy, students must advise the Financial Aid Office of any additional awards received (scholarships, grants, loans, VA benefits, teaching assistantships, teaching fellowships, etc.). As a general rule, outside awards up to $10,000 can be received without affecting the student’s scholarship from the School of Art, although it may be necessary to reduce the student’s loan(s). Outside assistance in excess of $10,000 will likely affect a student’s need-based scholarship from the School of Art. Students’ financial aid awards (scholarship, loans, and/or work-study) cannot exceed the School’s established cost of attendance.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Satisfactory Academic Progress (SAP)</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>All students enrolled in the Yale School of Art must meet Satisfactory Academic Progress (SAP) standards to remain eligible for financial aid, including Title IV federal aid, institutional funding, and external sources such as private scholarships, grants, and educational loans. SAP applies to all degree-seeking students, regardless of financial aid status, and is evaluated using qualitative and quantitative measures, as well as a maximum timeframe standard. These standards are as strict as or stricter than those applied to students not receiving Title IV aid.</li>
+                                                <li>SAP is the measure of a student’s academic progress toward program completion and reflects their ability to meet the institution’s minimum academic standards. The same SAP requirements and evaluation schedule apply to all recipients of school-administered financial aid, including federal student aid, institutional loans, work-study, and scholarships.</li>
+                                                <li>SAP evaluations are conducted at the official evaluation point identified in this policy. Students who do not meet the SAP standards at the time of evaluation will lose eligibility for both federal and institutional financial aid for the next payment period unless they successfully appeal and are placed on financial aid probation, or they regain eligibility by meeting all SAP standards.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Qualitative Measures</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>The School of Art’s MFA program uses a Pass/Fail grading scale and does not assign a GPA. The qualitative measure for Satisfactory Academic Progress requires that students maintain a cumulative average grade of “Pass” in all attempted coursework. At each SAP evaluation point, a student’s academic record must demonstrate overall performance consistent with the program’s graduation requirements. This means the majority of attempted credits must be successfully completed with a grade of “Pass.” In addition to maintaining a cumulative average of ‘Pass’ in all attempted coursework, students must not be under academic warning or subject to dismissal based on faculty review. Receipt of an academic warning or failure to meet faculty-mandated academic requirements may be considered a failure to meet the qualitative SAP standard. Faculty evaluations used for SAP purposes will be guided by documented academic criteria applied consistently across students and reviewed by the Financial Aid Office to ensure equitable application. This standing is the equivalent of at least a “C” average, as required by federal regulations.</li>
+                                                <li>For programs longer than two academic years, students must, by the end of their second academic year, demonstrate academic standing consistent with the school’s graduation requirements.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Quantitative Measures (Pace of Completion)</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>In addition to the qualitative measure, students must maintain a pace of completion that ensures they can finish their program within the maximum timeframe. Pace is calculated by dividing the cumulative number of credits successfully completed by the cumulative number of credits attempted. At each evaluation students must successfully complete at least 75% of all cumulative attempted credits to meet the quantitative standard.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Maximum Time Frame</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Traditional time frame is the program and specialty-specific allotted time with which all students enrolled in a specific program and specialty are expected to complete their respective program. Beyond the expected time frame there is a Maximum Time Frame (MTF) within which students must complete their given program of study (barring excused away periods outlined below). Art students have a traditional time frame for program completion of 24 months in the 2-year track MFA program or 36 months in 3-year track MFA program. Their maximum time frame for program completion is 36 months (2-year track) or 54 months (3-year track) or 150% of the traditional time. The School of Art does not offer a part-time or less-than-half-time status.</li>
+                                                <li>To complete the 2-year track MFA program within the traditional time frame of 2 years, students enrolled in the program must complete at least 60 credits.</li>
+                                                <li>To complete the 3-year track MFA program within the traditional time frame of 3 years, students enrolled in the program must complete at least 90 credits.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Incomplete Grades</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Grades of Incomplete (INC) must be resolved before the first day of classes of the next consecutive term. Incomplete grades do not count as earned or attempted credits. Failure to cure an Incomplete (INC) by this deadline will result in a course failure and a grade of Fail will be recorded. </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Course Withdrawals</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Withdrawals before the tuition proration period of the term will not be counted as attempted courses. Withdrawals after the tuition proration period takes effect will count as attempted but unearned credit. Please contact the school’s Financial Aid office before withdrawing from any course to see how the withdrawal may impact your SAP status.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Grade Changes</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Grade changes that occur that negatively impact a student’s SAP status after the start of a new reporting cycle in which aid has been released will not result in a return of funds as the release will be tied to the basis of the last SAP evaluation as that was the most accurate at the time it was performed. The student will maintain Title IV aid eligibility until the next evaluation period and their standing at the point of the next evaluation period will be assessed.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Course Repetitions</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>All repeated courses are included in the cumulative attempted credit total for purposes of the quantitative (pace) calculation. Successfully repeated and passed courses are included in the earned credit total once. For the qualitative standard, the most recent grade of “Pass” or “Fail” is used in the cumulative evaluation. Federal financial aid may be awarded for an unlimited number of attempts for courses never passed, and for one additional attempt of a previously passed course, in accordance with federal regulations.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Transfer Credits and Program Changes</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Transfer credits are only accepted from the Yale Summer Session program. Transfer credits accepted toward the MFA program count as both attempted and earned credits for purposes of the quantitative (pace) calculation. For the qualitative measure, only coursework completed in residence at the School of Art is included in the cumulative “Pass” average; accepted transfer credits are not factored into this qualitative review. In the event a student is approved to change their program or major, credits accepted toward the new program count as both attempted and earned credit for the qualitative and quantitative (pace) calculations. </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Remedial Coursework</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>The Art School does not offer or accept remedial coursework.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">SAP Reporting Frequency, Procedure, and Notices</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Satisfactory Academic Progress reporting and reviews will be performed by the school’s Financial Aid office with support from the school registrar. The School of Art conducts official Satisfactory Academic Progress evaluations annually at the end of the Spring term, which also marks the end of the Title IV payment period and academic year for all MFA students. The evaluation reviews the student’s cumulative qualitative and quantitative measures to determine continued eligibility for federal student aid. The school’s Financial Aid office will send SAP notices to students who are not meeting Satisfactory Academic Progress standards at each reporting period. Students will be notified via their Yale email. SAP notifications and appeals information will be communicated in a clear and accessible manner. Reasonable accommodations, including language assistance where appropriate, will be provided upon request.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Counseling</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Students in the MFA program must meet with both the Registrar and Financial Aid before any withdrawal or leave of absence to discuss the impact of the student’s Satisfactory Academic Progress.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Appeal Process</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>Students in the MFA program may appeal a loss of financial aid eligibility due to unsatisfactory academic progress. The appeal should include a plan for meeting SAP that extends no further than the end of the following financial aid term. In conference with the Progress Committee, the program director will approve or deny each appeal. Appeal decisions and supporting documentation will be retained to ensure consistency and equity in decision-making. If the appeal is approved, the student may be placed on financial aid probation for one payment period. During this probationary period, the student remains eligible for Title IV aid. To continue receiving aid beyond that term, the student must either meet the SAP standards by the end of the probationary period or be successfully following an academic plan developed by the institution that will lead to SAP compliance within a specified timeframe. SAP evaluations are conducted before aid is disbursed for the next payment period. Students who fail to meet the standards set in the approved plan and fail to meet SAP goals in the time allotted will lose eligibility for federal aid at the end of the next financial aid term.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Regaining SAP Without an Appeal</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <ul class="apply-sublist">
+                                                <li>If a student chooses not to appeal, they may regain federal eligibility for future terms once all three SAP measures are back within the required standards.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="apply-accordion-item">
+                                    <button type="button" class="apply-accordion-trigger" aria-expanded="false">
+                                        <span class="apply-accordion-title">Tuition Rebate and Refund Policy</span>
+                                        <span class="apply-accordion-dots" aria-hidden="true"></span>
+                                        <span class="apply-accordion-action">View</span>
+                                    </button>
+                                    <div class="apply-accordion-panel">
+                                        <div class="apply-accordion-content">
+                                            <p class="apply-accordion-lead">On the basis of the federal regulations governing the return of federal student aid (Title IV) funds for withdrawn students, the rebate and refund of tuition are subject to the following policy:</p>
+                                            <ol class="apply-ordered-list">
+                                                <li>For purposes of determining the refund of Title IV funds, any student who withdraws from the School of Art for any reason during the first 60 percent of the term will be subject to a pro rata schedule that will be used to determine the amount of Title IV funds a student has earned at the time of withdrawal. A student who withdraws after the 60 percent point has earned 100 percent of the Title IV funds. In 2026–2027, the last days for refunding Title IV funds will be November 14, 2026, in the fall term and April 4, 2027, in the spring term.</li>
+                                                <li>
+                                                    For purposes of determining the refund of institutional aid funds and for students who have not received financial aid:
+                                                    <ol class="apply-alpha-list" type="a">
+                                                        <li>100 percent of tuition will be rebated for withdrawals that occur on or before the end of the first 10 percent of the term (September 12, 2026, in the fall term and January 29, 2027, in the spring term).</li>
+                                                        <li>A rebate of one-half (50 percent) of tuition will be granted for withdrawals that occur after the first 10 percent but on or before the last day of the first quarter of the term (September 27, 2026, in the fall term and February 13, 2027, in the spring term).</li>
+                                                        <li>A rebate of one-quarter (25 percent) of tuition will be granted for withdrawals that occur after the first quarter of a term but on or before the day of midterm (October 20, 2026, in the fall term and March 5, 2027, in the spring term).</li>
+                                                        <li>Students who withdraw for any reason after midterm will not receive a rebate of any portion of tuition.</li>
+                                                    </ol>
+                                                </li>
+                                                <li>The death of a student will cancel charges for tuition as of the date of death, and the bursar will adjust the tuition on a pro rata basis.</li>
+                                                <li>If the student has received student loans or other forms of financial aid, funds will be returned in the order prescribed by federal regulations; namely, first to Federal Direct Unsubsidized Loans, if any; then to Federal Direct Graduate PLUS Loans; next to any other federal, state, private, or institutional scholarships and loans; and, finally, any remaining balance to the student.</li>
+                                                <li>Recipients of federal and/or institutional loans who withdraw are required to have an exit interview before leaving Yale. Students leaving Yale receive instructions on completing this process from Yale Student Financial Services.</li>                                                
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <p>
+                            Any students or applicants with questions or concerns can contact the Financial Aid Office by emailing <a class="apply-inline-link" href="mailto:artfinancialaid@yale.edu">artfinancialaid@yale.edu</a>.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- Editorial Quote Band & Degree Directory -->
+        <section class="quote-band" aria-label="Quote and degree list">
+            <div class="quote-inner">
+                <blockquote>“Art washes away from the soul the dust of everyday life.”</blockquote>
+                <div class="quote-author">Pablo Picasso</div>
+
+                <div class="degree-list" aria-label="MFA degrees">
+                    <a class="degree" href="../html/programs-gd.html">
+                        <div class="name">Graphic Design</div>
+                        <div class="label">MFA</div>
+                    </a>
+
+                    <a class="degree" href="../html/programs-pp.html">
+                        <div class="name">Painting/Printmaking</div>
+                        <div class="label">MFA</div>
+                    </a>
+
+                    <a class="degree" href="../html/programs-photography.html">
+                        <div class="name">Photography</div>
+                        <div class="label">MFA</div>
+                    </a>
+
+                    <a class="degree" href="../html/programs-sculpture.html">
+                        <div class="name">Sculpture</div>
+                        <div class="label">MFA</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Footer -->
+        <footer class="footer" aria-label="Footer">
+            <div class="footer-inner">
+                <div class="footer-grid">
+                    <!-- Brand & Mailing Address -->
+                    <div class="footer-brand">
+                        <div class="footer-brand-row">
+                            <img class="mark" src="../assets/blue-school-crest.png" alt="Yale School of Art crest" />
+                            <div class="footer-brand-name">Yale School of Art</div>
+                        </div>
+                        <div class="footer-address">
+                            <div>1156 Chapel Street</div>
+                            <div>POB 208339</div>
+                            <div>New Haven, CT 06520-8339</div>
+                        </div>
+                    </div>
+
+                    <!-- Primary Navigation Links -->
+                    <div class="footer-column footer-nav-col">
+                        <p class="footer-title">Navigation</p>
+                        <div class="footer-links">
+                            <div class="footer-links-column">
+                                <div class="footer-accordion">
+                                    <a href="../html/index.html" class="footer-accordion-trigger" aria-expanded="false">
+                                        <span>About</span>
+                                        <svg class="footer-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="footer-accordion-panel">
+                                        <ul class="footer-sublinks">
+                                            <li><a href="../html/index.html">Overview</a></li>
+                                            <li><a href="../html/about-mission.html">Mission Statement</a></li>
+                                            <li><a href="../html/about-history.html">History</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p><a href="../html/apply.html" aria-current="page">Apply</a></p>
+                                <p><a href="../html/calendar.html">Calendar</a></p>
+                                <div class="footer-accordion">
+                                    <a href="../html/programs.html" class="footer-accordion-trigger" aria-expanded="false">
+                                        <span>Programs</span>
+                                        <svg class="footer-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="footer-accordion-panel">
+                                        <ul class="footer-sublinks">
+                                            <li><a href="../html/programs.html">Overview</a></li>
+                                            <li><a href="../html/programs-gd.html">Graphic Design MFA</a></li>
+                                            <li><a href="../html/programs-pp.html">Painting &amp; Printmaking MFA</a></li>
+                                            <li><a href="../html/programs-photography.html">Photography MFA</a></li>
+                                            <li><a href="../html/programs-sculpture.html">Sculpture MFA</a></li>
+                                            <li><a href="../html/programs-usp.html">Undergraduate &amp; Summer Programs</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="footer-links-column">
+                                <p><a href="../html/news.html">News</a></p>
+                                <p><a href="../html/resources.html">Resources</a></p>
+                                <p><a href="../html/facilities.html">Facilities</a></p>
+                                <p><a href="../html/faculty.html">Faculty</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Channels -->
+                    <div class="footer-column">
+                        <p class="footer-title">Social Media</p>
+                        <p>
+                            <a class="footer-social-link" href="https://www.instagram.com/yaleschoolofart/?hl=en" target="_blank" rel="noopener">
+                                <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                                </svg>
+                                <span>Instagram</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a class="footer-social-link" href="https://www.facebook.com/YaleSchoolofArt" target="_blank" rel="noopener">
+                                <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 8h-2a3 3 0 0 0-3 3v11" />
+                                    <path d="M8.5 13.5H15.5" />
+                                </svg>
+                                <span>Facebook</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a class="footer-social-link" href="https://www.youtube.com/@yaleschoolofart1869" target="_blank" rel="noopener">
+                                <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                                </svg>
+                                <span>YouTube</span>
+                            </a>
+                        </p>
+                    </div>
+
+                    <!-- Secondary Utility Links -->
+                    <div class="footer-column">
+                        <p class="footer-title">Other Links</p>
+                        <p><a href="../html/support.html">Support</a></p>
+                        <p><a href="../html/visit.html">Visit</a></p>
+                        <p><a href="../html/contact.html">Contact</a></p>
+                        <p><a href="../html/newsletter.html">Newsletter</a></p>
+                    </div>
+                </div>
+
+                <!-- Copyright Bar -->
+                <div class="footer-bottom">
+                    <div class="primary-footer-separator" aria-hidden="true"></div>
+                    <div class="footer-copy">© <span id="copyright-year">2026</span> Yale School of Art</div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
