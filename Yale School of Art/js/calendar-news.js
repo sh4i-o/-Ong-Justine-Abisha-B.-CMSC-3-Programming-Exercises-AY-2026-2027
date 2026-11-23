@@ -921,7 +921,11 @@ function setupFilterDrawer(toggleBtnId, panelId, resetBtnId, countBadgeId, onFil
 
     if (!toggleBtn || !panel) return;
 
-    const state = { category: 'all', department: 'all' };
+    const state = {};
+    panel.querySelectorAll('.cn-pill-group').forEach((group) => {
+        state[group.dataset.filterType] = 'all';
+    });
+
     panel.inert = true;
 
     toggleBtn.addEventListener('click', () => {
@@ -934,7 +938,7 @@ function setupFilterDrawer(toggleBtnId, panelId, resetBtnId, countBadgeId, onFil
     });
 
     function syncBadge() {
-        const activeCount = (state.category !== 'all' ? 1 : 0) + (state.department !== 'all' ? 1 : 0);
+        const activeCount = Object.values(state).filter((val) => val !== 'all').length;
         if (countBadge) {
             countBadge.textContent = String(activeCount);
             countBadge.hidden = activeCount === 0;
@@ -960,8 +964,9 @@ function setupFilterDrawer(toggleBtnId, panelId, resetBtnId, countBadgeId, onFil
     });
 
     resetBtn?.addEventListener('click', () => {
-        state.category = 'all';
-        state.department = 'all';
+        Object.keys(state).forEach((key) => {
+            state[key] = 'all';
+        });
         panel.querySelectorAll('.cn-pill-group').forEach((group) => {
             group.querySelectorAll('.cn-pill').forEach((btn) => {
                 const isDefault = btn.dataset.value === 'all';
@@ -1009,13 +1014,15 @@ function initCalendarPage() {
     let viewYear = initialDateObj.getFullYear();
     let viewMonth = initialDateObj.getMonth();
     let selectedIso = initialDate;
-    let filters = { category: 'all', department: 'all' };
+    let filters = { category: 'all', eventType: 'all', department: 'all', audience: 'all' };
 
     function getFilteredEvents() {
         return SCHOOL_EVENTS.filter((evt) => {
             const catOk = filters.category === 'all' || evt.category === filters.category;
+            const typeOk = filters.eventType === 'all' || evt.eventType === filters.eventType;
             const deptOk = filters.department === 'all' || evt.department === filters.department;
-            return catOk && deptOk;
+            const audOk = filters.audience === 'all' || evt.audience === filters.audience;
+            return catOk && typeOk && deptOk && audOk;
         });
     }
 
@@ -1247,9 +1254,12 @@ function initCalendarPage() {
         filters = nextFilters;
 
         if (activeSummaryEl) {
-            const parts = [];
-            if (filters.category !== 'all') parts.push(filters.category);
-            if (filters.department !== 'all') parts.push(filters.department);
+            const parts = [
+                filters.category !== 'all' ? filters.category : '',
+                filters.eventType !== 'all' ? filters.eventType : '',
+                filters.department !== 'all' ? filters.department : '',
+                filters.audience !== 'all' ? filters.audience : ''
+            ].filter(Boolean);
             activeSummaryEl.textContent = parts.join(' · ');
             activeSummaryEl.hidden = parts.length === 0;
         }
