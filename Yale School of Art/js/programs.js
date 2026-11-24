@@ -9,14 +9,14 @@ const PROGRAM_GALLERIES = {
             intro: {
                 label: 'Overview',
                 count: 4,
-                placeholderPrefix: '../assets/studio.png',
+                placeholderPrefix: '../assets/studio.webp',
                 captionTemplate: (i, total) =>
                     `Yale School of Art studios and collaborative atrium spaces — View ${i} of ${total}.`
             },
             exhibitions: {
                 label: 'Exhibitions',
                 count: 6,
-                placeholderPrefix: '../assets/exhibition.png',
+                placeholderPrefix: '../assets/exhibition.webp',
                 captionTemplate: (i, total) =>
                     `Annual thesis and juried student exhibition at 32 Edgewood Gallery — View ${i} of ${total}.`
             },
@@ -25,7 +25,7 @@ const PROGRAM_GALLERIES = {
                 count: 4,
                 items: [
                     {
-                        src: '../assets/gh-entrance.png',
+                        src: '../assets/gh-entrance.webp',
                         alt: 'Green Hall Gallery',
                         name: 'Green Hall Gallery',
                         location: '1st Floor, Green Hall',
@@ -33,7 +33,7 @@ const PROGRAM_GALLERIES = {
                         hours: 'Mon – Sun: 12:00 PM – 6:00 PM ET (24/7 ID-card student access)'
                     },
                     {
-                        src: '../assets/edgewood-gallery.png',
+                        src: '../assets/edgewood-gallery.webp',
                         alt: '32 Edgewood Gallery',
                         name: '32 Edgewood Gallery',
                         location: 'Ground Floor, 32 Edgewood Avenue',
@@ -41,7 +41,7 @@ const PROGRAM_GALLERIES = {
                         hours: 'Wed – Sun: 12:00 PM – 6:00 PM ET'
                     },
                     {
-                        src: '../assets/studio.png',
+                        src: '../assets/studio.webp',
                         alt: 'Crown Street Printmaking & Painting Studios',
                         name: 'Crown Street Studios & Printshops',
                         location: 'Floors 1–4, Crown Street Wing',
@@ -49,7 +49,7 @@ const PROGRAM_GALLERIES = {
                         hours: 'Mon – Sun: 24/7 ID-card access (Staffed shops Mon – Fri: 9 AM – 6 PM ET)'
                     },
                     {
-                        src: '../assets/sp-interior.png',
+                        src: '../assets/sp-interior.webp',
                         alt: '36 Edgewood Fabrication & Photo Labs',
                         name: '36 Edgewood Studios & Labs',
                         location: 'Floors 1–3, Edgewood Building',
@@ -66,14 +66,14 @@ const PROGRAM_GALLERIES = {
             intro: {
                 label: 'Overview',
                 count: 4,
-                placeholderPrefix: '../assets/gd-atrium.png',
+                placeholderPrefix: '../assets/gd-atrium.webp',
                 captionTemplate: (i, total) =>
                     `Graphic Design MFA studio critiques and cohort workspace at 1156 Chapel Street — Image ${i} of ${total}.`
             },
             exhibitions: {
                 label: 'Exhibitions',
                 count: 8,
-                placeholderPrefix: '../assets/exhibition.png',
+                placeholderPrefix: '../assets/exhibition.webp',
                 captionTemplate: (i, total) =>
                     `Graphic Design MFA thesis books, posters, and interactive installations — Exhibition ${i} of ${total}.`
             },
@@ -82,7 +82,7 @@ const PROGRAM_GALLERIES = {
                 count: 6,
                 items: [
                     {
-                        src: '../assets/gh-entrance.png',
+                        src: '../assets/gh-entrance.webp',
                         alt: 'Green Hall Gallery',
                         name: 'Green Hall Gallery',
                         location: '1st Floor, Green Hall',
@@ -90,7 +90,7 @@ const PROGRAM_GALLERIES = {
                         hours: 'Mon – Sun: 12 AM – 4 AM ET'
                     },
                     {
-                        src: '../assets/studio.png',
+                        src: '../assets/studio.webp',
                         alt: 'Graphic Design Studios & Critique Rooms',
                         name: 'Graphic Design Studios & Atrium',
                         location: '3rd & 4th Floors, Green Hall',
@@ -98,7 +98,7 @@ const PROGRAM_GALLERIES = {
                         hours: 'Mon – Sun: 24/7 ID-card student access'
                     },
                     {
-                        src: '../assets/studio.png',
+                        src: '../assets/studio.webp',
                         alt: 'Print & Bindery Lab',
                         name: 'Print, Risograph & Bookbinding Lab',
                         location: 'Basement & 3rd Floor, Green Hall',
@@ -106,7 +106,7 @@ const PROGRAM_GALLERIES = {
                         hours: 'Mon – Fri: 9:00 AM – 6:00 PM ET (Staffed lab hours)'
                     },
                     {
-                        src: '../assets/studio.png',
+                        src: '../assets/studio.webp',
                         alt: 'Letterpress & Typesetting Shop',
                         name: 'Letterpress & Typesetting Studio',
                         location: 'Lower Level, Green Hall',
@@ -114,7 +114,7 @@ const PROGRAM_GALLERIES = {
                         hours: 'Mon – Fri: 10:00 AM – 5:00 PM ET'
                     },
                     {
-                        src: '../assets/studio.png',
+                        src: '../assets/studio.webp',
                         alt: 'Digital Output & Large-Format Plotter Room',
                         name: 'Digital Print & Output Bureau',
                         location: '3rd Floor, Green Hall',
@@ -122,7 +122,7 @@ const PROGRAM_GALLERIES = {
                         hours: 'Mon – Sun: 24/7 ID-card student access'
                     },
                     {
-                        src: '../assets/studio.png',
+                        src: '../assets/studio.webp',
                         alt: 'Graphic Design Thesis Reading Room',
                         name: 'Graphic Design Resource & Reading Room',
                         location: '4th Floor, Green Hall',
@@ -139,21 +139,21 @@ const PROGRAM_GALLERIES = {
             intro: {
                 label: 'Overview',
                 count: 4,
-                placeholderPrefix: '../assets/pp-interior.png',
+                placeholderPrefix: '../assets/pp-interior.webp',
                 captionTemplate: (i, total) =>
                     `Painting & Printmaking MFA individual studios and group critique spaces at 353 Crown Street — Image ${i} of ${total}.`
             },
             exhibitions: {
                 label: 'Exhibitions',
                 count: 18,
-                placeholderPrefix: '../assets/exhibition.png',
+                placeholderPrefix: '../assets/exhibition.webp',
                 captionTemplate: (i, total) =>
                     `Painting & Printmaking MFA graduate exhibition and open studio installation — Exhibition ${i} of ${total}.`
             },
             facilities: {
                 label: 'Facilities',
                 count: 9,
-                placeholderPrefix: '../assets/studio.png',
+                placeholderPrefix: '../assets/studio.webp',
                 facilityTemplate: (i) => ({
                     name: `353 Crown Street — Painting & Printmaking Studio Space ${i}`,
                     location: 'Floors 1–4, Crown Street Wing',
@@ -169,21 +169,21 @@ const PROGRAM_GALLERIES = {
             intro: {
                 label: 'Overview',
                 count: 4,
-                placeholderPrefix: '../assets/sp-interior.png',
+                placeholderPrefix: '../assets/sp-interior.webp',
                 captionTemplate: (i, total) =>
                     `Photography MFA critique rooms and lens-based practice studios at 36 Edgewood Avenue — Image ${i} of ${total}.`
             },
             exhibitions: {
                 label: 'Exhibitions',
                 count: 11,
-                placeholderPrefix: '../assets/exhibition.png',
+                placeholderPrefix: '../assets/exhibition.webp',
                 captionTemplate: (i, total) =>
                     `Photography MFA thesis exhibition and large-format print installation — Exhibition ${i} of ${total}.`
             },
             facilities: {
                 label: 'Facilities',
                 count: 8,
-                placeholderPrefix: '../assets/studio.png',
+                placeholderPrefix: '../assets/studio.webp',
                 facilityTemplate: (i) => ({
                     name: `36 Edgewood Avenue — Photography Darkroom & Digital Lab ${i}`,
                     location: '2nd & 3rd Floors, Edgewood Building',
@@ -199,21 +199,21 @@ const PROGRAM_GALLERIES = {
             intro: {
                 label: 'Overview',
                 count: 4,
-                placeholderPrefix: '../assets/sp-interior.png',
+                placeholderPrefix: '../assets/sp-interior.webp',
                 captionTemplate: (i, total) =>
                     `Sculpture MFA individual studios and departmental seminars at 36 Edgewood Avenue — Image ${i} of ${total}.`
             },
             exhibitions: {
                 label: 'Exhibitions',
                 count: 10,
-                placeholderPrefix: '../assets/exhibition.png',
+                placeholderPrefix: '../assets/exhibition.webp',
                 captionTemplate: (i, total) =>
                     `Sculpture MFA spatial installation and thesis exhibition work — Exhibition ${i} of ${total}.`
             },
             facilities: {
                 label: 'Facilities',
                 count: 6,
-                placeholderPrefix: '../assets/edgewood-gallery.png',
+                placeholderPrefix: '../assets/edgewood-gallery.webp',
                 facilityTemplate: (i) => ({
                     name: `36 Edgewood Avenue — Sculpture Studio & Fabrication Shop ${i}`,
                     location: '1st & 2nd Floors, Edgewood Building',
@@ -229,21 +229,21 @@ const PROGRAM_GALLERIES = {
             intro: {
                 label: 'Overview',
                 count: 4,
-                placeholderPrefix: '../assets/studio.png',
+                placeholderPrefix: '../assets/studio.webp',
                 captionTemplate: (i, total) =>
                     `Yale College BA Art major and Summer School studio instruction — Image ${i} of ${total}.`
             },
             exhibitions: {
                 label: 'Exhibitions',
                 count: 6,
-                placeholderPrefix: '../assets/exhibition.png',
+                placeholderPrefix: '../assets/exhibition.webp',
                 captionTemplate: (i, total) =>
                     `Undergraduate Senior Thesis Exhibition and Norfolk Summer School showcase — Exhibition ${i} of ${total}.`
             },
             facilities: {
                 label: 'Facilities',
                 count: 5,
-                placeholderPrefix: '../assets/gh-entrance.png',
+                placeholderPrefix: '../assets/gh-entrance.webp',
                 facilityTemplate: (i) => ({
                     name: `Undergraduate Studio & Classroom Space ${i}`,
                     location: 'Green Hall & Crown Street Studios',

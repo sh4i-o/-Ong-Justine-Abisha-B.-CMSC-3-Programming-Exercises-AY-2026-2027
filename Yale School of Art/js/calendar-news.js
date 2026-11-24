@@ -861,7 +861,7 @@ const SCHOOL_NEWS = [
         title: 'Yale School of Art Seeks Associate Adjunct Professor in Sculpture',
         date: '2026-11-11',
         displayDate: 'Nov 11, 2026',
-        image: '../assets/adjunct-prof.png',
+        image: '../assets/adjunct-prof.webp',
         imageAlt: '36 Edgewood Avenue Sculpture facilities',
         shortDescription: 'The Department of Sculpture invites applications for an Associate Adjunct Professor position.',
         fullText: [
@@ -877,7 +877,7 @@ const SCHOOL_NEWS = [
         title: '"Devotional Alchemy" open at 63 Audubon through November 19',
         date: '2026-11-04',
         displayDate: 'Nov 04, 2026',
-        image: '../assets/devo-alchemy.png',
+        image: '../assets/devo-alchemy.webp',
         imageAlt: 'Devotional Alchemy gallery exhibition view',
         shortDescription: 'Featuring artists for whom creative practice is an act of devotion.',
         fullText: [
@@ -893,7 +893,7 @@ const SCHOOL_NEWS = [
         title: 'Alums gather in New York and Philadelphia for exhibition tours',
         date: '2026-10-31',
         displayDate: 'Oct 31, 2026',
-        image: '../assets/exhibition-tours.png',
+        image: '../assets/exhibition-tours.webp',
         imageAlt: 'Yale School of Art alumni gathering and studio tour',
         shortDescription: 'October highlights from alumni events!',
         fullText: [
@@ -909,7 +909,7 @@ const SCHOOL_NEWS = [
         title: 'October 2026 Community News',
         date: '2026-10-30',
         displayDate: 'Oct 30, 2026',
-        image: '../assets/oct-2026-cn.png',
+        image: '../assets/oct-2026-cn.webp',
         imageAlt: 'Green Hall entrance at 1156 Chapel Street',
         shortDescription: 'Monthly roundup of exhibitions, awards, publications, and residencies across the School of Art community.',
         fullText: [
@@ -924,7 +924,7 @@ const SCHOOL_NEWS = [
         title: 'Graphic Design hosts "Publishing as Praxis"',
         date: '2026-10-21',
         displayDate: 'Oct 21, 2026',
-        image: '../assets/praxis.png',
+        image: '../assets/praxis.webp',
         imageAlt: 'Graphic Design atrium at 1156 Chapel Street',
         shortDescription: 'The day-long convening unpacked the pedagogical and the performative.',
         fullText: [
