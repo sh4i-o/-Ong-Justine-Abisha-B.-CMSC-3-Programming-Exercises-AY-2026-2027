@@ -1,0 +1,184 @@
+/* ==========================================================================
+   Resources Page (resources.html)
+   Aligned with apply.css dotted-leader inline accordions and editorial tokens
+   ========================================================================== */
+
+.resources-section {
+    max-width: 1120px;
+    margin: 56px auto 0;
+    scroll-margin-top: 96px;
+}
+
+.resources-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.resources-lead {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.75;
+    font-weight: 400;
+}
+
+.resources-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resources-block h3 {
+    margin: 0;
+    color: var(--text);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+/* Dotted-Leader Inline Accordions ("Title ......... View / Hide") */
+.resource-accordion-list {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.resource-accordion-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-accordion-trigger {
+    position: relative;
+    width: 100%;
+    padding: 4px 0;
+    border: none;
+    background: transparent;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 12px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--blue);
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.resource-accordion-dots {
+    position: absolute;
+    left: 0;
+    right: 44px;
+    bottom: 9px;
+    border-bottom: 2px dotted var(--blue-tint-65);
+    pointer-events: none;
+    transition: border-color 0.2s ease;
+}
+
+.resource-accordion-title {
+    position: relative;
+    z-index: 1;
+    justify-self: start;
+    font-weight: 500;
+}
+
+.resource-accordion-title::after {
+    content: "";
+    position: absolute;
+    inset: 0 -8px 0 0;
+    background: var(--cream);
+    z-index: -1;
+}
+
+.resource-accordion-action {
+    position: relative;
+    z-index: 1;
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 34px;
+    text-align: right;
+}
+
+.resource-accordion-trigger:hover .resource-accordion-title,
+.resource-accordion-trigger:focus-visible .resource-accordion-title,
+.resource-accordion-item.open .resource-accordion-title {
+    color: var(--navy);
+}
+
+.resource-accordion-trigger:hover .resource-accordion-action,
+.resource-accordion-trigger:focus-visible .resource-accordion-action {
+    color: var(--navy);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.resource-accordion-trigger:hover .resource-accordion-dots,
+.resource-accordion-trigger:focus-visible .resource-accordion-dots,
+.resource-accordion-item.open .resource-accordion-dots {
+    border-bottom-color: var(--blue);
+}
+
+.resource-accordion-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.resource-accordion-item.open .resource-accordion-panel {
+    grid-template-rows: 1fr;
+}
+
+.resource-accordion-content {
+    overflow: hidden;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.resource-accordion-item.open .resource-accordion-content {
+    padding-top: 12px;
+    padding-bottom: 8px;
+}
+
+.resource-sublist {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.resource-sublist li::marker {
+    color: var(--blue);
+}
+
+.resource-accordion-content code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.88em;
+    color: var(--text);
+}
+
+.resource-inline-link {
+    color: var(--blue);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.resource-inline-link:hover,
+.resource-inline-link:focus-visible {
+    color: var(--navy);
+}

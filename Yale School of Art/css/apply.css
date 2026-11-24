@@ -1,13 +1,12 @@
-/* Utility-Specific Tokens */
+/* ==========================================================================
+   Apply Page (apply.html)
+   ========================================================================== */
+
 :root {
     --gallery-bg: #d8dbd4;
     --blue-badge: #00356beb;
     --white-tint-95: #fffffff2;
 }
-
-/* ==========================================================================
-   Apply Page (apply.html)
-   ========================================================================== */
 
 /* Admissions Welcome Two-Column Layout + Gallery-Sized YouTube Embed */
 .apply-welcome-section {
@@ -486,12 +485,7 @@
     color: var(--navy);
 }
 
-/* ==========================================================================
-   Utility Pages Responsive Breakpoints (<= 1120px)
-   ========================================================================== */
-
 @media (max-width: 1120px) {
-    /* Apply Page */
     .apply-welcome-section {
         grid-template-columns: 1fr;
         gap: 32px;
