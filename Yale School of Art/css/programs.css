@@ -409,7 +409,7 @@
 }
 
 /* ==========================================================================
-   5. Documents Accordions, Lists & Plan of Study Curriculum
+   5. Documents Accordions, Lists, Plan of Study & Admission Requirements
    ========================================================================== */
 
 /* Dotted-Leader Document Links */
@@ -606,16 +606,12 @@
     padding-bottom: 6px;
 }
 
-.program-accordion-content p {
-    font-size: 15px;
-    line-height: 1.65;
-}
-
+.program-accordion-content p,
 .program-accordion-lead {
     margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
     color: var(--muted);
-    font-size: 15px !important;
-    line-height: 1.7 !important;
 }
 
 .program-sublist {
@@ -657,9 +653,10 @@
     gap: 10px;
 }
 
-.program-inline-link {
+.program-inline-link,
+.intro-body a,
+.program-accordion-content p a {
     color: var(--blue);
-    font-size: 14px;
     font-weight: 500;
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -667,11 +664,28 @@
 }
 
 .program-inline-link:hover,
-.program-inline-link:focus-visible {
+.program-inline-link:focus-visible,
+.intro-body a:hover,
+.intro-body a:focus-visible,
+.program-accordion-content p a:hover,
+.program-accordion-content p a:focus-visible {
     color: var(--navy);
 }
 
-/* Plan of Study Curriculum Grid inside Accordion */
+/* Shared Accordion Subsection Headings (Plan of Study & Admission Requirements) */
+.study-year-title,
+.admission-req-title {
+    margin: 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--blue-tint-15);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--blue);
+}
+
+/* Plan of Study Curriculum Grid */
 .study-plan-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -683,17 +697,6 @@
     display: flex;
     flex-direction: column;
     gap: 22px;
-}
-
-.study-year-title {
-    margin: 0;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--blue-tint-15);
-    font-family: 'Newsreader', Georgia, serif;
-    font-size: 21px;
-    font-style: normal;
-    font-weight: 400;
-    color: var(--blue);
 }
 
 .study-term-block {
@@ -742,7 +745,6 @@
 .study-term-total {
     margin: 4px 0 0;
     font-size: 13.5px;
-    font-style: italic;
     font-weight: 500;
     color: var(--blue);
 }
@@ -759,11 +761,10 @@
     margin: 4px 0 0;
     font-size: 13.5px;
     line-height: 1.6;
-    font-style: italic;
     color: var(--muted);
 }
 
-/* Admission Requirements Stack inside Accordion */
+/* Admission Requirements Stack */
 .admission-reqs-stack {
     display: flex;
     flex-direction: column;
@@ -775,24 +776,6 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-}
-
-.admission-req-title {
-    margin: 0;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--blue-tint-15);
-    font-family: 'Newsreader', Georgia, serif;
-    font-size: 21px;
-    font-style: normal;
-    font-weight: 400;
-    color: var(--blue);
-}
-
-.admission-req-group p {
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--muted);
 }
 
 .admission-formats-box {
@@ -831,22 +814,13 @@
     border-radius: 4px;
 }
 
-@media (max-width: 560px) {
-    .admission-formats-box {
-        grid-template-columns: 1fr;
-        gap: 2px;
-    }
-
-    .admission-formats-box dt:not(:first-child) {
-        margin-top: 8px;
-    }
-}
-
 /* ==========================================================================
    6. Apply Now CTA & Department Faculty Directory
    ========================================================================== */
 
 .program-apply-cta-row {
+    display: flex;
+    justify-content: flex-start;
     margin-top: 12px;
 }
 
@@ -1147,7 +1121,7 @@
     object-fit: contain;
     border-radius: 4px;
     opacity: 0;
-    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
     pointer-events: none;
 }
 
@@ -1286,5 +1260,14 @@
 @media (max-width: 560px) {
     .program-faculty-grid {
         grid-template-columns: 1fr;
+    }
+
+    .admission-formats-box {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .admission-formats-box dt:not(:first-child) {
+        margin-top: 8px;
     }
 }

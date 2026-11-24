@@ -154,7 +154,7 @@ const PROGRAM_GALLERIES = {
                 label: 'Facilities',
                 count: 9,
                 placeholderPrefix: '../assets/studio.png',
-                facilityTemplate: (i, total) => ({
+                facilityTemplate: (i) => ({
                     name: `353 Crown Street — Painting & Printmaking Studio Space ${i}`,
                     location: 'Floors 1–4, Crown Street Wing',
                     address: '353 Crown Street, New Haven, CT 06511',
@@ -184,7 +184,7 @@ const PROGRAM_GALLERIES = {
                 label: 'Facilities',
                 count: 8,
                 placeholderPrefix: '../assets/studio.png',
-                facilityTemplate: (i, total) => ({
+                facilityTemplate: (i) => ({
                     name: `36 Edgewood Avenue — Photography Darkroom & Digital Lab ${i}`,
                     location: '2nd & 3rd Floors, Edgewood Building',
                     address: '36 Edgewood Avenue, New Haven, CT 06511',
@@ -214,7 +214,7 @@ const PROGRAM_GALLERIES = {
                 label: 'Facilities',
                 count: 6,
                 placeholderPrefix: '../assets/edgewood-gallery.png',
-                facilityTemplate: (i, total) => ({
+                facilityTemplate: (i) => ({
                     name: `36 Edgewood Avenue — Sculpture Studio & Fabrication Shop ${i}`,
                     location: '1st & 2nd Floors, Edgewood Building',
                     address: '36 Edgewood Avenue, New Haven, CT 06511',
@@ -244,7 +244,7 @@ const PROGRAM_GALLERIES = {
                 label: 'Facilities',
                 count: 5,
                 placeholderPrefix: '../assets/gh-entrance.png',
-                facilityTemplate: (i, total) => ({
+                facilityTemplate: (i) => ({
                     name: `Undergraduate Studio & Classroom Space ${i}`,
                     location: 'Green Hall & Crown Street Studios',
                     address: '1156 Chapel Street, New Haven, CT 06511',
@@ -280,23 +280,44 @@ function renderFormattedCaption(containerEl, item, isFacility) {
     }
 }
 
+function getCollectionItems(col, key) {
+    if (!col) return [];
+    if (Array.isArray(col.items) && col.items.length) return col.items;
+
+    return Array.from({ length: col.count }, (_, idx) => {
+        if (key === 'facilities' && typeof col.facilityTemplate === 'function') {
+            const meta = col.facilityTemplate(idx + 1, col.count);
+            return {
+                src: col.placeholderPrefix,
+                alt: meta.name || `${col.label} ${idx + 1} of ${col.count}`,
+                ...meta
+            };
+        }
+        return {
+            src: col.placeholderPrefix,
+            alt: `${col.label} placeholder image ${idx + 1} of ${col.count}`,
+            caption: col.captionTemplate(idx + 1, col.count)
+        };
+    });
+}
+
 function initProgramShowcase() {
     const showcase = document.getElementById('program-gallery-showcase');
     if (!showcase) return;
 
     const programKey = showcase.dataset.program || 'overview';
     const programConfig = PROGRAM_GALLERIES[programKey] || PROGRAM_GALLERIES.overview;
+    const collectionKeys = Object.keys(programConfig.collections);
 
     const tabsContainer = showcase.querySelector('.gallery-tabs');
     const slidesContainer = showcase.querySelector('.gallery-slides');
     const metaEl = showcase.querySelector('.gallery-meta');
-    const metaLabelEl = showcase.querySelector('.gallery-meta .meta-label');
-    const metaCounterEl = showcase.querySelector('.gallery-meta .meta-counter');
+    const metaLabelEl = showcase.querySelector('.meta-label');
+    const metaCounterEl = showcase.querySelector('.meta-counter');
     const captionEl = showcase.querySelector('.gallery-caption');
     const prevBtn = showcase.querySelector('[data-gallery-prev]');
     const nextBtn = showcase.querySelector('[data-gallery-next]');
 
-    // Lightbox elements
     const lightbox = document.getElementById('program-lightbox');
     const lightboxMedia = lightbox?.querySelector('.program-lightbox-media');
     const lightboxCaption = document.getElementById('program-lightbox-caption');
@@ -305,40 +326,17 @@ function initProgramShowcase() {
     const lightboxPrev = document.getElementById('program-lightbox-prev');
     const lightboxNext = document.getElementById('program-lightbox-next');
 
-    const collectionKeys = Object.keys(programConfig.collections);
-    let activeCollectionKey = collectionKeys[0];
+    let activeKey = collectionKeys[0];
+    let currentItems = [];
     let currentIndex = 0;
     let lastFocusedEl = null;
     let touchStartX = 0;
-
-    function getItemsForCollection(key) {
-        const col = programConfig.collections[key];
-        if (!col) return [];
-        if (Array.isArray(col.items) && col.items.length) {
-            return col.items;
-        }
-        return Array.from({ length: col.count }, (_, idx) => {
-            if (key === 'facilities' && typeof col.facilityTemplate === 'function') {
-                const meta = col.facilityTemplate(idx + 1, col.count);
-                return {
-                    src: col.placeholderPrefix,
-                    alt: meta.name || `${col.label} ${idx + 1} of ${col.count}`,
-                    ...meta
-                };
-            }
-            return {
-                src: col.placeholderPrefix,
-                alt: `${col.label} placeholder image ${idx + 1} of ${col.count}`,
-                caption: col.captionTemplate(idx + 1, col.count)
-            };
-        });
-    }
 
     function renderTabs() {
         if (!tabsContainer) return;
         tabsContainer.innerHTML = collectionKeys.map((key) => {
             const col = programConfig.collections[key];
-            const isActive = key === activeCollectionKey;
+            const isActive = key === activeKey;
             const totalCount = Array.isArray(col.items) && col.items.length ? col.items.length : col.count;
             return `
                 <button
@@ -353,52 +351,53 @@ function initProgramShowcase() {
         }).join('');
     }
 
-    function renderGallery(index = 0) {
-        const col = programConfig.collections[activeCollectionKey];
-        const items = getItemsForCollection(activeCollectionKey);
-        if (!items.length || !slidesContainer) return;
+    function mountCollectionImages(key) {
+        activeKey = key;
+        const col = programConfig.collections[activeKey];
+        currentItems = getCollectionItems(col, activeKey);
 
-        currentIndex = (index + items.length) % items.length;
-        const isFacility = activeCollectionKey === 'facilities';
-
-        slidesContainer.innerHTML = items.map((item, idx) => `
+        const buildImgs = (className) => currentItems.map((item, idx) => `
             <img
-                class="gallery-slide${idx === currentIndex ? ' active' : ''}"
+                class="${className}${idx === 0 ? ' active' : ''}"
                 src="${item.src}"
                 alt="${escapeHtml(item.alt)}"
             />
         `).join('');
 
-        const labelText = `${currentIndex + 1} of ${items.length}`;
-        if (metaLabelEl) metaLabelEl.textContent = col.label;
-        if (metaCounterEl) metaCounterEl.textContent = labelText;
-        metaEl?.setAttribute('aria-label', `${col.label} ${labelText}`);
-
-        renderFormattedCaption(captionEl, items[currentIndex], isFacility);
+        if (slidesContainer) slidesContainer.innerHTML = buildImgs('gallery-slide');
+        if (lightboxMedia) lightboxMedia.innerHTML = buildImgs('');
     }
 
-    function renderLightbox(index) {
-        const col = programConfig.collections[activeCollectionKey];
-        const items = getItemsForCollection(activeCollectionKey);
-        if (!items.length || !lightboxMedia) return;
+    function setSlide(index) {
+        if (!currentItems.length) return;
+        currentIndex = (index + currentItems.length) % currentItems.length;
 
-        currentIndex = (index + items.length) % items.length;
-        renderGallery(currentIndex);
+        const col = programConfig.collections[activeKey];
+        const current = currentItems[currentIndex];
+        const isFacility = activeKey === 'facilities';
+        const counterText = `${currentIndex + 1} of ${currentItems.length}`;
 
-        const current = items[currentIndex];
-        const isFacility = activeCollectionKey === 'facilities';
-        lightboxMedia.innerHTML = `<img class="active" src="${current.src}" alt="${escapeHtml(current.alt)}" />`;
+        slidesContainer?.querySelectorAll('.gallery-slide').forEach((img, idx) => {
+            img.classList.toggle('active', idx === currentIndex);
+        });
 
-        if (lightboxCounter) {
-            lightboxCounter.textContent = `${col.label} · ${currentIndex + 1} of ${items.length}`;
-        }
+        lightboxMedia?.querySelectorAll('img').forEach((img, idx) => {
+            img.classList.toggle('active', idx === currentIndex);
+        });
+
+        if (metaLabelEl) metaLabelEl.textContent = col.label;
+        if (metaCounterEl) metaCounterEl.textContent = counterText;
+        metaEl?.setAttribute('aria-label', `${col.label} ${counterText}`);
+        renderFormattedCaption(captionEl, current, isFacility);
+
+        if (lightboxCounter) lightboxCounter.textContent = `${col.label} · ${counterText}`;
         renderFormattedCaption(lightboxCaption, current, isFacility);
     }
 
     function openLightbox() {
         if (!lightbox) return;
         lastFocusedEl = document.activeElement;
-        renderLightbox(currentIndex);
+        setSlide(currentIndex);
         lightbox.classList.add('open');
         lightbox.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
@@ -415,23 +414,22 @@ function initProgramShowcase() {
 
     tabsContainer?.addEventListener('click', (e) => {
         const tab = e.target.closest('.gallery-tab');
-        if (!tab) return;
-        const nextKey = tab.dataset.collection;
-        if (!nextKey || nextKey === activeCollectionKey) return;
+        const nextKey = tab?.dataset.collection;
+        if (!nextKey || nextKey === activeKey) return;
 
-        activeCollectionKey = nextKey;
+        mountCollectionImages(nextKey);
         renderTabs();
-        renderGallery(0);
+        setSlide(0);
     });
 
     prevBtn?.addEventListener('click', (e) => {
         e.stopPropagation();
-        renderGallery(currentIndex - 1);
+        setSlide(currentIndex - 1);
     });
 
     nextBtn?.addEventListener('click', (e) => {
         e.stopPropagation();
-        renderGallery(currentIndex + 1);
+        setSlide(currentIndex + 1);
     });
 
     slidesContainer?.addEventListener('click', openLightbox);
@@ -444,8 +442,8 @@ function initProgramShowcase() {
 
     lightboxClose?.addEventListener('click', closeLightbox);
     lightbox?.querySelector('[data-lightbox-close]')?.addEventListener('click', closeLightbox);
-    lightboxPrev?.addEventListener('click', () => renderLightbox(currentIndex - 1));
-    lightboxNext?.addEventListener('click', () => renderLightbox(currentIndex + 1));
+    lightboxPrev?.addEventListener('click', () => setSlide(currentIndex - 1));
+    lightboxNext?.addEventListener('click', () => setSlide(currentIndex + 1));
 
     lightbox?.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
@@ -454,26 +452,24 @@ function initProgramShowcase() {
     lightbox?.addEventListener('touchend', (e) => {
         const deltaX = e.changedTouches[0].screenX - touchStartX;
         if (Math.abs(deltaX) > 40) {
-            renderLightbox(deltaX < 0 ? currentIndex + 1 : currentIndex - 1);
+            setSlide(deltaX < 0 ? currentIndex + 1 : currentIndex - 1);
         }
     }, { passive: true });
 
     document.addEventListener('keydown', (e) => {
         if (!lightbox?.classList.contains('open')) return;
         if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') renderLightbox(currentIndex - 1);
-        if (e.key === 'ArrowRight') renderLightbox(currentIndex + 1);
+        if (e.key === 'ArrowLeft') setSlide(currentIndex - 1);
+        if (e.key === 'ArrowRight') setSlide(currentIndex + 1);
     });
 
+    mountCollectionImages(activeKey);
     renderTabs();
-    renderGallery(0);
+    setSlide(0);
 }
 
 function initProgramAccordions() {
-    const triggers = document.querySelectorAll('.program-accordion-trigger');
-    if (!triggers.length) return;
-
-    triggers.forEach((trigger) => {
+    document.querySelectorAll('.program-accordion-trigger').forEach((trigger) => {
         trigger.addEventListener('click', () => {
             const item = trigger.closest('.program-accordion-item');
             const actionLabel = trigger.querySelector('.program-accordion-action');
