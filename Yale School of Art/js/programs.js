@@ -7,11 +7,11 @@ const PROGRAM_GALLERIES = {
         sourceUrl: 'https://art.yale.edu/program',
         collections: {
             intro: {
-                label: 'Studios & Atrium',
+                label: 'Overview',
                 count: 4,
                 placeholderPrefix: '../assets/studio.png',
                 captionTemplate: (i, total) =>
-                    `Yale School of Art studios and collaborative atrium spaces — View ${i} of ${total}. (Replace with program overview image ${i})`
+                    `Yale School of Art studios and collaborative atrium spaces — View ${i} of ${total}.`
             },
             exhibitions: {
                 label: 'Exhibitions',
@@ -23,9 +23,40 @@ const PROGRAM_GALLERIES = {
             facilities: {
                 label: 'Facilities',
                 count: 4,
-                placeholderPrefix: '../assets/gh-entrance.png',
-                captionTemplate: (i, total) =>
-                    `Shared fabrication labs, print shops, and digital media facilities — View ${i} of ${total}.`
+                items: [
+                    {
+                        src: '../assets/gh-entrance.png',
+                        alt: 'Green Hall Gallery',
+                        name: 'Green Hall Gallery',
+                        location: '1st Floor, Green Hall',
+                        address: '1156 Chapel Street, New Haven, CT 06511',
+                        hours: 'Mon – Sun: 12:00 PM – 6:00 PM ET (24/7 ID-card student access)'
+                    },
+                    {
+                        src: '../assets/edgewood-gallery.png',
+                        alt: '32 Edgewood Gallery',
+                        name: '32 Edgewood Gallery',
+                        location: 'Ground Floor, 32 Edgewood Avenue',
+                        address: '32 Edgewood Avenue, New Haven, CT 06511',
+                        hours: 'Wed – Sun: 12:00 PM – 6:00 PM ET'
+                    },
+                    {
+                        src: '../assets/studio.png',
+                        alt: 'Crown Street Printmaking & Painting Studios',
+                        name: 'Crown Street Studios & Printshops',
+                        location: 'Floors 1–4, Crown Street Wing',
+                        address: '353 Crown Street, New Haven, CT 06511',
+                        hours: 'Mon – Sun: 24/7 ID-card access (Staffed shops Mon – Fri: 9 AM – 6 PM ET)'
+                    },
+                    {
+                        src: '../assets/sp-interior.png',
+                        alt: '36 Edgewood Fabrication & Photo Labs',
+                        name: '36 Edgewood Studios & Labs',
+                        location: 'Floors 1–3, Edgewood Building',
+                        address: '36 Edgewood Avenue, New Haven, CT 06511',
+                        hours: 'Mon – Sun: 24/7 ID-card access (Staffed labs Mon – Fri: 9 AM – 6 PM ET)'
+                    }
+                ]
             }
         }
     },
@@ -33,7 +64,7 @@ const PROGRAM_GALLERIES = {
         sourceUrl: 'https://art.yale.edu/program/graphic-design',
         collections: {
             intro: {
-                label: 'Introduction',
+                label: 'Overview',
                 count: 4,
                 placeholderPrefix: '../assets/gd-atrium.png',
                 captionTemplate: (i, total) =>
@@ -49,9 +80,56 @@ const PROGRAM_GALLERIES = {
             facilities: {
                 label: 'Facilities',
                 count: 6,
-                placeholderPrefix: '../assets/studio.png',
-                captionTemplate: (i, total) =>
-                    `Graphic Design letterpress, Risograph, bookbinding, and digital labs — Facility ${i} of ${total}.`
+                items: [
+                    {
+                        src: '../assets/gh-entrance.png',
+                        alt: 'Green Hall Gallery',
+                        name: 'Green Hall Gallery',
+                        location: '1st Floor, Green Hall',
+                        address: '1156 Chapel Street',
+                        hours: 'Mon – Sun: 12 AM – 4 AM ET'
+                    },
+                    {
+                        src: '../assets/studio.png',
+                        alt: 'Graphic Design Studios & Critique Rooms',
+                        name: 'Graphic Design Studios & Atrium',
+                        location: '3rd & 4th Floors, Green Hall',
+                        address: '1156 Chapel Street, New Haven, CT 06511',
+                        hours: 'Mon – Sun: 24/7 ID-card student access'
+                    },
+                    {
+                        src: '../assets/studio.png',
+                        alt: 'Print & Bindery Lab',
+                        name: 'Print, Risograph & Bookbinding Lab',
+                        location: 'Basement & 3rd Floor, Green Hall',
+                        address: '1156 Chapel Street, New Haven, CT 06511',
+                        hours: 'Mon – Fri: 9:00 AM – 6:00 PM ET (Staffed lab hours)'
+                    },
+                    {
+                        src: '../assets/studio.png',
+                        alt: 'Letterpress & Typesetting Shop',
+                        name: 'Letterpress & Typesetting Studio',
+                        location: 'Lower Level, Green Hall',
+                        address: '1156 Chapel Street, New Haven, CT 06511',
+                        hours: 'Mon – Fri: 10:00 AM – 5:00 PM ET'
+                    },
+                    {
+                        src: '../assets/studio.png',
+                        alt: 'Digital Output & Large-Format Plotter Room',
+                        name: 'Digital Print & Output Bureau',
+                        location: '3rd Floor, Green Hall',
+                        address: '1156 Chapel Street, New Haven, CT 06511',
+                        hours: 'Mon – Sun: 24/7 ID-card student access'
+                    },
+                    {
+                        src: '../assets/studio.png',
+                        alt: 'Graphic Design Thesis Reading Room',
+                        name: 'Graphic Design Resource & Reading Room',
+                        location: '4th Floor, Green Hall',
+                        address: '1156 Chapel Street, New Haven, CT 06511',
+                        hours: 'Mon – Sun: 24/7 ID-card student access'
+                    }
+                ]
             }
         }
     },
@@ -59,7 +137,7 @@ const PROGRAM_GALLERIES = {
         sourceUrl: 'https://art.yale.edu/program/painting-printmaking',
         collections: {
             intro: {
-                label: 'Introduction',
+                label: 'Overview',
                 count: 4,
                 placeholderPrefix: '../assets/pp-interior.png',
                 captionTemplate: (i, total) =>
@@ -76,8 +154,12 @@ const PROGRAM_GALLERIES = {
                 label: 'Facilities',
                 count: 9,
                 placeholderPrefix: '../assets/studio.png',
-                captionTemplate: (i, total) =>
-                    `Intaglio, lithography, silkscreen, woodcut, and painting studios at 353 Crown Street — Facility ${i} of ${total}.`
+                facilityTemplate: (i, total) => ({
+                    name: `353 Crown Street — Painting & Printmaking Studio Space ${i}`,
+                    location: 'Floors 1–4, Crown Street Wing',
+                    address: '353 Crown Street, New Haven, CT 06511',
+                    hours: 'Mon – Sun: 24/7 ID-card access (Printshops Mon – Fri: 9 AM – 6 PM ET)'
+                })
             }
         }
     },
@@ -85,7 +167,7 @@ const PROGRAM_GALLERIES = {
         sourceUrl: 'https://art.yale.edu/program/photography',
         collections: {
             intro: {
-                label: 'Introduction',
+                label: 'Overview',
                 count: 4,
                 placeholderPrefix: '../assets/sp-interior.png',
                 captionTemplate: (i, total) =>
@@ -102,8 +184,12 @@ const PROGRAM_GALLERIES = {
                 label: 'Facilities',
                 count: 8,
                 placeholderPrefix: '../assets/studio.png',
-                captionTemplate: (i, total) =>
-                    `Analog darkrooms, color processors, lighting studios, and digital print labs — Facility ${i} of ${total}.`
+                facilityTemplate: (i, total) => ({
+                    name: `36 Edgewood Avenue — Photography Darkroom & Digital Lab ${i}`,
+                    location: '2nd & 3rd Floors, Edgewood Building',
+                    address: '36 Edgewood Avenue, New Haven, CT 06511',
+                    hours: 'Mon – Sun: 24/7 ID-card access (Technical staff Mon – Fri: 9 AM – 6 PM ET)'
+                })
             }
         }
     },
@@ -111,7 +197,7 @@ const PROGRAM_GALLERIES = {
         sourceUrl: 'https://art.yale.edu/program/sculpture',
         collections: {
             intro: {
-                label: 'Introduction',
+                label: 'Overview',
                 count: 4,
                 placeholderPrefix: '../assets/sp-interior.png',
                 captionTemplate: (i, total) =>
@@ -128,8 +214,12 @@ const PROGRAM_GALLERIES = {
                 label: 'Facilities',
                 count: 6,
                 placeholderPrefix: '../assets/edgewood-gallery.png',
-                captionTemplate: (i, total) =>
-                    `Woodworking, metal fabrication, foundry, and digital prototyping shops at 36 Edgewood Avenue — Facility ${i} of ${total}.`
+                facilityTemplate: (i, total) => ({
+                    name: `36 Edgewood Avenue — Sculpture Studio & Fabrication Shop ${i}`,
+                    location: '1st & 2nd Floors, Edgewood Building',
+                    address: '36 Edgewood Avenue, New Haven, CT 06511',
+                    hours: 'Mon – Sun: 24/7 ID-card access (Wood & metal shops Mon – Fri: 9 AM – 6 PM ET)'
+                })
             }
         }
     },
@@ -137,7 +227,7 @@ const PROGRAM_GALLERIES = {
         sourceUrl: 'https://art.yale.edu/program/undergraduate',
         collections: {
             intro: {
-                label: 'Introduction',
+                label: 'Overview',
                 count: 4,
                 placeholderPrefix: '../assets/studio.png',
                 captionTemplate: (i, total) =>
@@ -154,12 +244,41 @@ const PROGRAM_GALLERIES = {
                 label: 'Facilities',
                 count: 5,
                 placeholderPrefix: '../assets/gh-entrance.png',
-                captionTemplate: (i, total) =>
-                    `Undergraduate painting, printmaking, design, and sculpture classrooms — Facility ${i} of ${total}.`
+                facilityTemplate: (i, total) => ({
+                    name: `Undergraduate Studio & Classroom Space ${i}`,
+                    location: 'Green Hall & Crown Street Studios',
+                    address: '1156 Chapel Street, New Haven, CT 06511',
+                    hours: 'Mon – Sun: 7:00 AM – 11:00 PM ET (Course-enrolled ID access)'
+                })
             }
         }
     }
 };
+
+function escapeHtml(str) {
+    return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
+function renderFormattedCaption(containerEl, item, isFacility) {
+    if (!containerEl || !item) return;
+
+    if (isFacility && (item.name || item.location || item.address || item.hours)) {
+        containerEl.classList.add('is-facility-caption');
+        containerEl.innerHTML = `
+            <span class="facility-cap-name">${escapeHtml(item.name)}</span>
+            <span class="facility-cap-line">${escapeHtml(item.location)}</span>
+            <span class="facility-cap-line">${escapeHtml(item.address)}</span>
+            <span class="facility-cap-hours">${escapeHtml(item.hours)}</span>
+        `;
+    } else {
+        containerEl.classList.remove('is-facility-caption');
+        containerEl.textContent = item.caption || '';
+    }
+}
 
 function initProgramShowcase() {
     const showcase = document.getElementById('program-gallery-showcase');
@@ -198,11 +317,21 @@ function initProgramShowcase() {
         if (Array.isArray(col.items) && col.items.length) {
             return col.items;
         }
-        return Array.from({ length: col.count }, (_, idx) => ({
-            src: col.placeholderPrefix,
-            alt: `${col.label} placeholder image ${idx + 1} of ${col.count}`,
-            caption: col.captionTemplate(idx + 1, col.count)
-        }));
+        return Array.from({ length: col.count }, (_, idx) => {
+            if (key === 'facilities' && typeof col.facilityTemplate === 'function') {
+                const meta = col.facilityTemplate(idx + 1, col.count);
+                return {
+                    src: col.placeholderPrefix,
+                    alt: meta.name || `${col.label} ${idx + 1} of ${col.count}`,
+                    ...meta
+                };
+            }
+            return {
+                src: col.placeholderPrefix,
+                alt: `${col.label} placeholder image ${idx + 1} of ${col.count}`,
+                caption: col.captionTemplate(idx + 1, col.count)
+            };
+        });
     }
 
     function renderTabs() {
@@ -210,6 +339,7 @@ function initProgramShowcase() {
         tabsContainer.innerHTML = collectionKeys.map((key) => {
             const col = programConfig.collections[key];
             const isActive = key === activeCollectionKey;
+            const totalCount = Array.isArray(col.items) && col.items.length ? col.items.length : col.count;
             return `
                 <button
                     type="button"
@@ -217,7 +347,7 @@ function initProgramShowcase() {
                     data-collection="${key}"
                     aria-pressed="${String(isActive)}">
                     <span>${col.label}</span>
-                    <span class="gallery-tab-count">${col.count}</span>
+                    <span class="gallery-tab-count">${totalCount}</span>
                 </button>
             `;
         }).join('');
@@ -229,23 +359,22 @@ function initProgramShowcase() {
         if (!items.length || !slidesContainer) return;
 
         currentIndex = (index + items.length) % items.length;
+        const isFacility = activeCollectionKey === 'facilities';
 
         slidesContainer.innerHTML = items.map((item, idx) => `
             <img
                 class="gallery-slide${idx === currentIndex ? ' active' : ''}"
                 src="${item.src}"
-                alt="${item.alt}"
+                alt="${escapeHtml(item.alt)}"
             />
         `).join('');
 
         const labelText = `${currentIndex + 1} of ${items.length}`;
-        if (metaLabelEl) metaLabelEl.textContent = 'Photo';
+        if (metaLabelEl) metaLabelEl.textContent = col.label;
         if (metaCounterEl) metaCounterEl.textContent = labelText;
-        metaEl?.setAttribute('aria-label', `Photo ${labelText}`);
+        metaEl?.setAttribute('aria-label', `${col.label} ${labelText}`);
 
-        if (captionEl) {
-            captionEl.textContent = items[currentIndex].caption;
-        }
+        renderFormattedCaption(captionEl, items[currentIndex], isFacility);
     }
 
     function renderLightbox(index) {
@@ -257,14 +386,13 @@ function initProgramShowcase() {
         renderGallery(currentIndex);
 
         const current = items[currentIndex];
-        lightboxMedia.innerHTML = `<img class="active" src="${current.src}" alt="${current.alt}" />`;
+        const isFacility = activeCollectionKey === 'facilities';
+        lightboxMedia.innerHTML = `<img class="active" src="${current.src}" alt="${escapeHtml(current.alt)}" />`;
 
         if (lightboxCounter) {
             lightboxCounter.textContent = `${col.label} · ${currentIndex + 1} of ${items.length}`;
         }
-        if (lightboxCaption) {
-            lightboxCaption.textContent = current.caption;
-        }
+        renderFormattedCaption(lightboxCaption, current, isFacility);
     }
 
     function openLightbox() {
@@ -284,32 +412,6 @@ function initProgramShowcase() {
         document.body.style.overflow = '';
         lastFocusedEl?.focus();
     }
-
-    function initProgramAccordions() {
-    const triggers = document.querySelectorAll('.program-accordion-trigger');
-    if (!triggers.length) return;
-
-    triggers.forEach((trigger) => {
-        trigger.addEventListener('click', () => {
-            const item = trigger.closest('.program-accordion-item');
-            const actionLabel = trigger.querySelector('.program-accordion-action');
-            if (!item) return;
-
-            const willOpen = !item.classList.contains('open');
-            item.classList.toggle('open', willOpen);
-            trigger.setAttribute('aria-expanded', String(willOpen));
-
-            if (actionLabel) {
-                actionLabel.textContent = willOpen ? 'Hide' : 'View';
-            }
-        });
-    });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    initProgramShowcase();
-    initProgramAccordions();
-});
 
     tabsContainer?.addEventListener('click', (e) => {
         const tab = e.target.closest('.gallery-tab');
@@ -367,4 +469,28 @@ document.addEventListener('DOMContentLoaded', () => {
     renderGallery(0);
 }
 
-document.addEventListener('DOMContentLoaded', initProgramShowcase);
+function initProgramAccordions() {
+    const triggers = document.querySelectorAll('.program-accordion-trigger');
+    if (!triggers.length) return;
+
+    triggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+            const item = trigger.closest('.program-accordion-item');
+            const actionLabel = trigger.querySelector('.program-accordion-action');
+            if (!item) return;
+
+            const willOpen = !item.classList.contains('open');
+            item.classList.toggle('open', willOpen);
+            trigger.setAttribute('aria-expanded', String(willOpen));
+
+            if (actionLabel) {
+                actionLabel.textContent = willOpen ? 'Hide' : 'View';
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initProgramShowcase();
+    initProgramAccordions();
+});

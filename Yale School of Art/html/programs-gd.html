@@ -229,7 +229,7 @@
                     </p>
                 </section>
 
-                <!-- Multi-Collection Photo Showcase (4 Intro · 8 Exhibitions · 6 Facilities) -->
+                <!-- Multi-Collection Photo Showcase (Overview · Exhibitions · Facilities) -->
                 <section class="program-gallery-section" id="program-gallery-showcase" data-program="gd" aria-label="Graphic Design MFA photo gallery">
                     <div class="gallery-tabs" role="group" aria-label="Select Graphic Design photo collection"></div>
                     <figure class="gallery-wrapper">
@@ -242,7 +242,7 @@
                                     </svg>
                                 </button>
                                 <div class="gallery-meta">
-                                    <span class="meta-label">Introduction</span>
+                                    <span class="meta-label">Overview</span>
                                     <span class="meta-counter">1 of 4</span>
                                 </div>
                                 <button type="button" class="gallery-button" data-gallery-next aria-label="Next photo">
@@ -252,64 +252,221 @@
                                 </button>
                             </div>
                         </div>
+                        <div class="gallery-caption-bar">
+                            <figcaption class="gallery-caption"></figcaption>
+                        </div>
                     </figure>
                 </section>
 
-                <!-- Documents & Facilities -->
-                <section class="program-details-section">
+                <!-- Stacked Documents, Apply Now CTA, and Program Faculty -->
+                <section class="program-details-section" aria-label="Documents and faculty">
                     <div class="program-two-col">
-                        <!-- Stacked Top: Documents -->
+                        
+                        <!-- Documents + Apply Now Button -->
                         <div class="program-col-block">
+                            <div class="section-label">
+                                <div class="section-rule" aria-hidden="true"></div>
+                                <span>Documents &amp; Admissions</span>
+                            </div>
                             <h2>Documents</h2>
                             <ul class="program-accordion-list">
-                                <!-- Credit Requirements, Plan of Study, Admission Requirements -->
+                                <li class="program-accordion-item">
+                                    <button type="button" class="program-accordion-trigger" aria-expanded="false">
+                                        <span class="program-accordion-title">Credit Requirements</span>
+                                        <span class="program-accordion-dots" aria-hidden="true"></span>
+                                        <span class="program-accordion-action">View</span>
+                                    </button>
+                                    <div class="program-accordion-panel">
+                                        <div class="program-accordion-content">
+                                            <p>60 credits in residence across four semesters (or 90 credits for the three-year Preliminary Degree Program).</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="program-accordion-item">
+                                    <button type="button" class="program-accordion-trigger" aria-expanded="false">
+                                        <span class="program-accordion-title">Plan of Study</span>
+                                        <span class="program-accordion-dots" aria-hidden="true"></span>
+                                        <span class="program-accordion-action">View</span>
+                                    </button>
+                                    <div class="program-accordion-panel">
+                                        <div class="program-accordion-content">
+                                            <p>Core studio sequence, interdisciplinary electives, visiting artist lectures, and final thesis review milestones.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="program-accordion-item">
+                                    <button type="button" class="program-accordion-trigger" aria-expanded="false">
+                                        <span class="program-accordion-title">Admission Requirements</span>
+                                        <span class="program-accordion-dots" aria-hidden="true"></span>
+                                        <span class="program-accordion-action">View</span>
+                                    </button>
+                                    <div class="program-accordion-panel">
+                                        <div class="program-accordion-content">
+                                            <p>Portfolio specifications, one-page statement of purpose, three letters of recommendation, and January 10 application deadline.</p>
+                                        </div>
+                                    </div>
+                                </li>
                             </ul>
+
+                            <div class="program-apply-cta-row">
+                                <a class="program-apply-btn" href="https://apply.art.yale.edu/apply/" target="_blank" rel="noopener noreferrer">
+                                    <span>Apply Now</span>
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
                         </div>
 
-                        <!-- Stacked Bottom: Facilities Carousel -->
+                        <!-- Program Faculty -->
                         <div class="program-col-block">
-                            <h2>Facilities</h2>
-                            <div class="facility-carousel-wrap" data-facility-carousel>
-                                <div class="gallery">
-                                    <div class="gallery-slides">
-                                        <img
-                                            class="gallery-slide active"
-                                            src="../images/facilities/green-hall-gallery.jpg"
-                                            alt="Green Hall Gallery"
-                                            data-name="Green Hall Gallery"
-                                            data-building="Green Hall"
-                                            data-address="1156 Chapel Street"
-                                            data-hours="Mon – Sun: 12 AM – 4 AM ET"
-                                        />
-                                        <!-- Additional .gallery-slide images -->
-                                    </div>
+                            <div class="section-label">
+                                <div class="section-rule" aria-hidden="true"></div>
+                                <span>Department Faculty</span>
+                            </div>
+                            <h2>Faculty</h2>
 
-                                    <div class="gallery-controls">
-                                        <button type="button" class="gallery-button" data-facility-prev aria-label="Previous facility">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="15 18 9 12 15 6"></polyline>
-                                            </svg>
-                                        </button>
+                            <!-- Leadership -->
+                            <h3>Leadership</h3>
+                            <div class="program-faculty-grid">
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Nontsikelelo Mutiti</span>
+                                    <span class="program-faculty-role">Director of Graduate Studies in Graphic Design, Assistant Professor</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Nicole Killian</span>
+                                    <span class="program-faculty-role">Assistant Director in Graphic Design, Assistant Professor</span>
+                                </a>
+                            </div>
 
-                                        <div class="gallery-meta">
-                                            <span class="meta-label">FACILITY</span>
-                                            <span class="meta-counter" data-facility-counter>1 / 2</span>
-                                        </div>
+                            <!-- Full-Time Faculty -->
+                            <h3>Full-Time Faculty</h3>
+                            <div class="program-faculty-grid">
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Alvin Ashiatey</span>
+                                    <span class="program-faculty-role">Lecturer, Graphic Design Lab Coordinator</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Julian Bittiner</span>
+                                    <span class="program-faculty-role">Senior Critic</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Jake Hobart</span>
+                                    <span class="program-faculty-role">Lecturer, All-School Graphic Designer and Commission Coordinator</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Tiriree Kananuruk</span>
+                                    <span class="program-faculty-role">Lecturer</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Henk Van Assen</span>
+                                    <span class="program-faculty-role">Senior Critic, Interim Director of Undergraduate Studies</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Andrew Walsh-Lister</span>
+                                    <span class="program-faculty-role">Senior Critic</span>
+                                </a>
+                            </div>
 
-                                        <button type="button" class="gallery-button" data-facility-next aria-label="Next facility">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <polyline points="9 18 15 12 9 6"></polyline>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
+                            <!-- Part-Time Faculty -->
+                            <h3>Part-Time Faculty</h3>
+                            <div class="program-faculty-grid">
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Anna Craycroft</span>
+                                    <span class="program-faculty-role">Critic</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Will Denton</span>
+                                    <span class="program-faculty-role">Lecturer</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Nate Gibbons</span>
+                                    <span class="program-faculty-role">Lecturer</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Neil Goldberg</span>
+                                    <span class="program-faculty-role">Senior Critic</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Riley Hooker</span>
+                                    <span class="program-faculty-role">Lecturer</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Jazsalyn</span>
+                                    <span class="program-faculty-role">Lecturer</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Geoff Kaplan</span>
+                                    <span class="program-faculty-role">Critic</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Nina Stössinger</span>
+                                    <span class="program-faculty-role">Critic</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Juan Villanueva</span>
+                                    <span class="program-faculty-role">Lecturer</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Bryant Wells</span>
+                                    <span class="program-faculty-role">Lecturer</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Stanley Wolukau-Wanambwa</span>
+                                    <span class="program-faculty-role">Critic</span>
+                                </a>
+                            </div>
 
-                                <div class="facility-editorial-meta">
-                                    <p class="facility-name" data-facility-name>Green Hall Gallery</p>
-                                    <p data-facility-building>Green Hall</p>
-                                    <p data-facility-address>1156 Chapel Street</p>
-                                    <p data-facility-hours>Mon – Sun: 12 AM – 4 AM ET</p>
-                                </div>
+                            <!-- Visiting Critics -->
+                            <h3>Visiting Critics</h3>
+                            <div class="program-faculty-grid">
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Julian Alexander</span>
+                                    <span class="program-faculty-role">Thesis Advisor</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Paul Bailey</span>
+                                    <span class="program-faculty-role">Visiting Artist</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Laurenz Brunner</span>
+                                    <span class="program-faculty-role">Visiting Artist</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Sulki Choi</span>
+                                    <span class="program-faculty-role">Visiting Artist</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Sung Min Choi</span>
+                                    <span class="program-faculty-role">Visiting Artist</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Alice Chung</span>
+                                    <span class="program-faculty-role">Thesis Advisor</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Talia Cotton</span>
+                                    <span class="program-faculty-role">Thesis Advisor</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Ed Cutting</span>
+                                    <span class="program-faculty-role">Visiting Artist</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Tin Nguyen</span>
+                                    <span class="program-faculty-role">Visiting Artist</span>
+                                </a>
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">John Provencher</span>
+                                    <span class="program-faculty-role">Thesis Advisor</span>
+                                </a>
+                            </div>
+
+                            <!-- Faculty Governing Board -->
+                            <h3>Faculty Governing Board</h3>
+                            <div class="program-faculty-grid">
+                                <a class="program-faculty-card">
+                                    <span class="program-faculty-name">Nontsikelelo Mutiti</span>
+                                    <span class="program-faculty-role">Director of Graduate Studies in Graphic Design, Assistant Professor</span>
+                                </a>
                             </div>
                         </div>
                     </div>
