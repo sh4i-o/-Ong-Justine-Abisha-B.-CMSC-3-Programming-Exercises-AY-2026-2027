@@ -285,6 +285,32 @@ function initProgramShowcase() {
         lastFocusedEl?.focus();
     }
 
+    function initProgramAccordions() {
+    const triggers = document.querySelectorAll('.program-accordion-trigger');
+    if (!triggers.length) return;
+
+    triggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+            const item = trigger.closest('.program-accordion-item');
+            const actionLabel = trigger.querySelector('.program-accordion-action');
+            if (!item) return;
+
+            const willOpen = !item.classList.contains('open');
+            item.classList.toggle('open', willOpen);
+            trigger.setAttribute('aria-expanded', String(willOpen));
+
+            if (actionLabel) {
+                actionLabel.textContent = willOpen ? 'Hide' : 'View';
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initProgramShowcase();
+    initProgramAccordions();
+});
+
     tabsContainer?.addEventListener('click', (e) => {
         const tab = e.target.closest('.gallery-tab');
         if (!tab) return;

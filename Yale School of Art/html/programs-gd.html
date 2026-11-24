@@ -252,77 +252,65 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="gallery-caption-bar">
-                            <figcaption class="gallery-caption"></figcaption>
-                            <a class="gallery-source-link" href="https://art.yale.edu/program/graphic-design" target="_blank" rel="noopener">Official Program Archive ↗</a>
-                        </div>
                     </figure>
                 </section>
 
                 <!-- Documents & Facilities -->
-                <section class="program-details-section" aria-label="Documents and facilities">
-                    <div class="section-label">
-                        <div class="section-rule" aria-hidden="true"></div>
-                        <span>Documents &amp; Facilities</span>
-                    </div>
-
+                <section class="program-details-section">
                     <div class="program-two-col">
+                        <!-- Stacked Top: Documents -->
                         <div class="program-col-block">
                             <h2>Documents</h2>
-                            <ul class="program-doc-list">
-                                <li>
-                                    <a class="program-doc-link" href="../html/resources.html">
-                                        <span>
-                                            Credit Requirements
-                                            <span class="program-doc-meta">60 credits in residence across four semesters (or 90 credits for Preliminary).</span>
-                                        </span>
-                                        <span class="program-doc-arrow">→</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="program-doc-link" href="../html/resources.html">
-                                        <span>
-                                            Plan of Study
-                                            <span class="program-doc-meta">Core studio sequence, electives, and Thesis Book milestones.</span>
-                                        </span>
-                                        <span class="program-doc-arrow">→</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="program-doc-link" href="../html/apply.html">
-                                        <span>
-                                            Admission Requirements
-                                            <span class="program-doc-meta">Portfolio specifications, statement of purpose, and application deadlines.</span>
-                                        </span>
-                                        <span class="program-doc-arrow">→</span>
-                                    </a>
-                                </li>
+                            <ul class="program-accordion-list">
+                                <!-- Credit Requirements, Plan of Study, Admission Requirements -->
                             </ul>
                         </div>
 
+                        <!-- Stacked Bottom: Facilities Carousel -->
                         <div class="program-col-block">
                             <h2>Facilities</h2>
-                            <dl class="facility-specs">
-                                <dt>Facility Name</dt>
-                                <dd>Green Hall — Graphic Design Studios &amp; Labs</dd>
-                                <dt>Location</dt>
-                                <dd>1st, 3rd &amp; 4th Floors</dd>
-                                <dt>Address</dt>
-                                <dd>1156 Chapel Street, New Haven, CT 06511</dd>
-                                <dt>Operating Hours</dt>
-                                <dd>24/7 ID-card studio access for enrolled MFA candidates; staffed print &amp; binding labs Mon–Fri, 9:00 AM – 6:00 PM</dd>
-                            </dl>
-
-                            <a class="facility-map-card" href="../html/facilities.html">
-                                <span class="facility-map-badge">Campus Building · 1156 Chapel St</span>
-                                <div class="facility-map-footer">
-                                    <div>
-                                        <p class="facility-map-title">Green Hall Studios &amp; Print Labs</p>
-                                        <p class="facility-map-sub">Letterpress, Risograph, bookbinding &amp; individual cohort workstations</p>
+                            <div class="facility-carousel-wrap" data-facility-carousel>
+                                <div class="gallery">
+                                    <div class="gallery-slides">
+                                        <img
+                                            class="gallery-slide active"
+                                            src="../images/facilities/green-hall-gallery.jpg"
+                                            alt="Green Hall Gallery"
+                                            data-name="Green Hall Gallery"
+                                            data-building="Green Hall"
+                                            data-address="1156 Chapel Street"
+                                            data-hours="Mon – Sun: 12 AM – 4 AM ET"
+                                        />
+                                        <!-- Additional .gallery-slide images -->
                                     </div>
-                                    <span class="facility-map-cta">View Facilities →</span>
+
+                                    <div class="gallery-controls">
+                                        <button type="button" class="gallery-button" data-facility-prev aria-label="Previous facility">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="15 18 9 12 15 6"></polyline>
+                                            </svg>
+                                        </button>
+
+                                        <div class="gallery-meta">
+                                            <span class="meta-label">FACILITY</span>
+                                            <span class="meta-counter" data-facility-counter>1 / 2</span>
+                                        </div>
+
+                                        <button type="button" class="gallery-button" data-facility-next aria-label="Next facility">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
                                 </div>
-                            </a>
+
+                                <div class="facility-editorial-meta">
+                                    <p class="facility-name" data-facility-name>Green Hall Gallery</p>
+                                    <p data-facility-building>Green Hall</p>
+                                    <p data-facility-address>1156 Chapel Street</p>
+                                    <p data-facility-hours>Mon – Sun: 12 AM – 4 AM ET</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>

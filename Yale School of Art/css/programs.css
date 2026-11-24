@@ -346,10 +346,141 @@
     transform: translateY(-3px);
 }
 
+/* Dotted-Leader Inline Accordions ("Title ......... View / Hide") */
+.program-accordion-list {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.program-accordion-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.program-accordion-trigger {
+    position: relative;
+    width: 100%;
+    padding: 4px 0;
+    border: none;
+    background: transparent;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 12px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--blue);
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.program-accordion-dots {
+    position: absolute;
+    left: 0;
+    right: 44px;
+    bottom: 9px;
+    border-bottom: 2px dotted var(--blue-tint-65);
+    pointer-events: none;
+    transition: border-color 0.2s ease;
+}
+
+.program-accordion-title {
+    position: relative;
+    z-index: 1;
+    justify-self: start;
+    font-weight: 500;
+}
+
+.program-accordion-title::after {
+    content: "";
+    position: absolute;
+    inset: 0 -8px 0 0;
+    background: var(--cream);
+    z-index: -1;
+}
+
+.program-accordion-action {
+    position: relative;
+    z-index: 1;
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 34px;
+    text-align: right;
+}
+
+.program-accordion-trigger:hover .program-accordion-title,
+.program-accordion-trigger:focus-visible .program-accordion-title,
+.program-accordion-item.open .program-accordion-title {
+    color: var(--navy);
+}
+
+.program-accordion-trigger:hover .program-accordion-action,
+.program-accordion-trigger:focus-visible .program-accordion-action {
+    color: var(--navy);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.program-accordion-trigger:hover .program-accordion-dots,
+.program-accordion-trigger:focus-visible .program-accordion-dots,
+.program-accordion-item.open .program-accordion-dots {
+    border-bottom-color: var(--blue);
+}
+
+.program-accordion-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.program-accordion-item.open .program-accordion-panel {
+    grid-template-rows: 1fr;
+}
+
+.program-accordion-content {
+    overflow: hidden;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.program-accordion-item.open .program-accordion-content {
+    padding-top: 10px;
+    padding-bottom: 6px;
+}
+
+.program-accordion-content p {
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.program-inline-link {
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.program-inline-link:hover,
+.program-inline-link:focus-visible {
+    color: var(--navy);
+}
+
 /* Separated Facility Carousel & Editorial Caption Block */
 .facility-carousel-wrap {
     width: 100%;
-    max-width: 780px;
+    max-width: 100%;
 }
 
 .facility-editorial-meta {
@@ -382,10 +513,10 @@
 }
 
 .program-two-col {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 48px 80px;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    width: 100%;
 }
 
 .program-col-block {
