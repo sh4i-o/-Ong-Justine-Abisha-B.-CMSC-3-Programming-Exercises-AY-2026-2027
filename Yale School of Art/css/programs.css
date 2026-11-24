@@ -1,4 +1,7 @@
-/* Programs-Specific Tokens */
+/* ==========================================================================
+   1. Programs-Specific Tokens
+   ========================================================================== */
+
 :root {
     --gallery-bg: #d8dbd4;
     --blue-badge: #00356beb;
@@ -6,7 +9,7 @@
 }
 
 /* ==========================================================================
-   Multi-Collection Gallery Showcase (Overview / Exhibitions / Facilities)
+   2. Multi-Collection Gallery Showcase (Overview / Exhibitions / Facilities)
    ========================================================================== */
 
 .program-gallery-section {
@@ -267,90 +270,8 @@
     margin-top: 2px;
 }
 
-/* Apply Now CTA Button */
-.program-apply-cta-row {
-    margin-top: 12px;
-}
-
-.program-apply-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 13px 24px;
-    border: 1px solid var(--blue);
-    border-radius: 8px;
-    background: var(--blue);
-    color: var(--white);
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.2px;
-    text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.program-apply-btn:hover,
-.program-apply-btn:focus-visible {
-    background: var(--navy);
-    border-color: var(--navy);
-    color: var(--white);
-    transform: translateY(-1px);
-}
-
-/* Program Faculty Directory Grid */
-.program-faculty-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px 24px;
-    margin-top: 4px;
-}
-
-.program-faculty-card {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 16px 18px;
-    border: 1px solid var(--blue-tint-15);
-    border-radius: 8px;
-    background: var(--white);
-    text-decoration: none;
-    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.program-faculty-card:hover,
-.program-faculty-card:focus-visible {
-    border-color: var(--blue);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 33, 69, 0.06);
-}
-
-.program-faculty-name {
-    font-family: 'Newsreader', Georgia, serif;
-    font-size: 19px;
-    line-height: 1.25;
-    color: var(--blue);
-}
-
-.program-faculty-role {
-    font-size: 13px;
-    line-height: 1.45;
-    color: var(--muted);
-}
-
-@media (max-width: 900px) {
-    .program-faculty-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 560px) {
-    .program-faculty-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* ==========================================================================
-   Programs Overview Directory Grid (programs.html)
+   3. Programs Overview Directory Grid (programs.html)
    ========================================================================== */
 
 .program-directory-section {
@@ -422,7 +343,76 @@
     color: var(--blue);
 }
 
-/* Dotted-Leader Document Links (Matches Apply Page) */
+/* ==========================================================================
+   4. Details Sections, Editorial Columns & Headings
+   ========================================================================== */
+
+.program-details-section {
+    max-width: 1120px;
+    margin: 72px auto 0;
+}
+
+.program-two-col {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    width: 100%;
+}
+
+.program-col-block {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.program-col-block .section-label {
+    margin-bottom: 15px;
+}
+
+.program-col-block h2 {
+    margin: 0;
+    color: var(--blue);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: clamp(28px, 2.6vw, 38px);
+    line-height: 1.12;
+    letter-spacing: -0.6px;
+    font-weight: 400;
+}
+
+.program-col-block h3 {
+    margin: 15px 0 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--blue-tint-65);
+}
+
+.program-faculty-grid + h3 {
+    margin-top: 28px;
+}
+
+.program-col-block p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+/* Undergraduate & Summer Programs 2x2 Grid */
+.usp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 44px 80px;
+    align-items: start;
+}
+
+/* ==========================================================================
+   5. Documents Accordions, Lists & Plan of Study Curriculum
+   ========================================================================== */
+
+/* Dotted-Leader Document Links */
 .program-leader-list {
     list-style: none;
     margin: 8px 0 0;
@@ -460,10 +450,54 @@
     transform: translateY(-3px);
 }
 
+/* Bordered Document Link List */
+.program-doc-list {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0;
+    border-top: 1px solid var(--blue-tint-15);
+}
+
+.program-doc-list li {
+    border-bottom: 1px solid var(--blue-tint-15);
+}
+
+.program-doc-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 15px 4px;
+    color: var(--blue);
+    font-size: 15px;
+    font-weight: 500;
+    transition: padding-left 0.2s ease, background-color 0.2s ease;
+}
+
+.program-doc-link:hover,
+.program-doc-link:focus-visible {
+    padding-left: 10px;
+    background: var(--blue-tint-06);
+}
+
+.program-doc-meta {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-top: 2px;
+}
+
+.program-doc-arrow {
+    font-size: 16px;
+    color: var(--blue);
+    flex-shrink: 0;
+}
+
 /* Dotted-Leader Inline Accordions ("Title ......... View / Hide") */
 .program-accordion-list {
     list-style: none;
-    margin: 4px 0 0;
+    margin: 0;
     padding: 0;
     width: 100%;
     display: flex;
@@ -577,6 +611,52 @@
     line-height: 1.65;
 }
 
+.program-accordion-lead {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+}
+
+.program-sublist {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.program-sublist .program-sublist {
+    margin-top: 10px;
+}
+
+.program-sublist li::marker {
+    color: var(--blue);
+}
+
+.program-ordered-list {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.program-alpha-list {
+    margin: 10px 0 0;
+    padding-left: 22px;
+    list-style-type: lower-alpha;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .program-inline-link {
     color: var(--blue);
     font-size: 14px;
@@ -591,7 +671,253 @@
     color: var(--navy);
 }
 
-/* Separated Facility Carousel & Editorial Caption Block */
+/* Plan of Study Curriculum Grid inside Accordion */
+.study-plan-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 48px;
+    padding-top: 6px;
+}
+
+.study-year-col {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.study-year-title {
+    margin: 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--blue-tint-15);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--blue);
+}
+
+.study-term-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.study-term-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+.study-course-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.study-course-list li {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text);
+}
+
+.study-course-list .course-code {
+    font-weight: 600;
+    font-size: 12.5px;
+    letter-spacing: 0.4px;
+    color: var(--blue);
+    margin-right: 4px;
+}
+
+.study-course-list em {
+    font-style: normal;
+    color: var(--muted);
+}
+
+.study-term-total {
+    margin: 4px 0 0;
+    font-size: 13.5px;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+.study-prelim-section {
+    margin-top: 24px;
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.study-prelim-note {
+    margin: 4px 0 0;
+    font-size: 13.5px;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--muted);
+}
+
+/* Admission Requirements Stack inside Accordion */
+.admission-reqs-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 6px;
+}
+
+.admission-req-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.admission-req-title {
+    margin: 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--blue-tint-15);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--blue);
+}
+
+.admission-req-group p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.admission-formats-box {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 8px 16px;
+    margin: 4px 0;
+    padding: 14px 18px;
+    border: 1px solid var(--blue-tint-15);
+    border-radius: 8px;
+    background: var(--white);
+}
+
+.admission-formats-box dt {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--blue);
+    line-height: 1.6;
+}
+
+.admission-formats-box dd {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.admission-formats-box code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 12.5px;
+    color: var(--blue);
+    background: var(--blue-tint-06);
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+
+@media (max-width: 560px) {
+    .admission-formats-box {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .admission-formats-box dt:not(:first-child) {
+        margin-top: 8px;
+    }
+}
+
+/* ==========================================================================
+   6. Apply Now CTA & Department Faculty Directory
+   ========================================================================== */
+
+.program-apply-cta-row {
+    margin-top: 12px;
+}
+
+.program-apply-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 24px;
+    border: 1px solid var(--blue);
+    border-radius: 8px;
+    background: var(--blue);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.program-apply-btn:hover,
+.program-apply-btn:focus-visible {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--white);
+    transform: translateY(-1px);
+}
+
+.program-faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 24px;
+    margin-top: 4px;
+}
+
+.program-faculty-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 18px;
+    border: 1px solid var(--blue-tint-15);
+    border-radius: 8px;
+    background: var(--white);
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.program-faculty-card:hover,
+.program-faculty-card:focus-visible {
+    border-color: var(--blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 33, 69, 0.06);
+}
+
+.program-faculty-name {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.25;
+    color: var(--blue);
+}
+
+.program-faculty-role {
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--muted);
+}
+
+/* ==========================================================================
+   7. Facilities Carousel, Specs & Campus Map Box
+   ========================================================================== */
+
 .facility-carousel-wrap {
     width: 100%;
     max-width: 100%;
@@ -617,100 +943,6 @@
     color: var(--blue);
 }
 
-/* ==========================================================================
-   Bottom Two-Column Editorial & Documents / Facilities Sections
-   ========================================================================== */
-
-.program-details-section {
-    max-width: 1120px;
-    margin: 72px auto 0;
-}
-
-.program-two-col {
-    display: flex;
-    flex-direction: column;
-    gap: 56px;
-    width: 100%;
-}
-
-.program-col-block {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.program-col-block h2 {
-    margin: 0;
-    color: var(--blue);
-    font-family: 'Newsreader', Georgia, serif;
-    font-size: clamp(28px, 2.6vw, 38px);
-    line-height: 1.12;
-    letter-spacing: -0.6px;
-    font-weight: 400;
-}
-
-.program-col-block h3 {
-    margin: 12px 0 0;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--blue-tint-65);
-}
-
-.program-col-block p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.75;
-    color: var(--muted);
-}
-
-/* Documents List */
-.program-doc-list {
-    list-style: none;
-    margin: 4px 0 0;
-    padding: 0;
-    border-top: 1px solid var(--blue-tint-15);
-}
-
-.program-doc-list li {
-    border-bottom: 1px solid var(--blue-tint-15);
-}
-
-.program-doc-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 15px 4px;
-    color: var(--blue);
-    font-size: 15px;
-    font-weight: 500;
-    transition: padding-left 0.2s ease, background-color 0.2s ease;
-}
-
-.program-doc-link:hover,
-.program-doc-link:focus-visible {
-    padding-left: 10px;
-    background: var(--blue-tint-06);
-}
-
-.program-doc-meta {
-    display: block;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--muted);
-    margin-top: 2px;
-}
-
-.program-doc-arrow {
-    font-size: 16px;
-    color: var(--blue);
-    flex-shrink: 0;
-}
-
-/* Facilities Spec & Campus Map Box */
 .facility-specs {
     display: grid;
     grid-template-columns: 140px minmax(0, 1fr);
@@ -802,16 +1034,8 @@
     white-space: nowrap;
 }
 
-/* Undergraduate & Summer Programs 2x2 Grid */
-.usp-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 44px 80px;
-    align-items: start;
-}
-
 /* ==========================================================================
-   Lightbox Modal (Shared across Program Galleries)
+   8. Lightbox Modal (Shared across Program Galleries)
    ========================================================================== */
 
 .program-lightbox {
@@ -967,7 +1191,7 @@
 }
 
 /* ==========================================================================
-   Programs Responsive Breakpoints
+   9. Programs Responsive Breakpoints
    ========================================================================== */
 
 @media (max-width: 1120px) {
@@ -1017,6 +1241,19 @@
     }
 }
 
+@media (max-width: 900px) {
+    .program-faculty-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .study-plan-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
 @media (max-width: 640px) {
     .program-directory-grid {
         grid-template-columns: 1fr;
@@ -1043,5 +1280,11 @@
     .facility-map-footer {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+@media (max-width: 560px) {
+    .program-faculty-grid {
+        grid-template-columns: 1fr;
     }
 }
