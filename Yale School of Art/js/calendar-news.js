@@ -257,7 +257,7 @@ const SCHOOL_EVENTS = [
         category: 'Events',
         eventType: 'Artist Lectures',
         title: 'Nicole Eisenman and Craig Zammiello',
-        department: 'Painting/Printmaking',
+        department: 'Painting & Printmaking',
         audience: 'Public',
         description: 'Visiting artist conversation on painting, collaboration, and printmaking.',
         relatedNewsId: null
@@ -439,7 +439,7 @@ const SCHOOL_EVENTS = [
         category: 'Events',
         eventType: 'Workshops',
         title: 'Open Drawing',
-        department: 'Painting/Printmaking',
+        department: 'Painting & Printmaking',
         audience: 'SoA Community',
         description: 'Open studio figure and observational drawing session.',
         relatedNewsId: null
@@ -546,10 +546,10 @@ const SCHOOL_EVENTS = [
         location: 'Green Hall Gallery, 1156 Chapel St.',
         category: 'Exhibitions',
         eventType: null,
-        title: 'Spring 2027 Thesis Exhibition: Painting/Printmaking Group 1',
-        department: 'Painting/Printmaking',
+        title: 'Spring 2027 Thesis Exhibition: Painting & Printmaking Group 1',
+        department: 'Painting & Printmaking',
         audience: 'Public',
-        description: 'First graduating MFA thesis exhibition in Painting/Printmaking (on view Jan 23 – Feb 2, 2027).',
+        description: 'First graduating MFA thesis exhibition in Painting & Printmaking (on view Jan 23 – Feb 2, 2027).',
         relatedNewsId: null
     },
     {
@@ -572,10 +572,10 @@ const SCHOOL_EVENTS = [
         location: 'Green Hall Gallery, 1156 Chapel St.',
         category: 'Events',
         eventType: 'Receptions',
-        title: 'Public Reception: Painting/Printmaking Group 1 Thesis Exhibition',
-        department: 'Painting/Printmaking',
+        title: 'Public Reception: Painting & Printmaking Group 1 Thesis Exhibition',
+        department: 'Painting & Printmaking',
         audience: 'Public',
-        description: 'Public opening reception for Painting/Printmaking Group 1 MFA thesis candidates.',
+        description: 'Public opening reception for Painting & Printmaking Group 1 MFA thesis candidates.',
         relatedNewsId: null
     },
     {
@@ -585,10 +585,10 @@ const SCHOOL_EVENTS = [
         location: 'Green Hall Gallery, 1156 Chapel St.',
         category: 'Exhibitions',
         eventType: null,
-        title: 'Spring 2027 Thesis Exhibition: Painting/Printmaking Group 2',
-        department: 'Painting/Printmaking',
+        title: 'Spring 2027 Thesis Exhibition: Painting & Printmaking Group 2',
+        department: 'Painting & Printmaking',
         audience: 'Public',
-        description: 'Second graduating MFA thesis exhibition in Painting/Printmaking (on view Feb 10 – Feb 21, 2027).',
+        description: 'Second graduating MFA thesis exhibition in Painting & Printmaking (on view Feb 10 – Feb 21, 2027).',
         relatedNewsId: null
     },
     {
@@ -598,10 +598,10 @@ const SCHOOL_EVENTS = [
         location: 'Green Hall Gallery, 1156 Chapel St.',
         category: 'Events',
         eventType: 'Receptions',
-        title: 'Public Reception: Painting/Printmaking Group 2 Thesis Exhibition',
-        department: 'Painting/Printmaking',
+        title: 'Public Reception: Painting & Printmaking Group 2 Thesis Exhibition',
+        department: 'Painting & Printmaking',
         audience: 'Public',
-        description: 'Public reception celebrating Painting/Printmaking Group 2 MFA thesis candidates.',
+        description: 'Public reception celebrating Painting & Printmaking Group 2 MFA thesis candidates.',
         relatedNewsId: null
     },
     {
@@ -625,7 +625,7 @@ const SCHOOL_EVENTS = [
         category: 'Events',
         eventType: 'Artist Lectures',
         title: 'Jessica Dickinson',
-        department: 'Painting/Printmaking',
+        department: 'Painting & Printmaking',
         audience: 'Public',
         description: 'Spring 2027 Visiting Artist Lecture by painter Jessica Dickinson.',
         relatedNewsId: null

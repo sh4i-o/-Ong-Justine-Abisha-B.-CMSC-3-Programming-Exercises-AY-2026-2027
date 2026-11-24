@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yale School of Art | Undergraduate &amp; Summer Programs</title>
+    <link rel="icon" type="image/png" href="../assets/blue-school-crest.png" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/programs.css" />
+    <script src="../js/script.js" defer></script>
+    <script src="../js/programs.js" defer></script>
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- Global Header & Navigation -->
+        <header class="topbar">
+            <div class="topbar-inner">
+                <div class="utility-row">
+                    <div class="brand" aria-label="Yale School of Art brand">
+                        <img class="brand-mark" src="../assets/blue-school-crest.png" alt="Yale School of Art crest" />
+                        <div class="brand-name">Yale School of Art</div>
+                    </div>
+
+                    <div class="mobile-controls">
+                        <button type="button" class="mobile-icon-btn" id="mobile-search-toggle" aria-expanded="false" aria-controls="search-drawer" aria-label="Toggle search">
+                            <img class="icon" src="../assets/search.svg" alt="" />
+                        </button>
+                        <button type="button" class="mobile-icon-btn" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle navigation menu">
+                            <svg class="menu-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <path class="bar" d="M3 5.5H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="bar" d="M3 10H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="bar" d="M3 14.5H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="cross" d="M4.5 4.5L15.5 15.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="cross" d="M15.5 4.5L4.5 15.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <nav class="utility-nav" aria-label="Utility navigation">
+                        <div class="utility-item">
+                            <button type="button" class="utility-link" id="search-toggle" aria-expanded="false" aria-controls="search-drawer">
+                                <img class="icon" src="../assets/search.svg" alt="Search" />
+                                <span>Search</span>
+                            </button>
+                        </div>
+                        <div class="utility-item"><a class="utility-link" href="../html/support.html">Support</a></div>
+                        <div class="utility-item"><a class="utility-link" href="../html/visit.html">Visit</a></div>
+                        <div class="utility-item"><a class="utility-link" href="../html/contact.html">Contact</a></div>
+                        <div class="utility-item"><a class="utility-link" href="../html/newsletter.html">Newsletter</a></div>
+                        <div class="utility-divider" aria-hidden="true"></div>
+                        <div class="utility-item">
+                            <a class="utility-link" href="../html/settings.html">
+                                <svg class="utility-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="3" />
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                                </svg>
+                                <span>Settings</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="primary-nav-separator desktop-only" aria-hidden="true"></div>
+
+            <div class="topbar-inner desktop-only" style="padding-top: 0; padding-bottom: 0;">
+                <nav class="primary-nav" aria-label="Primary navigation">
+                    <div class="primary-item has-dropdown">
+                        <a class="primary-link" href="../html/index.html" aria-haspopup="true" aria-expanded="false">
+                            <span>About</span>
+                            <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <ul class="nav-dropdown" role="menu">
+                            <li role="none"><a role="menuitem" href="../html/index.html">Overview</a></li>
+                            <li role="none"><a role="menuitem" href="../html/about-mission.html">Mission Statement</a></li>
+                            <li role="none"><a role="menuitem" href="../html/about-history.html">History</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="primary-item"><a class="primary-link" href="../html/apply.html">Apply</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/calendar.html">Calendar</a></div>
+
+                    <div class="primary-item active has-dropdown">
+                        <a class="primary-link" href="../html/programs.html" aria-haspopup="true" aria-expanded="false">
+                            <span>Programs</span>
+                            <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <ul class="nav-dropdown" role="menu">
+                            <li role="none"><a role="menuitem" href="../html/programs.html">Overview</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-gd.html">Graphic Design MFA</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-pp.html">Painting &amp; Printmaking MFA</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-photography.html">Photography MFA</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-sculpture.html">Sculpture MFA</a></li>
+                            <li class="dropdown-divider" role="separator"></li>
+                            <li role="none"><a role="menuitem" class="active" href="../html/programs-usp.html">Undergraduate &amp; Summer Programs</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="primary-item"><a class="primary-link" href="../html/news.html">News</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/resources.html">Resources</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/facilities.html">Facilities</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/faculty.html">Faculty</a></div>
+                </nav>
+            </div>
+
+            <div class="search-drawer" id="search-drawer" aria-hidden="true">
+                <div class="search-drawer-clip">
+                    <div class="search-drawer-inner">
+                        <div class="search-input-wrap">
+                            <input type="text" id="site-search-input" placeholder="Search programs, faculty, admissions, events..." autocomplete="off" />
+                            <button type="button" id="search-clear" hidden>Clear</button>
+                            <span class="search-input-divider" id="search-divider" hidden></span>
+                            <button type="button" id="search-close" aria-label="Close search">✕</button>
+                        </div>
+                        <ul class="search-results" id="search-results"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+                <div class="mobile-drawer-clip">
+                    <nav class="mobile-drawer-inner" aria-label="Mobile navigation">
+                        <ul class="mobile-primary-list">
+                            <li class="mobile-accordion">
+                                <div class="mobile-accordion-header">
+                                    <a class="mobile-nav-link" href="../html/index.html">About</a>
+                                    <button type="button" class="mobile-accordion-btn" aria-expanded="false" aria-label="Toggle About submenu">
+                                        <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="mobile-accordion-panel">
+                                    <ul class="mobile-sublist">
+                                        <li><a href="../html/index.html">Overview</a></li>
+                                        <li><a href="../html/about-mission.html">Mission Statement</a></li>
+                                        <li><a href="../html/about-history.html">History</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li><a class="mobile-nav-link" href="../html/apply.html">Apply</a></li>
+                            <li><a class="mobile-nav-link" href="../html/calendar.html">Calendar</a></li>
+
+                            <li class="mobile-accordion">
+                                <div class="mobile-accordion-header">
+                                    <a class="mobile-nav-link active" href="../html/programs.html">Programs</a>
+                                    <button type="button" class="mobile-accordion-btn" aria-expanded="false" aria-label="Toggle Programs submenu">
+                                        <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="mobile-accordion-panel">
+                                    <ul class="mobile-sublist">
+                                        <li><a href="../html/programs.html">Overview</a></li>
+                                        <li><a href="../html/programs-gd.html">Graphic Design MFA</a></li>
+                                        <li><a href="../html/programs-pp.html">Painting &amp; Printmaking MFA</a></li>
+                                        <li><a href="../html/programs-photography.html">Photography MFA</a></li>
+                                        <li><a href="../html/programs-sculpture.html">Sculpture MFA</a></li>
+                                        <li><a class="active" href="../html/programs-usp.html">Undergraduate &amp; Summer Programs</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li><a class="mobile-nav-link" href="../html/news.html">News</a></li>
+                            <li><a class="mobile-nav-link" href="../html/resources.html">Resources</a></li>
+                            <li><a class="mobile-nav-link" href="../html/facilities.html">Facilities</a></li>
+                            <li><a class="mobile-nav-link" href="../html/faculty.html">Faculty</a></li>
+                        </ul>
+
+                        <div class="mobile-drawer-divider" aria-hidden="true"></div>
+
+                        <ul class="mobile-utility-list">
+                            <li><a href="../html/support.html">Support</a></li>
+                            <li><a href="../html/visit.html">Visit</a></li>
+                            <li><a href="../html/contact.html">Contact</a></li>
+                            <li><a href="../html/newsletter.html">Newsletter</a></li>
+                            <li>
+                                <a class="mobile-utility-icon-link" href="../html/settings.html">
+                                    <svg class="utility-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="3" />
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                                    </svg>
+                                    <span>Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="hero" aria-label="Undergraduate and Summer Programs hero section">
+                <div class="hero-inner">
+                    <p class="eyebrow">Programs</p>
+                    <h1>Undergraduate &amp; Summer Programs</h1>
+                    <p class="hero-subtitle">
+                        Yale School of Art, a graduate school dedicated to the exploration of art in all its forms — since 1869.
+                    </p>
+                    <div class="scroll-cue" aria-label="Scroll down">
+                        <span class="scroll-cue-label">Scroll</span>
+                        <img src="../assets/chevron-down.svg" alt="Scroll down indicator" />
+                    </div>
+                </div>
+            </section>
+
+            <div class="main-wrap">
+                <!-- Introduction -->
+                <section class="intro" aria-label="Undergraduate Art Major introduction">
+                    <p class="intro-line">
+                        Yale College, the undergraduate division of Yale University, offers a Bachelor of Arts degree program with a major in art.
+                    </p>
+                    <p class="intro-body">
+                        Students may concentrate in a medium such as Painting & Printmaking, sculpture, graphic design, photography, or filmmaking. Suggested program guidelines and specific requirements for the various areas of concentration are available from the director of undergraduate studies (DUS) and departmental faculty. Undergraduate applicants wishing to major in art at Yale must apply to Yale College directly.
+                    </p>
+                    <p class="intro-body">
+                        Students in this area will develop an understanding of the visual arts through a studio-based curriculum, apply fundamentals of art across a variety of media and disciplines, relate the practice of making art to the fields of art history and theory, and gain a high level of proficiency in at least one artistic discipline. For more information about the program including prerequisites, courses, and reviews, please visit the Bulletin of Yale University.
+                    </p>
+                </section>
+
+                <!-- Multi-Collection Photo Showcase (4 Intro · 6 Exhibitions · 5 Facilities) -->
+                <section class="program-gallery-section" id="program-gallery-showcase" data-program="usp" aria-label="Undergraduate and Summer Programs photo gallery">
+                    <div class="gallery-tabs" role="group" aria-label="Select Undergraduate and Summer photo collection"></div>
+                    <figure class="gallery-wrapper">
+                        <div class="gallery">
+                            <div class="gallery-slides" tabindex="0" role="button" aria-label="Inspect image in full view"></div>
+                            <div class="gallery-controls">
+                                <button type="button" class="gallery-button" data-gallery-prev aria-label="Previous photo">
+                                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M14.5 5.5L8 12L14.5 18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <div class="gallery-meta">
+                                    <span class="meta-label">Introduction</span>
+                                    <span class="meta-counter">1 of 4</span>
+                                </div>
+                                <button type="button" class="gallery-button" data-gallery-next aria-label="Next photo">
+                                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M9.5 5.5L16 12L9.5 18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gallery-caption-bar">
+                            <figcaption class="gallery-caption"></figcaption>
+                            <a class="gallery-source-link" href="https://art.yale.edu/program/undergraduate" target="_blank" rel="noopener">Official Program Archive ↗</a>
+                        </div>
+                    </figure>
+                </section>
+
+                <!-- Summer Programs & Facilities 2x2 Grid -->
+                <section class="program-details-section" aria-label="Summer programs and facilities">
+                    <div class="section-label">
+                        <div class="section-rule" aria-hidden="true"></div>
+                        <span>Summer Programs &amp; Facilities</span>
+                    </div>
+
+                    <div class="usp-grid">
+                        <article class="program-col-block">
+                            <h2>The Yale Norfolk School of Art</h2>
+                            <p>
+                                The Yale Norfolk School of Art is a six-week undergraduate summer intensive residency program for 26 rising seniors. The school is located on the picturesque Ellen Battell Stoeckel Estate in Norfolk, Connecticut and is supported by the Ellen Battell Stoeckel Trust. The Trust generously subsidizes much of the cost of attendance.
+                            </p>
+                        </article>
+
+                        <article class="program-col-block">
+                            <h2>Yale Summer Session</h2>
+                            <p>
+                                Yale Summer Session provides academically rigorous and innovative undergraduate programs and courses to Yale and visiting students across partners and around the world. Students come to Yale Summer Session to take Yale College courses in New Haven, online, or abroad, or to hone their craft at the Yale Writers’ Workshop or in the Summer Drama Program.
+                            </p>
+                        </article>
+
+                        <article class="program-col-block">
+                            <h2>The Artist Collective Summer School</h2>
+                            <p>
+                                The Artist Collective Summer School is designed to be an informal, flexible, and lively program of workshops and events in which the participating students and instructors will have a leading role. It is intended to provide the opportunity for an in-depth immersion in the work of artists from each area, and for Yale-based students to spend time with their UK-based peers and with other members of the UK’s art community.
+                            </p>
+                        </article>
+
+                        <div class="program-col-block">
+                            <h2>Facilities</h2>
+                            <dl class="facility-specs">
+                                <dt>Facility Name</dt>
+                                <dd>Green Hall &amp; Crown Street Undergraduate Studios</dd>
+                                <dt>Location</dt>
+                                <dd>New Haven Campus &amp; Norfolk Stoeckel Estate</dd>
+                                <dt>Address</dt>
+                                <dd>1156 Chapel Street, New Haven, CT 06511</dd>
+                                <dt>Operating Hours</dt>
+                                <dd>Academic Term: 7:00 AM – 11:00 PM daily for declared Art majors</dd>
+                            </dl>
+
+                            <a class="facility-map-card" href="../html/facilities.html">
+                                <span class="facility-map-badge">Undergraduate &amp; Summer Studios</span>
+                                <div class="facility-map-footer">
+                                    <div>
+                                        <p class="facility-map-title">Undergraduate &amp; Norfolk Facilities</p>
+                                        <p class="facility-map-sub">Shared drawing, painting, printmaking, design &amp; digital classrooms</p>
+                                    </div>
+                                    <span class="facility-map-cta">View Facilities →</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Image Lightbox Modal -->
+        <div class="program-lightbox" id="program-lightbox" role="dialog" aria-modal="true" aria-labelledby="program-lightbox-caption" aria-hidden="true">
+            <div class="program-lightbox-backdrop" data-lightbox-close></div>
+            <div class="program-lightbox-panel">
+                <div class="program-lightbox-topbar">
+                    <span class="program-lightbox-counter" id="program-lightbox-counter">1 of 4</span>
+                    <button type="button" class="program-lightbox-close" id="program-lightbox-close" aria-label="Close image viewer">✕</button>
+                </div>
+                <div class="program-lightbox-stage">
+                    <button type="button" class="program-lightbox-nav" id="program-lightbox-prev" aria-label="Previous image">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M14.5 5.5L8 12L14.5 18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="program-lightbox-media"></div>
+                    <button type="button" class="program-lightbox-nav" id="program-lightbox-next" aria-label="Next image">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M9.5 5.5L16 12L9.5 18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <p class="program-lightbox-caption" id="program-lightbox-caption"></p>
+            </div>
+        </div>
+
+        <!-- Editorial Quote Band & Degree Directory -->
+        <section class="quote-band" aria-label="Quote and degree list">
+            <div class="quote-inner">
+                <blockquote>“Art washes away from the soul the dust of everyday life.”</blockquote>
+                <div class="quote-author">Pablo Picasso</div>
+
+                <div class="degree-list" aria-label="MFA degrees">
+                    <a class="degree" href="../html/programs-gd.html">
+                        <div class="name">Graphic Design</div>
+                        <div class="label">MFA</div>
+                    </a>
+                    <a class="degree" href="../html/programs-pp.html">
+                        <div class="name">Painting & Printmaking</div>
+                        <div class="label">MFA</div>
+                    </a>
+                    <a class="degree" href="../html/programs-photography.html">
+                        <div class="name">Photography</div>
+                        <div class="label">MFA</div>
+                    </a>
+                    <a class="degree" href="../html/programs-sculpture.html">
+                        <div class="name">Sculpture</div>
+                        <div class="label">MFA</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Footer -->
+        <footer class="footer" aria-label="Footer">
+            <div class="footer-inner">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-brand-row">
+                            <img class="mark" src="../assets/blue-school-crest.png" alt="Yale School of Art crest" />
+                            <div class="footer-brand-name">Yale School of Art</div>
+                        </div>
+                        <div class="footer-address">
+                            <div>1156 Chapel Street</div>
+                            <div>POB 208339</div>
+                            <div>New Haven, CT 06520-8339</div>
+                        </div>
+                    </div>
+
+                    <div class="footer-column footer-nav-col">
+                        <p class="footer-title">Navigation</p>
+                        <div class="footer-links">
+                            <div class="footer-links-column">
+                                <div class="footer-accordion">
+                                    <a href="../html/index.html" class="footer-accordion-trigger" aria-expanded="false">
+                                        <span>About</span>
+                                        <svg class="footer-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="footer-accordion-panel">
+                                        <ul class="footer-sublinks">
+                                            <li><a href="../html/index.html">Overview</a></li>
+                                            <li><a href="../html/about-mission.html">Mission Statement</a></li>
+                                            <li><a href="../html/about-history.html">History</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p><a href="../html/apply.html">Apply</a></p>
+                                <p><a href="../html/calendar.html">Calendar</a></p>
+                                <div class="footer-accordion">
+                                    <a href="../html/programs.html" class="footer-accordion-trigger" aria-expanded="false">
+                                        <span>Programs</span>
+                                        <svg class="footer-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="footer-accordion-panel">
+                                        <ul class="footer-sublinks">
+                                            <li><a href="../html/programs.html">Overview</a></li>
+                                            <li><a href="../html/programs-gd.html">Graphic Design MFA</a></li>
+                                            <li><a href="../html/programs-pp.html">Painting &amp; Printmaking MFA</a></li>
+                                            <li><a href="../html/programs-photography.html">Photography MFA</a></li>
+                                            <li><a href="../html/programs-sculpture.html">Sculpture MFA</a></li>
+                                            <li><a href="../html/programs-usp.html">Undergraduate &amp; Summer Programs</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="footer-links-column">
+                                <p><a href="../html/news.html">News</a></p>
+                                <p><a href="../html/resources.html">Resources</a></p>
+                                <p><a href="../html/facilities.html">Facilities</a></p>
+                                <p><a href="../html/faculty.html">Faculty</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <p class="footer-title">Social Media</p>
+                        <p>
+                            <a class="footer-social-link" href="https://www.instagram.com/yaleschoolofart/?hl=en" target="_blank" rel="noopener">
+                                <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                                </svg>
+                                <span>Instagram</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a class="footer-social-link" href="https://www.facebook.com/YaleSchoolofArt" target="_blank" rel="noopener">
+                                <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 8h-2a3 3 0 0 0-3 3v11" />
+                                    <path d="M8.5 13.5H15.5" />
+                                </svg>
+                                <span>Facebook</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a class="footer-social-link" href="https://www.youtube.com/@yaleschoolofart1869" target="_blank" rel="noopener">
+                                <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                                </svg>
+                                <span>YouTube</span>
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="footer-column">
+                        <p class="footer-title">Other Links</p>
+                        <p><a href="../html/support.html">Support</a></p>
+                        <p><a href="../html/visit.html">Visit</a></p>
+                        <p><a href="../html/contact.html">Contact</a></p>
+                        <p><a href="../html/newsletter.html">Newsletter</a></p>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="primary-footer-separator" aria-hidden="true"></div>
+                    <div class="footer-copy">© <span id="copyright-year">2026</span> Yale School of Art</div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,792 @@
+/* Programs-Specific Tokens */
+:root {
+    --gallery-bg: #d8dbd4;
+    --blue-badge: #00356beb;
+    --white-tint-95: #fffffff2;
+}
+
+/* ==========================================================================
+   Multi-Collection Gallery Showcase (Intro / Exhibitions / Facilities)
+   ========================================================================== */
+
+.program-gallery-section {
+    width: 100%;
+    max-width: 700px;
+    margin: 48px auto 0;
+}
+
+.gallery-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    padding: 12px 16px;
+    border: 1px solid var(--blue);
+    border-radius: 10px;
+    background: var(--white-tint-95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 20px rgba(0, 53, 107, 0.08);
+}
+
+.gallery-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--blue);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.gallery-tab:hover,
+.gallery-tab:focus-visible {
+    border-color: var(--blue-tint-65);
+    background: var(--white);
+}
+
+.gallery-tab.active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: var(--white);
+}
+
+.gallery-tab-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 18px;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: var(--blue-tint-10);
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.gallery-tab.active .gallery-tab-count {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+}
+
+.gallery-wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.gallery {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--blue);
+    border-radius: 8px;
+    aspect-ratio: 2 / 1;
+    background: var(--gallery-bg);
+}
+
+.gallery-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-in;
+}
+
+.gallery-slides::after {
+    content: "Inspect";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    padding: 4px 9px;
+    border-radius: 6px;
+    background: var(--blue-badge);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+.gallery-slides:hover::after,
+.gallery-slides:focus-visible::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+}
+
+.gallery-slide.active {
+    opacity: 1;
+}
+
+.gallery-controls {
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+    pointer-events: none;
+}
+
+.gallery-button {
+    width: 64px;
+    height: 44px;
+    border: 1px solid var(--blue);
+    border-radius: 8px;
+    background: var(--white-tint-95);
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.gallery-button:hover,
+.gallery-button:focus-visible {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.gallery-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.gallery-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: var(--blue-badge);
+    color: var(--white);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.gallery-meta .meta-label {
+    font-weight: 500;
+}
+
+.gallery-meta .meta-counter {
+    letter-spacing: 0;
+    text-transform: none;
+    font-weight: 400;
+}
+
+.gallery-caption-bar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.gallery-caption {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+.gallery-source-link {
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--blue);
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+}
+
+.gallery-source-link:hover,
+.gallery-source-link:focus-visible {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Programs Overview Directory Grid (programs.html)
+   ========================================================================== */
+
+.program-directory-section {
+    max-width: 1120px;
+    margin: 72px auto 0;
+}
+
+.program-directory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.program-dir-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px;
+    border: 1px solid var(--blue-tint-16);
+    border-radius: 10px;
+    background: var(--white);
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.program-dir-card:hover,
+.program-dir-card:focus-visible {
+    border-color: var(--blue);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 33, 69, 0.08);
+}
+
+.program-dir-card.is-wide {
+    grid-column: span 2;
+}
+
+.program-dir-kicker {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--blue-tint-65);
+}
+
+.program-dir-card h3 {
+    margin: 0 0 8px;
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: var(--blue);
+}
+
+.program-dir-card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.program-dir-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+/* Dotted-Leader Document Links (Matches Apply Page) */
+.program-leader-list {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.program-leader-link {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.program-leader-link:hover,
+.program-leader-link:focus-visible {
+    opacity: 0.78;
+}
+
+.program-leader-title,
+.program-leader-action {
+    flex-shrink: 0;
+}
+
+.program-leader-dots {
+    flex: 1 1 auto;
+    border-bottom: 1.5px dotted var(--blue);
+    opacity: 0.55;
+    transform: translateY(-3px);
+}
+
+/* Separated Facility Carousel & Editorial Caption Block */
+.facility-carousel-wrap {
+    width: 100%;
+    max-width: 780px;
+}
+
+.facility-editorial-meta {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.45;
+    color: var(--text);
+}
+
+.facility-editorial-meta p {
+    margin: 0;
+}
+
+.facility-editorial-meta .facility-name {
+    font-weight: 500;
+    color: var(--blue);
+}
+
+/* ==========================================================================
+   Bottom Two-Column Editorial & Documents / Facilities Sections
+   ========================================================================== */
+
+.program-details-section {
+    max-width: 1120px;
+    margin: 72px auto 0;
+}
+
+.program-two-col {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px 80px;
+    align-items: start;
+}
+
+.program-col-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.program-col-block h2 {
+    margin: 0;
+    color: var(--blue);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: clamp(28px, 2.6vw, 38px);
+    line-height: 1.12;
+    letter-spacing: -0.6px;
+    font-weight: 400;
+}
+
+.program-col-block p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+/* Documents List */
+.program-doc-list {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0;
+    border-top: 1px solid var(--blue-tint-15);
+}
+
+.program-doc-list li {
+    border-bottom: 1px solid var(--blue-tint-15);
+}
+
+.program-doc-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 15px 4px;
+    color: var(--blue);
+    font-size: 15px;
+    font-weight: 500;
+    transition: padding-left 0.2s ease, background-color 0.2s ease;
+}
+
+.program-doc-link:hover,
+.program-doc-link:focus-visible {
+    padding-left: 10px;
+    background: var(--blue-tint-06);
+}
+
+.program-doc-meta {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-top: 2px;
+}
+
+.program-doc-arrow {
+    font-size: 16px;
+    color: var(--blue);
+    flex-shrink: 0;
+}
+
+/* Facilities Spec & Campus Map Box */
+.facility-specs {
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 10px 16px;
+    margin: 4px 0 0;
+    padding: 18px 20px;
+    border: 1px solid var(--blue-tint-15);
+    border-radius: 8px;
+    background: var(--white);
+}
+
+.facility-specs dt {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--blue-tint-65);
+}
+
+.facility-specs dd {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.facility-map-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 176px;
+    padding: 20px;
+    border: 1px solid var(--blue-tint-20);
+    border-radius: 8px;
+    background:
+        radial-gradient(circle at 85% 25%, var(--blue-tint-10) 0, transparent 55%),
+        linear-gradient(135deg, #e7e9e4 0%, #d8dbd4 100%);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.facility-map-card:hover,
+.facility-map-card:focus-visible {
+    border-color: var(--blue);
+    transform: translateY(-2px);
+}
+
+.facility-map-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--white);
+    border: 1px solid var(--blue-tint-20);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--blue);
+}
+
+.facility-map-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.facility-map-title {
+    margin: 0;
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 20px;
+    color: var(--blue);
+}
+
+.facility-map-sub {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.facility-map-cta {
+    padding: 8px 14px;
+    border-radius: 6px;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Undergraduate & Summer Programs 2x2 Grid */
+.usp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 44px 80px;
+    align-items: start;
+}
+
+/* ==========================================================================
+   Lightbox Modal (Shared across Program Galleries)
+   ========================================================================== */
+
+.program-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.program-lightbox.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.program-lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 34, 0.85);
+    backdrop-filter: blur(4px);
+}
+
+.program-lightbox-panel {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 960px;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px;
+    border: 1px solid var(--blue);
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.program-lightbox-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.program-lightbox-counter {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--blue);
+}
+
+.program-lightbox-close {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--blue);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--blue);
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.program-lightbox-close:hover,
+.program-lightbox-close:focus-visible {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.program-lightbox-stage {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    align-items: center;
+    gap: 14px;
+    min-height: 260px;
+}
+
+.program-lightbox-media {
+    position: relative;
+    width: 100%;
+    height: 62vh;
+    display: grid;
+    place-items: center;
+    padding: 12px;
+    overflow: hidden;
+    border: 1px solid var(--blue-tint-65);
+    border-radius: 8px;
+    background: var(--gallery-bg);
+}
+
+.program-lightbox-media img {
+    grid-area: 1 / 1;
+    display: block;
+    max-width: 100%;
+    max-height: calc(62vh - 24px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+}
+
+.program-lightbox-media img.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.program-lightbox-nav {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--blue);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.program-lightbox-nav:hover,
+.program-lightbox-nav:focus-visible {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.program-lightbox-nav svg {
+    width: 18px;
+    height: 18px;
+}
+
+.program-lightbox-caption {
+    width: calc(100% - 116px);
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* ==========================================================================
+   Programs Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1120px) {
+    .program-directory-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .program-dir-card.is-wide {
+        grid-column: span 2;
+    }
+
+    .program-two-col,
+    .usp-grid {
+        grid-template-columns: 1fr;
+        gap: 44px;
+    }
+
+    .program-lightbox-stage {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .program-lightbox-media {
+        grid-column: 1 / -1;
+        height: 52vh;
+    }
+
+    .program-lightbox-media img {
+        max-height: calc(52vh - 24px);
+    }
+
+    .program-lightbox-nav {
+        width: 100%;
+        height: 40px;
+    }
+
+    .program-lightbox-caption {
+        width: 100%;
+    }
+
+    #program-lightbox-prev {
+        order: 2;
+    }
+
+    #program-lightbox-next {
+        order: 3;
+    }
+}
+
+@media (max-width: 640px) {
+    .program-directory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .program-dir-card.is-wide {
+        grid-column: span 1;
+    }
+
+    .gallery-caption-bar {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .facility-specs {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .facility-specs dt:not(:first-child) {
+        margin-top: 8px;
+    }
+
+    .facility-map-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

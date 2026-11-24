@@ -45,7 +45,6 @@ function initHistoryMediaGrids() {
             firstFrame?.classList.contains(cls)
         ) || 'landscape';
 
-        // Build unified single container
         const frame = document.createElement('div');
         frame.className = `history-media-frame ${aspectClass}`;
 
@@ -227,11 +226,23 @@ function initArchivalLightbox() {
     const lightboxPrev = document.getElementById('lightbox-prev');
     const lightboxNext = document.getElementById('lightbox-next');
 
+    const ERA_LABELS = {
+        'era-origins': 'Era I',
+        'era-curriculum': 'Era II',
+        'era-campus': 'Era III'
+    };
+
     let items = [];
     let activeIndex = 0;
     let lastFocusedTrigger = null;
     let touchStartX = 0;
     let captionTimer = null;
+
+    function getEraLabel(element) {
+        const eraSection = element.closest('.history-era');
+        if (!eraSection) return 'Campus Gallery';
+        return ERA_LABELS[eraSection.id] || 'History';
+    }
 
     function getLightboxItems() {
         const historyFrames = Array.from(document.querySelectorAll('.history-media-frame')).filter(
@@ -241,6 +252,7 @@ function initArchivalLightbox() {
         if (historyFrames.length) {
             const list = [];
             historyFrames.forEach((frame) => {
+                const eraLabel = getEraLabel(frame);
                 const carouselSlides = Array.from(frame.querySelectorAll('.history-carousel-slide'));
                 if (carouselSlides.length) {
                     const captions = Array.from(
@@ -249,7 +261,8 @@ function initArchivalLightbox() {
                     carouselSlides.forEach((slide, idx) => {
                         list.push({
                             img: slide,
-                            caption: captions[idx]?.textContent.trim() || ''
+                            caption: captions[idx]?.textContent.trim() || '',
+                            eraLabel
                         });
                     });
                 } else {
@@ -258,7 +271,8 @@ function initArchivalLightbox() {
                     if (img) {
                         list.push({
                             img,
-                            caption: caption ? caption.textContent.trim() : ''
+                            caption: caption ? caption.textContent.trim() : '',
+                            eraLabel
                         });
                     }
                 }
@@ -271,7 +285,8 @@ function initArchivalLightbox() {
 
         return gallerySlides.map((slide, idx) => ({
             img: slide,
-            caption: galleryCaptions[idx]?.textContent.trim() || ''
+            caption: galleryCaptions[idx]?.textContent.trim() || '',
+            eraLabel: 'Campus Gallery'
         }));
     }
 
@@ -292,7 +307,6 @@ function initArchivalLightbox() {
         lightboxMedia.appendChild(newSlide);
 
         if (animate) {
-            // Force reflow so the opacity transition triggers reliably
             void newSlide.offsetWidth;
             newSlide.classList.add('active');
             existingSlides.forEach((oldSlide) => {
@@ -318,7 +332,7 @@ function initArchivalLightbox() {
         }
 
         if (lightboxCounter) {
-            lightboxCounter.textContent = `${activeIndex + 1} of ${items.length}`;
+            lightboxCounter.textContent = `${current.eraLabel} · ${activeIndex + 1} of ${items.length}`;
         }
     }
 
