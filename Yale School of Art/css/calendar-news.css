@@ -3,6 +3,7 @@
     --gallery-bg: #d8dbd4;
     --blue-badge: #00356beb;
     --white-tint-95: #fffffff2;
+    --deadline: #933030;
 }
 
 /* ==========================================================================
@@ -76,6 +77,10 @@
     color: var(--white);
     font-size: 11px;
     font-weight: 600;
+}
+
+.cn-filter-badge[hidden] {
+    display: none;
 }
 
 .cn-filter-toggle.active .cn-filter-badge {
@@ -339,6 +344,7 @@
     overflow: hidden;
     background: var(--white);
     box-shadow: 0 6px 20px rgba(0, 53, 107, 0.06);
+    touch-action: pan-y;
 }
 
 .cal-weekdays {
@@ -439,7 +445,7 @@
 }
 
 .cal-dot.is-deadline {
-    background: var(--red);
+    background: var(--deadline);
 }
 
 .cal-cell.is-selected .cal-dot {
@@ -890,33 +896,30 @@
 @media (max-width: 768px) {
     #calendar-toolbar {
         flex-direction: column;
-        align-items: center;
-        gap: 14px;
-        padding-bottom: 16px;
+        align-items: stretch;
+        gap: 10px;
+        padding-bottom: 14px;
         border-bottom: 1px solid var(--blue-tint-15);
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
 
-    /* Top Row: Prev Arrow — Centered Month — Next Arrow */
+    /* Top Row: Full-width edge-aligned Prev — Month — Next */
     .cal-month-controls {
-        display: inline-flex;
+        display: flex;
         align-items: center;
-        justify-content: center;
-        width: auto;
-        gap: 16px;
+        justify-content: space-between;
+        width: 100%;
+        gap: 12px;
     }
 
     .cal-month-heading {
-        min-width: 150px;
+        flex: 1;
+        min-width: 0;
         text-align: center;
-        font-size: 21px;
+        font-size: 20px;
     }
 
-    .cal-selected-panel {
-        scroll-margin-top: 96px;
-    }
-
-    /* Bottom Row: Today & Filters cleanly spaced */
+    /* Bottom Row: Edge-aligned Today & Filters */
     #calendar-toolbar .cn-filter-controls {
         width: 100%;
         justify-content: space-between;
@@ -930,6 +933,10 @@
 
     .cn-filter-label {
         padding-top: 0;
+    }
+
+    .cal-selected-panel {
+        scroll-margin-top: 96px;
     }
 
     .cal-cell {

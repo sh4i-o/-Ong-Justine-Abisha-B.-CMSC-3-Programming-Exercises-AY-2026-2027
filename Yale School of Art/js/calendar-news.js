@@ -1083,6 +1083,35 @@ function initCalendarPage() {
     let selectedIso = initialDate;
     let filters = { category: 'all', eventType: 'all', department: 'all', audience: 'all' };
 
+    const boardEl = document.querySelector('.cal-board');
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    boardEl?.addEventListener('touchstart', (e) => {
+        if (e.touches.length !== 1) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    boardEl?.addEventListener('touchend', (e) => {
+        if (!touchStartX && !touchStartY) return;
+        const touch = e.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+
+        touchStartX = 0;
+        touchStartY = 0;
+
+        // Trigger only on intentional horizontal swipes (> 45px and dominant over vertical scroll)
+        if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY) * 1.3) {
+            if (deltaX < 0) {
+                nextMonthBtn?.click();
+            } else {
+                prevMonthBtn?.click();
+            }
+        }
+    }, { passive: true });
+    
     function getFilteredEvents() {
         return SCHOOL_EVENTS.filter((evt) => {
             const catOk = filters.category === 'all' || evt.category === filters.category;
