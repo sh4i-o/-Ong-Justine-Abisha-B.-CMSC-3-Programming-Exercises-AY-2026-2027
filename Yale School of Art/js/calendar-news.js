@@ -1083,14 +1083,22 @@ function initCalendarPage() {
     let selectedIso = initialDate;
     let filters = { category: 'all', eventType: 'all', department: 'all', audience: 'all' };
 
+    function animateGrid(direction) {
+        gridEl.classList.remove('is-sliding-next', 'is-sliding-prev');
+        void gridEl.offsetWidth;
+        gridEl.classList.add(direction === 'next' ? 'is-sliding-next' : 'is-sliding-prev');
+    }
+
     const boardEl = document.querySelector('.cal-board');
     let touchStartX = 0;
     let touchStartY = 0;
+    let suppressNextCellClick = false;
 
     boardEl?.addEventListener('touchstart', (e) => {
         if (e.touches.length !== 1) return;
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
+        suppressNextCellClick = false;
     }, { passive: true });
 
     boardEl?.addEventListener('touchend', (e) => {
@@ -1102,8 +1110,8 @@ function initCalendarPage() {
         touchStartX = 0;
         touchStartY = 0;
 
-        // Trigger only on intentional horizontal swipes (> 45px and dominant over vertical scroll)
         if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY) * 1.3) {
+            suppressNextCellClick = true;
             if (deltaX < 0) {
                 nextMonthBtn?.click();
             } else {
@@ -1111,7 +1119,7 @@ function initCalendarPage() {
             }
         }
     }, { passive: true });
-    
+
     function getFilteredEvents() {
         return SCHOOL_EVENTS.filter((evt) => {
             const catOk = filters.category === 'all' || evt.category === filters.category;
@@ -1291,6 +1299,10 @@ function initCalendarPage() {
     }
 
     gridEl.addEventListener('click', (e) => {
+        if (suppressNextCellClick) {
+            suppressNextCellClick = false;
+            return;
+        }
         const cell = e.target.closest('.cal-cell');
         if (!cell) return;
 
@@ -1308,6 +1320,7 @@ function initCalendarPage() {
             viewYear -= 1;
         }
         renderCalendarGrid();
+        animateGrid('prev');
     });
 
     nextMonthBtn?.addEventListener('click', () => {
@@ -1317,6 +1330,7 @@ function initCalendarPage() {
             viewYear += 1;
         }
         renderCalendarGrid();
+        animateGrid('next');
     });
 
     todayBtn?.addEventListener('click', () => {

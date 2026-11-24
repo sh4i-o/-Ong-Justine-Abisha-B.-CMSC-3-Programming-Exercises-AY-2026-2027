@@ -368,6 +368,36 @@
     grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
+.cal-grid.is-sliding-next {
+    animation: calSlideNext 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cal-grid.is-sliding-prev {
+    animation: calSlidePrev 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes calSlideNext {
+    from {
+        opacity: 0.45;
+        transform: translateX(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes calSlidePrev {
+    from {
+        opacity: 0.45;
+        transform: translateX(-18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .cal-cell {
     position: relative;
     min-height: 68px;
@@ -895,35 +925,38 @@
 
 @media (max-width: 768px) {
     #calendar-toolbar {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-        padding-bottom: 14px;
-        border-bottom: 1px solid var(--blue-tint-15);
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px 12px;
         margin-bottom: 18px;
     }
 
-    /* Top Row: Full-width edge-aligned Prev — Month — Next */
+    /* Left Group: [ < ] Month Year [ > ] with fixed heading width */
     .cal-month-controls {
-        display: flex;
+        display: inline-flex;
         align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        gap: 12px;
+        justify-content: flex-start;
+        width: auto;
+        gap: 10px;
     }
 
     .cal-month-heading {
-        flex: 1;
-        min-width: 0;
+        order: 0;
+        margin-right: 0;
+        min-width: 162px;
         text-align: center;
         font-size: 20px;
+        white-space: nowrap;
     }
 
-    /* Bottom Row: Edge-aligned Today & Filters */
+    /* Right Group: [ Today ] [ Filters ] */
     #calendar-toolbar .cn-filter-controls {
-        width: 100%;
-        justify-content: space-between;
-        margin-left: 0;
+        width: auto;
+        justify-content: flex-end;
+        margin-left: auto;
+        gap: 8px;
     }
 
     .cn-filter-row {
