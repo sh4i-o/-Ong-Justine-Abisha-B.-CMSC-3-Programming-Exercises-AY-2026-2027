@@ -381,6 +381,16 @@ function initSettingsPage() {
         if (statusText && message) {
             statusText.textContent = message;
         }
+
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+        } catch (_) {
+            // Ignore storage errors
+        }
+
+        if (typeof window.syncYaleSoAPreferences === 'function') {
+            window.syncYaleSoAPreferences();
+        }
     }
 
     let currentPrefs = loadPrefs();

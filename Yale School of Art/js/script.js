@@ -140,38 +140,145 @@ if (searchDrawer && searchToggle && searchClose && searchInput) {
 // ==========================================================================
 // 0. Global Site Preferences Loader (Synced with settings.html)
 // ==========================================================================
-(function applyYaleSoAPreferences() {
+const yaleSoATranslations = {
+    en: {
+        about: 'About', apply: 'Apply', calendar: 'Calendar', programs: 'Programs',
+        news: 'News', resources: 'Resources', facilities: 'Facilities', faculty: 'Faculty',
+        support: 'Support', visit: 'Visit', contact: 'Contact', newsletter: 'Newsletter',
+        settings: 'Settings', search: 'Search'
+    },
+    es: {
+        about: 'Acerca de', apply: 'Solicitar', calendar: 'Calendario', programs: 'Programas',
+        news: 'Noticias', resources: 'Recursos', facilities: 'Instalaciones', faculty: 'Profesorado',
+        support: 'Apoyar', visit: 'Visitar', contact: 'Contacto', newsletter: 'Boletín',
+        settings: 'Configuración', search: 'Buscar'
+    },
+    fr: {
+        about: 'À propos', apply: 'Postuler', calendar: 'Calendrier', programs: 'Programmes',
+        news: 'Actualités', resources: 'Ressources', facilities: 'Installations', faculty: 'Corps professoral',
+        support: 'Soutenir', visit: 'Visiter', contact: 'Contact', newsletter: 'Infolettre',
+        settings: 'Paramètres', search: 'Rechercher'
+    },
+    zh: {
+        about: '关于学院', apply: '申请入学', calendar: '日程表', programs: '专业项目',
+        news: '新闻动态', resources: '学院资源', facilities: '教学设施', faculty: '师资团队',
+        support: '支持学院', visit: '参观访问', contact: '联系我们', newsletter: '电子简报',
+        settings: '页面设置', search: '搜索'
+    }
+};
+
+function applyGlobalNotificationBars(prefs) {
+    const header = document.querySelector('.topbar');
+    if (!header) return;
+
+    // Remove existing dynamic banners before re-rendering
+    document.getElementById('global-announcement-bar')?.remove();
+    document.getElementById('global-events-bar')?.remove();
+
+    if (prefs.announcements) {
+        const bar = document.createElement('div');
+        bar.id = 'global-announcement-bar';
+        bar.className = 'global-notice-bar';
+        bar.setAttribute('role', 'region');
+        bar.setAttribute('aria-label', 'School announcement');
+        bar.innerHTML = `
+            <span><strong>Announcement:</strong> MFA Admissions &amp; Financial Aid applications for the upcoming academic year are now open.</span>
+            <a href="../html/apply.html">Learn more →</a>
+        `;
+        header.prepend(bar);
+    }
+
+    if (prefs.events) {
+        const eventBar = document.createElement('div');
+        eventBar.id = 'global-events-bar';
+        eventBar.className = 'global-notice-bar is-event';
+        eventBar.setAttribute('role', 'region');
+        eventBar.setAttribute('aria-label', 'Upcoming events notice');
+        eventBar.innerHTML = `
+            <span><strong>Upcoming Event:</strong> Visiting Artist Lecture Series &amp; Open Studios at Green Hall Gallery.</span>
+            <a href="../html/calendar.html">View calendar →</a>
+        `;
+        header.append(eventBar);
+    }
+}
+
+function applyGlobalLanguage(lang) {
+    const dict = yaleSoATranslations[lang] || yaleSoATranslations.en;
+    document.documentElement.lang = lang || 'en';
+
+    const routeMap = {
+        'index.html': dict.about,
+        'apply.html': dict.apply,
+        'calendar.html': dict.calendar,
+        'programs.html': dict.programs,
+        'news.html': dict.news,
+        'resources.html': dict.resources,
+        'facilities.html': dict.facilities,
+        'faculty.html': dict.faculty,
+        'support.html': dict.support,
+        'visit.html': dict.visit,
+        'contact.html': dict.contact,
+        'newsletter.html': dict.newsletter,
+        'settings.html': dict.settings
+    };
+
+    document.querySelectorAll('.primary-nav .primary-link, .utility-nav a.utility-link').forEach((link) => {
+        const href = link.getAttribute('href') || '';
+        const file = href.split('/').pop();
+        if (file && routeMap[file]) {
+            const labelSpan = link.querySelector('span');
+            if (labelSpan) {
+                labelSpan.textContent = routeMap[file];
+            } else {
+                link.textContent = routeMap[file];
+            }
+        }
+    });
+
+    const searchLabel = document.querySelector('#search-toggle span');
+    if (searchLabel) searchLabel.textContent = dict.search;
+}
+
+window.syncYaleSoAPreferences = function syncYaleSoAPreferences() {
     try {
         const raw = localStorage.getItem('yale_soa_preferences');
-        if (!raw) return;
-        const prefs = JSON.parse(raw);
+        const prefs = raw ? JSON.parse(raw) : { announcements: true };
         const root = document.documentElement;
 
+        // Font Scale
         if (prefs.fontScale && prefs.fontScale !== 'normal') {
             root.dataset.fontScale = prefs.fontScale;
+        } else {
+            delete root.dataset.fontScale;
         }
+
+        // Theme & Accent
         if (prefs.theme === 'dark') {
             root.dataset.theme = 'dark';
+        } else {
+            delete root.dataset.theme;
         }
+
         if (prefs.accent === 'orange') {
             root.dataset.accent = 'orange';
+        } else {
+            delete root.dataset.accent;
         }
-        if (prefs.highContrast) {
-            root.dataset.highContrast = 'true';
-        }
-        if (prefs.underlineLinks) {
-            root.dataset.underlineLinks = 'true';
-        }
-        if (prefs.reduceMotion) {
-            root.dataset.reduceMotion = 'true';
-        }
-        if (prefs.language) {
-            root.lang = prefs.language;
-        }
+
+        // Accessibility Toggles
+        root.dataset.highContrast = String(Boolean(prefs.highContrast));
+        root.dataset.underlineLinks = String(Boolean(prefs.underlineLinks));
+        root.dataset.reduceMotion = String(Boolean(prefs.reduceMotion));
+
+        // Language & Notification Bars
+        applyGlobalLanguage(prefs.language || 'en');
+        applyGlobalNotificationBars(prefs);
     } catch (_) {
         // Ignore storage restrictions
     }
-})();
+};
+
+window.syncYaleSoAPreferences();
 
 // ==========================================================================
 // Mobile Navigation Drawer

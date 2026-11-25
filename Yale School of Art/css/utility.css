@@ -899,7 +899,7 @@
 
 .settings-panel-section,
 .settings-policy-section {
-    max-width: 960px;
+    max-width: 1120px;
     margin: 0 auto;
 }
 
@@ -1018,8 +1018,8 @@
 }
 
 .accent-dot.is-orange {
-    background: #c2410c;
-    border: 1px solid #ffffff88;
+    background: #f7c588;
+    border: 1px solid #4a2c1a88;
 }
 
 /* WCAG Accessible Toggle Switch */
