@@ -378,18 +378,12 @@ function initSettingsPage() {
             // Ignore storage errors
         }
 
-        if (statusText && message) {
-            statusText.textContent = message;
-        }
-
-        try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
-        } catch (_) {
-            // Ignore storage errors
-        }
-
         if (typeof window.syncYaleSoAPreferences === 'function') {
             window.syncYaleSoAPreferences();
+        }
+
+        if (statusText && message) {
+            statusText.textContent = message;
         }
     }
 
@@ -434,12 +428,12 @@ function initSettingsPage() {
 
     announcementsToggle?.addEventListener('change', () => {
         currentPrefs.announcements = announcementsToggle.checked;
-        applyPrefs(currentPrefs, `Announcement preferences updated.`);
+        applyPrefs(currentPrefs, 'Announcement preferences updated.');
     });
 
     eventsToggle?.addEventListener('change', () => {
         currentPrefs.events = eventsToggle.checked;
-        applyPrefs(currentPrefs, `Event notification preferences updated.`);
+        applyPrefs(currentPrefs, 'Event notification preferences updated.');
     });
 
     languageSelect?.addEventListener('change', () => {
@@ -459,11 +453,12 @@ function initSettingsPage() {
 }
 
 // ==========================================================================
-// 5. Initialization
+// 6. Initialization
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
     initUtilityNavAndFilters();
     initContactDirectorySearch();
     initNewsletterForm();
+    initSettingsPage();
 });

@@ -860,7 +860,7 @@ const SCHOOL_NEWS = [
         department: 'Sculpture',
         title: 'Yale School of Art Seeks Associate Adjunct Professor in Sculpture',
         date: '2026-11-11',
-        displayDate: 'Nov 11, 2026',
+        displayDate: 'Nov. 11, 2026',
         image: '../assets/adjunct-prof.webp',
         imageAlt: '36 Edgewood Avenue Sculpture facilities',
         shortDescription: 'The Department of Sculpture invites applications for an Associate Adjunct Professor position.',
@@ -876,7 +876,7 @@ const SCHOOL_NEWS = [
         department: 'Interdisciplinary',
         title: '"Devotional Alchemy" open at 63 Audubon through November 19',
         date: '2026-11-04',
-        displayDate: 'Nov 04, 2026',
+        displayDate: 'Nov. 04, 2026',
         image: '../assets/devo-alchemy.webp',
         imageAlt: 'Devotional Alchemy gallery exhibition view',
         shortDescription: 'Featuring artists for whom creative practice is an act of devotion.',
@@ -892,7 +892,7 @@ const SCHOOL_NEWS = [
         department: 'Interdisciplinary',
         title: 'Alums gather in New York and Philadelphia for exhibition tours',
         date: '2026-10-31',
-        displayDate: 'Oct 31, 2026',
+        displayDate: 'Oct. 31, 2026',
         image: '../assets/exhibition-tours.webp',
         imageAlt: 'Yale School of Art alumni gathering and studio tour',
         shortDescription: 'October highlights from alumni events!',
@@ -908,7 +908,7 @@ const SCHOOL_NEWS = [
         department: 'Interdisciplinary',
         title: 'October 2026 Community News',
         date: '2026-10-30',
-        displayDate: 'Oct 30, 2026',
+        displayDate: 'Oct. 30, 2026',
         image: '../assets/oct-2026-cn.webp',
         imageAlt: 'Green Hall entrance at 1156 Chapel Street',
         shortDescription: 'Monthly roundup of exhibitions, awards, publications, and residencies across the School of Art community.',
@@ -923,7 +923,7 @@ const SCHOOL_NEWS = [
         department: 'Graphic Design',
         title: 'Graphic Design hosts "Publishing as Praxis"',
         date: '2026-10-21',
-        displayDate: 'Oct 21, 2026',
+        displayDate: 'Oct. 21, 2026',
         image: '../assets/praxis.webp',
         imageAlt: 'Graphic Design atrium at 1156 Chapel Street',
         shortDescription: 'The day-long convening unpacked the pedagogical and the performative.',
@@ -969,9 +969,10 @@ function formatLongDate(isoStr) {
 
 function formatShortMonthDate(isoStr) {
     const dt = parseIsoDate(isoStr);
-    const monthShort = MONTH_NAMES[dt.getMonth()].slice(0, 3);
+    const fullMonth = MONTH_NAMES[dt.getMonth()];
+    const monthLabel = fullMonth === 'May' ? 'May' : `${fullMonth.slice(0, 3)}.`;
     const day = String(dt.getDate()).padStart(2, '0');
-    return `${monthShort} ${day}, ${dt.getFullYear()}`;
+    return `${monthLabel} ${day}, ${dt.getFullYear()}`;
 }
 
 // ==========================================================================
@@ -1583,6 +1584,17 @@ function initNewsPage() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    try {
+        localStorage.setItem('yale_soa_calendar_events', JSON.stringify(SCHOOL_EVENTS));
+        localStorage.setItem('yale_soa_news_items', JSON.stringify(SCHOOL_NEWS));
+    } catch (_) {
+        // Ignore storage restrictions
+    }
+
+    if (typeof window.syncYaleSoAPreferences === 'function') {
+        window.syncYaleSoAPreferences();
+    }
+
     initCalendarPage();
     initNewsPage();
 });
