@@ -2,6 +2,21 @@
 // Yale School of Art — 2026–2027 Faculty & Staff Directory Controller
 // ==========================================================================
 
+function getFacultyStickyBottom() {
+    const topbar = document.querySelector('.topbar');
+    const controls = document.querySelector('.faculty-controls-section');
+
+    const topbarHeight = topbar ? topbar.getBoundingClientRect().height : 0;
+    const stickyTop = Math.round(topbarHeight + 16);
+    document.documentElement.style.setProperty('--topbar-offset', `${stickyTop}px`);
+
+    const controlsHeight = (controls && window.innerWidth > 1120)
+        ? controls.getBoundingClientRect().height
+        : 0;
+
+    return Math.round(stickyTop + controlsHeight + 24);
+}
+
 const FACULTY_GOVERNING_BOARD = [
     {
         name: 'Gregory Crewdson',

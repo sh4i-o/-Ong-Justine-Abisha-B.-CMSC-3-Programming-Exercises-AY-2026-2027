@@ -283,6 +283,16 @@
     font-size: 15px;
 }
 
+@media (min-width: 1121px) {
+    .faculty-controls-section {
+        position: -webkit-sticky;
+        position: sticky;
+        top: var(--topbar-offset, 154px);
+        z-index: 25;
+        transition: top 0.2s ease;
+    }
+}
+
 @media (max-width: 900px) {
     .program-faculty-grid,
     .faculty-tier-list {

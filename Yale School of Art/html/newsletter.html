@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yale School of Art | Newsletter Sign-Up</title>
+    <link rel="icon" type="image/png" href="../assets/blue-school-crest.webp" />
+
+    <!-- Stylesheets & Scripts -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/utility.css" />
+    <script src="../js/script.js" defer></script>
+    <script src="../js/utility.js" defer></script>
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- Global Header & Navigation -->
+        <header class="topbar">
+            <div class="topbar-inner">
+                <div class="utility-row">
+                    <div class="brand" aria-label="Yale School of Art brand">
+                        <img class="brand-mark" src="../assets/blue-school-crest.webp" alt="Yale School of Art crest" />
+                        <div class="brand-name">Yale School of Art</div>
+                    </div>
+
+                    <div class="mobile-controls">
+                        <button type="button" class="mobile-icon-btn" id="mobile-search-toggle" aria-expanded="false" aria-controls="search-drawer" aria-label="Toggle search">
+                            <img class="icon" src="../assets/search.svg" alt="" />
+                        </button>
+                        <button type="button" class="mobile-icon-btn" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle navigation menu">
+                            <svg class="menu-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <path class="bar" d="M3 5.5H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="bar" d="M3 10H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="bar" d="M3 14.5H17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="cross" d="M4.5 4.5L15.5 15.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                                <path class="cross" d="M15.5 4.5L4.5 15.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <nav class="utility-nav" aria-label="Utility navigation">
+                        <div class="utility-item">
+                            <button type="button" class="utility-link" id="search-toggle" aria-expanded="false" aria-controls="search-drawer">
+                                <img class="icon" src="../assets/search.svg" alt="Search" />
+                                <span>Search</span>
+                            </button>
+                        </div>
+                        <div class="utility-item"><a class="utility-link" href="../html/support.html">Support</a></div>
+                        <div class="utility-item"><a class="utility-link" href="../html/visit.html">Visit</a></div>
+                        <div class="utility-item"><a class="utility-link" href="../html/contact.html">Contact</a></div>
+                        <div class="utility-item"><a class="utility-link active" href="../html/newsletter.html" aria-current="page">Newsletter</a></div>
+                        <div class="utility-divider" aria-hidden="true"></div>
+                        <div class="utility-item">
+                            <a class="utility-link" href="../html/settings.html">
+                                <svg class="utility-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="3" />
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                                </svg>
+                                <span>Settings</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="primary-nav-separator desktop-only" aria-hidden="true"></div>
+
+            <div class="topbar-inner desktop-only" style="padding-top: 0; padding-bottom: 0;">
+                <nav class="primary-nav" aria-label="Primary navigation">
+                    <div class="primary-item has-dropdown">
+                        <a class="primary-link" href="../html/index.html" aria-haspopup="true" aria-expanded="false">
+                            <span>About</span>
+                            <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <ul class="nav-dropdown" role="menu">
+                            <li role="none"><a role="menuitem" href="../html/index.html">Overview</a></li>
+                            <li role="none"><a role="menuitem" href="../html/about-mission.html">Mission Statement</a></li>
+                            <li role="none"><a role="menuitem" href="../html/about-history.html">History</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="primary-item"><a class="primary-link" href="../html/apply.html">Apply</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/calendar.html">Calendar</a></div>
+
+                    <div class="primary-item has-dropdown">
+                        <a class="primary-link" href="../html/programs.html" aria-haspopup="true" aria-expanded="false">
+                            <span>Programs</span>
+                            <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <ul class="nav-dropdown" role="menu">
+                            <li role="none"><a role="menuitem" href="../html/programs.html">Overview</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-gd.html">Graphic Design MFA</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-pp.html">Painting &amp; Printmaking MFA</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-photography.html">Photography MFA</a></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-sculpture.html">Sculpture MFA</a></li>
+                            <li class="dropdown-divider" role="separator"></li>
+                            <li role="none"><a role="menuitem" href="../html/programs-usp.html">Undergraduate &amp; Summer Programs</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="primary-item"><a class="primary-link" href="../html/news.html">News</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/resources.html">Resources</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/facilities.html">Facilities</a></div>
+                    <div class="primary-item"><a class="primary-link" href="../html/faculty.html">Faculty</a></div>
+                </nav>
+            </div>
+
+            <div class="search-drawer" id="search-drawer" aria-hidden="true">
+                <div class="search-drawer-clip">
+                    <div class="search-drawer-inner">
+                        <div class="search-input-wrap">
+                            <input type="text" id="site-search-input" placeholder="Search programs, faculty, admissions, events..." autocomplete="off" />
+                            <button type="button" id="search-clear" hidden>Clear</button>
+                            <span class="search-input-divider" id="search-divider" hidden></span>
+                            <button type="button" id="search-close" aria-label="Close search">✕</button>
+                        </div>
+                        <ul class="search-results" id="search-results"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+                <div class="mobile-drawer-clip">
+                    <nav class="mobile-drawer-inner" aria-label="Mobile navigation">
+                        <ul class="mobile-primary-list">
+                            <li class="mobile-accordion">
+                                <div class="mobile-accordion-header">
+                                    <a class="mobile-nav-link" href="../html/index.html">About</a>
+                                    <button type="button" class="mobile-accordion-btn" aria-expanded="false" aria-label="Toggle About submenu">
+                                        <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="mobile-accordion-panel">
+                                    <ul class="mobile-sublist">
+                                        <li><a href="../html/index.html">Overview</a></li>
+                                        <li><a href="../html/about-mission.html">Mission Statement</a></li>
+                                        <li><a href="../html/about-history.html">History</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li><a class="mobile-nav-link" href="../html/apply.html">Apply</a></li>
+                            <li><a class="mobile-nav-link" href="../html/calendar.html">Calendar</a></li>
+
+                            <li class="mobile-accordion">
+                                <div class="mobile-accordion-header">
+                                    <a class="mobile-nav-link" href="../html/programs.html">Programs</a>
+                                    <button type="button" class="mobile-accordion-btn" aria-expanded="false" aria-label="Toggle Programs submenu">
+                                        <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="mobile-accordion-panel">
+                                    <ul class="mobile-sublist">
+                                        <li><a href="../html/programs.html">Overview</a></li>
+                                        <li><a href="../html/programs-gd.html">Graphic Design MFA</a></li>
+                                        <li><a href="../html/programs-pp.html">Painting &amp; Printmaking MFA</a></li>
+                                        <li><a href="../html/programs-photography.html">Photography MFA</a></li>
+                                        <li><a href="../html/programs-sculpture.html">Sculpture MFA</a></li>
+                                        <li><a href="../html/programs-usp.html">Undergraduate &amp; Summer Programs</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li><a class="mobile-nav-link" href="../html/news.html">News</a></li>
+                            <li><a class="mobile-nav-link" href="../html/resources.html">Resources</a></li>
+                            <li><a class="mobile-nav-link" href="../html/facilities.html">Facilities</a></li>
+                            <li><a class="mobile-nav-link" href="../html/faculty.html">Faculty</a></li>
+                        </ul>
+
+                        <div class="mobile-drawer-divider" aria-hidden="true"></div>
+
+                        <ul class="mobile-utility-list">
+                            <li><a href="../html/support.html">Support</a></li>
+                            <li><a href="../html/visit.html">Visit</a></li>
+                            <li><a href="../html/contact.html">Contact</a></li>
+                            <li><a class="active" href="../html/newsletter.html" aria-current="page">Newsletter</a></li>
+                            <li>
+                                <a class="mobile-utility-icon-link" href="../html/settings.html">
+                                    <svg class="utility-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="3" />
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                                    </svg>
+                                    <span>Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Section -->
+            <section class="hero" aria-label="Newsletter Sign-Up hero section">
+                <div class="hero-inner">
+                    <p class="eyebrow">Newsletter</p>
+                    <h1>Newsletter Sign-Up</h1>
+                    <p class="hero-subtitle">
+                        The Yale School of Art publishes two newsletters during term-time sharing campus news, exhibitions, lectures, and community updates.
+                    </p>
+                    <div class="scroll-cue" aria-label="Scroll down">
+                        <span class="scroll-cue-label">Scroll</span>
+                        <img src="../assets/chevron-down.svg" alt="Scroll down indicator" />
+                    </div>
+                </div>
+            </section>
+
+            <div class="main-wrap">
+
+                <!-- Term-Time Publications Overview -->
+                <section class="newsletter-publications-section" aria-label="School of Art term-time newsletters">
+                    <div class="section-label">
+                        <div class="section-rule" aria-hidden="true"></div>
+                        <span>Term-Time Publications</span>
+                    </div>
+
+                    <div class="utility-two-col-grid">
+                        <article class="utility-info-card">
+                            <span class="utility-card-kicker">Monthly Public Mailing</span>
+                            <h3>News from New Haven</h3>
+                            <p>
+                                A monthly public mailing sharing news, exhibition announcements, visiting artist lectures, and public events happening across the Yale School of Art campus.
+                            </p>
+                        </article>
+
+                        <article class="utility-info-card">
+                            <span class="utility-card-kicker">Weekly Community Update</span>
+                            <h3>Week at SoA</h3>
+                            <p>
+                                A weekly update of upcoming events, critiques, workshops, and announcements open to the Yale School of Art community during term-time.
+                            </p>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Subscription Form Section -->
+                <section class="newsletter-form-section" aria-label="Sign up for School of Art newsletters">
+                    <div class="section-label">
+                        <div class="section-rule" aria-hidden="true"></div>
+                        <span>Sign Up for School of Art Newsletters</span>
+                    </div>
+
+                    <div class="newsletter-card">
+                        <div class="newsletter-card-header">
+                            <h2>Subscribe to Mailing Lists</h2>
+                            <p>
+                                Complete the form below to receive term-time updates from the Yale School of Art. Required fields are marked with <span class="newsletter-required">*</span>.
+                            </p>
+                        </div>
+
+                        <form class="newsletter-form" id="newsletter-signup-form" novalidate>
+                            <!-- Basic Identity -->
+                            <div class="newsletter-fields-grid">
+                                <div class="newsletter-field">
+                                    <label for="newsletter-first-name">First Name</label>
+                                    <input type="text" id="newsletter-first-name" name="firstName" placeholder="Jane" autocomplete="given-name" />
+                                </div>
+
+                                <div class="newsletter-field">
+                                    <label for="newsletter-last-name">Last Name</label>
+                                    <input type="text" id="newsletter-last-name" name="lastName" placeholder="Doe" autocomplete="family-name" />
+                                </div>
+
+                                <div class="newsletter-field">
+                                    <label for="newsletter-email">Email Address <span class="newsletter-required" aria-hidden="true">*</span></label>
+                                    <input type="email" id="newsletter-email" name="email" placeholder="name@example.com" autocomplete="email" required />
+                                </div>
+
+                                <div class="newsletter-field">
+                                    <label for="newsletter-academic-title">Academic Title</label>
+                                    <input type="text" id="newsletter-academic-title" name="academicTitle" placeholder="e.g., MFA Candidate, Professor, Curator" />
+                                </div>
+                            </div>
+
+                            <!-- Affiliation Questions -->
+                            <div class="newsletter-fields-grid">
+                                <fieldset class="newsletter-fieldset">
+                                    <legend>Are you an alum?</legend>
+                                    <div class="newsletter-radio-group">
+                                        <label class="newsletter-radio-pill">
+                                            <input type="radio" name="isAlum" value="yes" />
+                                            <span>Yes</span>
+                                        </label>
+                                        <label class="newsletter-radio-pill">
+                                            <input type="radio" name="isAlum" value="no" checked />
+                                            <span>No</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="newsletter-fieldset">
+                                    <legend>Are you a prospective student?</legend>
+                                    <div class="newsletter-radio-group">
+                                        <label class="newsletter-radio-pill">
+                                            <input type="radio" name="isProspective" value="yes" />
+                                            <span>Yes</span>
+                                        </label>
+                                        <label class="newsletter-radio-pill">
+                                            <input type="radio" name="isProspective" value="no" checked />
+                                            <span>No</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <!-- Alum-Specific Details -->
+                            <div class="newsletter-fields-grid" id="newsletter-alum-details">
+                                <div class="newsletter-field">
+                                    <label for="newsletter-grad-year">If alum, what is your graduation year?</label>
+                                    <input type="text" id="newsletter-grad-year" name="gradYear" inputmode="numeric" maxlength="4" placeholder="e.g., 2024" />
+                                </div>
+
+                                <div class="newsletter-field">
+                                    <label for="newsletter-grad-area">If alum, from which area did you graduate?</label>
+                                    <select id="newsletter-grad-area" name="gradArea">
+                                        <option value="Not an Alum" selected>Not an Alum</option>
+                                        <option value="Graphic Design">Graphic Design</option>
+                                        <option value="Painting / Printmaking">Painting / Printmaking</option>
+                                        <option value="Photography">Photography</option>
+                                        <option value="Sculpture">Sculpture</option>
+                                        <option value="Undergraduate Art">Undergraduate Art (BA)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Newsletter Selection -->
+                            <fieldset class="newsletter-fieldset">
+                                <legend>I would like to receive: <span class="newsletter-required" aria-hidden="true">*</span></legend>
+                                <div class="newsletter-checkbox-group">
+                                    <label class="newsletter-checkbox-card">
+                                        <input type="checkbox" name="lists" value="News from New Haven" checked />
+                                        <span class="newsletter-checkbox-copy">
+                                            <strong>News from New Haven</strong>
+                                            <span>Monthly public mailing · Campus news &amp; public events</span>
+                                        </span>
+                                    </label>
+
+                                    <label class="newsletter-checkbox-card">
+                                        <input type="checkbox" name="lists" value="Week at SoA — 2026–27 Academic Year" />
+                                        <span class="newsletter-checkbox-copy">
+                                            <strong>Week at SoA — 2026–27 Academic Year</strong>
+                                            <span>Weekly update · Events open to the School of Art community</span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <!-- Contact Permissions & Privacy Notice -->
+                            <div class="newsletter-permissions-box">
+                                <h3>Contact Permissions</h3>
+                                <p>
+                                    Yale School of Art will use the information you provide on this form to be in touch with you and to provide updates. Please check the box below to consent to being contacted by e-mail:
+                                </p>
+
+                                <label class="newsletter-consent-check">
+                                    <input type="checkbox" id="newsletter-email-consent" name="emailConsent" required />
+                                    <span>Email <span class="newsletter-required" aria-hidden="true">*</span></span>
+                                </label>
+
+                                <p class="newsletter-legal-copy">
+                                    You can change your mind at any time by clicking the unsubscribe link in the footer of any email you receive from us, or by contacting us at <a class="utility-inline-link" href="mailto:art.school@yale.edu">art.school@yale.edu</a>. We will treat your information with respect. For more information about our privacy practices please visit our website. By clicking below, you agree that we may process your information in accordance with these terms.
+                                </p>
+
+                                <div class="newsletter-mailchimp-note">
+                                    <svg class="mailchimp-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
+                                    <span>
+                                        We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. <a class="utility-inline-link" href="https://mailchimp.com/legal/terms" target="_blank" rel="noopener noreferrer">Learn more</a> about Mailchimp’s privacy practices.
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="newsletter-actions">
+                                <button type="submit" class="support-primary-btn">Subscribe</button>
+                            </div>
+
+                            <div class="newsletter-feedback" id="newsletter-feedback" role="status" aria-live="polite" hidden></div>
+                        </form>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- Editorial Quote Band & Degree Directory -->
+        <section class="quote-band" aria-label="Quote and degree list">
+            <div class="quote-inner">
+                <blockquote>“Art washes away from the soul the dust of everyday life.”</blockquote>
+                <div class="quote-author">Pablo Picasso</div>
+
+                <div class="degree-list" aria-label="MFA degrees">
+                    <a class="degree" href="../html/programs-gd.html">
+                        <div class="name">Graphic Design</div>
+                        <div class="label">MFA</div>
+                    </a>
+                    <a class="degree" href="../html/programs-pp.html">
+                        <div class="name">Painting &amp; Printmaking</div>
+                        <div class="label">MFA</div>
+                    </a>
+                    <a class="degree" href="../html/programs-photography.html">
+                        <div class="name">Photography</div>
+                        <div class="label">MFA</div>
+                    </a>
+                    <a class="degree" href="../html/programs-sculpture.html">
+                        <div class="name">Sculpture</div>
+                        <div class="label">MFA</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Footer -->
+        <footer class="footer" aria-label="Footer">
+            <div class="footer-inner">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-brand-row">
+                            <img class="mark" src="../assets/blue-school-crest.webp" alt="Yale School of Art crest" />
+                            <div class="footer-brand-name">Yale School of Art</div>
+                        </div>
+                        <div class="footer-address">
+                            <div>1156 Chapel Street</div>
+                            <div>POB 208339</div>
+                            <div>New Haven, CT 06520-8339</div>
+                        </div>
+                    </div>
+
+                    <div class="footer-column footer-nav-col">
+                        <p class="footer-title">Navigation</p>
+                        <div class="footer-links">
+                            <div class="footer-links-column">
+                                <div class="footer-accordion">
+                                    <a href="../html/index.html" class="footer-accordion-trigger" aria-expanded="false">
+                                        <span>About</span>
+                                        <svg class="footer-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="footer-accordion-panel">
+                                        <ul class="footer-sublinks">
+                                            <li><a href="../html/index.html">Overview</a></li>
+                                            <li><a href="../html/about-mission.html">Mission Statement</a></li>
+                                            <li><a href="../html/about-history.html">History</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p><a href="../html/apply.html">Apply</a></p>
+                                <p><a href="../html/calendar.html">Calendar</a></p>
+                                <div class="footer-accordion">
+                                    <a href="../html/programs.html" class="footer-accordion-trigger" aria-expanded="false">
+                                        <span>Programs</span>
+                                        <svg class="footer-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="footer-accordion-panel">
+                                        <ul class="footer-sublinks">
+                                            <li><a href="../html/programs.html">Overview</a></li>
+                                            <li><a href="../html/programs-gd.html">Graphic Design MFA</a></li>
+                                            <li><a href="../html/programs-pp.html">Painting &amp; Printmaking MFA</a></li>
+                                            <li><a href="../html/programs-photography.html">Photography MFA</a></li>
+                                            <li><a href="../html/programs-sculpture.html">Sculpture MFA</a></li>
+                                            <li><a href="../html/programs-usp.html">Undergraduate &amp; Summer Programs</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="footer-links-column">
+                                <p><a href="../html/news.html">News</a></p>
+                                <p><a href="../html/resources.html">Resources</a></p>
+                                <p><a href="../html/facilities.html">Facilities</a></p>
+                                <p><a href="../html/faculty.html">Faculty</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <p class="footer-title">Social Media</p>
+                        <p>
+                            <a class="footer-social-link" href="https://www.instagram.com/yaleschoolofart/?hl=en" target="_blank" rel="noopener">
+                                <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                                </svg>
+                                <span>Instagram</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a class="footer-social-link" href="https://www.facebook.com/YaleSchoolofArt" target="_blank" rel="noopener">
+                                <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 8h-2a3 3 0 0 0-3 3v11" />
+                                    <path d="M8.5 13.5H15.5" />
+                                </svg>
+                                <span>Facebook</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a class="footer-social-link" href="https://www.youtube.com/@yaleschoolofart1869" target="_blank" rel="noopener">
+                                <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                                </svg>
+                                <span>YouTube</span>
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="footer-column">
+                        <p class="footer-title">Other Links</p>
+                        <p><a href="../html/support.html">Support</a></p>
+                        <p><a href="../html/visit.html">Visit</a></p>
+                        <p><a href="../html/contact.html">Contact</a></p>
+                        <p><a href="../html/newsletter.html" aria-current="page">Newsletter</a></p>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="primary-footer-separator" aria-hidden="true"></div>
+                    <div class="footer-copy">© <span id="copyright-year">2026</span> Yale School of Art</div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
