@@ -138,6 +138,42 @@ if (searchDrawer && searchToggle && searchClose && searchInput) {
 }
 
 // ==========================================================================
+// 0. Global Site Preferences Loader (Synced with settings.html)
+// ==========================================================================
+(function applyYaleSoAPreferences() {
+    try {
+        const raw = localStorage.getItem('yale_soa_preferences');
+        if (!raw) return;
+        const prefs = JSON.parse(raw);
+        const root = document.documentElement;
+
+        if (prefs.fontScale && prefs.fontScale !== 'normal') {
+            root.dataset.fontScale = prefs.fontScale;
+        }
+        if (prefs.theme === 'dark') {
+            root.dataset.theme = 'dark';
+        }
+        if (prefs.accent === 'orange') {
+            root.dataset.accent = 'orange';
+        }
+        if (prefs.highContrast) {
+            root.dataset.highContrast = 'true';
+        }
+        if (prefs.underlineLinks) {
+            root.dataset.underlineLinks = 'true';
+        }
+        if (prefs.reduceMotion) {
+            root.dataset.reduceMotion = 'true';
+        }
+        if (prefs.language) {
+            root.lang = prefs.language;
+        }
+    } catch (_) {
+        // Ignore storage restrictions
+    }
+})();
+
+// ==========================================================================
 // Mobile Navigation Drawer
 // ==========================================================================
 

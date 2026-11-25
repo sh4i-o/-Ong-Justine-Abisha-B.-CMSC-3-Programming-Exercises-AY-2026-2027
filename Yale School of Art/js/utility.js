@@ -262,6 +262,193 @@ function initNewsletterForm() {
 }
 
 // ==========================================================================
+// 5. Settings & Accessibility Preferences Controller (settings.html)
+// ==========================================================================
+
+function initSettingsPage() {
+    const fontBtns = Array.from(document.querySelectorAll('[data-setting-font]'));
+    const themeBtns = Array.from(document.querySelectorAll('[data-setting-theme]'));
+    const accentBtns = Array.from(document.querySelectorAll('[data-setting-accent]'));
+
+    const contrastToggle = document.getElementById('setting-high-contrast');
+    const motionToggle = document.getElementById('setting-reduce-motion');
+    const underlineToggle = document.getElementById('setting-underline-links');
+    const announcementsToggle = document.getElementById('setting-announcements');
+    const eventsToggle = document.getElementById('setting-events');
+    const languageSelect = document.getElementById('setting-language');
+
+    const saveBtn = document.getElementById('settings-save-btn');
+    const resetBtn = document.getElementById('settings-reset-btn');
+    const statusText = document.getElementById('settings-status-text');
+
+    if (!fontBtns.length && !themeBtns.length && !accentBtns.length) return;
+
+    const STORAGE_KEY = 'yale_soa_preferences';
+    const defaults = {
+        fontScale: 'normal',
+        highContrast: false,
+        reduceMotion: false,
+        underlineLinks: false,
+        theme: 'light',
+        accent: 'blue',
+        announcements: true,
+        events: false,
+        language: 'en'
+    };
+
+    function loadPrefs() {
+        try {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            return { ...defaults, ...saved };
+        } catch (_) {
+            return { ...defaults };
+        }
+    }
+
+    function applyPrefs(prefs, message = '') {
+        const root = document.documentElement;
+
+        // Font scale
+        if (prefs.fontScale === 'normal') {
+            delete root.dataset.fontScale;
+        } else {
+            root.dataset.fontScale = prefs.fontScale;
+        }
+
+        // Theme (Light / Dark)
+        if (prefs.theme === 'dark') {
+            root.dataset.theme = 'dark';
+        } else {
+            delete root.dataset.theme;
+        }
+
+        // Color Preference (Blue / Orange)
+        if (prefs.accent === 'orange') {
+            root.dataset.accent = 'orange';
+        } else {
+            delete root.dataset.accent;
+        }
+
+        // Accessibility switches
+        root.dataset.highContrast = String(Boolean(prefs.highContrast));
+        root.dataset.reduceMotion = String(Boolean(prefs.reduceMotion));
+        root.dataset.underlineLinks = String(Boolean(prefs.underlineLinks));
+        root.lang = prefs.language || 'en';
+
+        // Sync segmented buttons
+        fontBtns.forEach((btn) => {
+            const active = btn.dataset.settingFont === prefs.fontScale;
+            btn.classList.toggle('active', active);
+            btn.setAttribute('aria-pressed', String(active));
+        });
+
+        themeBtns.forEach((btn) => {
+            const active = btn.dataset.settingTheme === prefs.theme;
+            btn.classList.toggle('active', active);
+            btn.setAttribute('aria-pressed', String(active));
+        });
+
+        accentBtns.forEach((btn) => {
+            const active = btn.dataset.settingAccent === prefs.accent;
+            btn.classList.toggle('active', active);
+            btn.setAttribute('aria-pressed', String(active));
+        });
+
+        // Sync switches & ARIA states
+        const switches = [
+            [contrastToggle, prefs.highContrast],
+            [motionToggle, prefs.reduceMotion],
+            [underlineToggle, prefs.underlineLinks],
+            [announcementsToggle, prefs.announcements],
+            [eventsToggle, prefs.events]
+        ];
+        switches.forEach(([el, val]) => {
+            if (!el) return;
+            el.checked = Boolean(val);
+            el.setAttribute('aria-checked', String(Boolean(val)));
+        });
+
+        if (languageSelect) {
+            languageSelect.value = prefs.language || 'en';
+        }
+
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+        } catch (_) {
+            // Ignore storage errors
+        }
+
+        if (statusText && message) {
+            statusText.textContent = message;
+        }
+    }
+
+    let currentPrefs = loadPrefs();
+    applyPrefs(currentPrefs);
+
+    fontBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            currentPrefs.fontScale = btn.dataset.settingFont || 'normal';
+            applyPrefs(currentPrefs, 'Text size updated across all pages.');
+        });
+    });
+
+    themeBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            currentPrefs.theme = btn.dataset.settingTheme || 'light';
+            applyPrefs(currentPrefs, `Switched to ${currentPrefs.theme === 'dark' ? 'Dark' : 'Light'} theme.`);
+        });
+    });
+
+    accentBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            currentPrefs.accent = btn.dataset.settingAccent || 'blue';
+            applyPrefs(currentPrefs, `Accent color set to ${currentPrefs.accent === 'orange' ? 'Orange' : 'Blue'}.`);
+        });
+    });
+
+    contrastToggle?.addEventListener('change', () => {
+        currentPrefs.highContrast = contrastToggle.checked;
+        applyPrefs(currentPrefs, `High contrast ${contrastToggle.checked ? 'enabled' : 'disabled'}.`);
+    });
+
+    motionToggle?.addEventListener('change', () => {
+        currentPrefs.reduceMotion = motionToggle.checked;
+        applyPrefs(currentPrefs, `Reduced motion ${motionToggle.checked ? 'enabled' : 'disabled'}.`);
+    });
+
+    underlineToggle?.addEventListener('change', () => {
+        currentPrefs.underlineLinks = underlineToggle.checked;
+        applyPrefs(currentPrefs, `Link underlines ${underlineToggle.checked ? 'enabled' : 'disabled'}.`);
+    });
+
+    announcementsToggle?.addEventListener('change', () => {
+        currentPrefs.announcements = announcementsToggle.checked;
+        applyPrefs(currentPrefs, `Announcement preferences updated.`);
+    });
+
+    eventsToggle?.addEventListener('change', () => {
+        currentPrefs.events = eventsToggle.checked;
+        applyPrefs(currentPrefs, `Event notification preferences updated.`);
+    });
+
+    languageSelect?.addEventListener('change', () => {
+        currentPrefs.language = languageSelect.value;
+        const label = languageSelect.options[languageSelect.selectedIndex]?.text || 'English';
+        applyPrefs(currentPrefs, `Display language set to ${label}.`);
+    });
+
+    saveBtn?.addEventListener('click', () => {
+        applyPrefs(currentPrefs, 'All settings saved and applied across the Yale School of Art website.');
+    });
+
+    resetBtn?.addEventListener('click', () => {
+        currentPrefs = { ...defaults };
+        applyPrefs(currentPrefs, 'All settings reset to defaults.');
+    });
+}
+
+// ==========================================================================
 // 5. Initialization
 // ==========================================================================
 
