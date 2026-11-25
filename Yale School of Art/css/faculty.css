@@ -1,0 +1,306 @@
+/* ==========================================================================
+   1. Faculty Directory Intro & Filter Bar
+   ========================================================================== */
+
+.faculty-page-heading {
+    margin: 0 0 12px;
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: clamp(32px, 4vw, 44px);
+    line-height: 1.15;
+    font-weight: 400;
+    color: var(--blue);
+}
+
+.faculty-controls-section {
+    max-width: 1120px;
+    margin: 40px auto 0;
+}
+
+.faculty-filter-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 1px solid var(--blue);
+    border-radius: 10px;
+    background: #fffffff2;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 20px rgba(0, 53, 107, 0.08);
+}
+
+.faculty-filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.faculty-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 11px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--blue);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.faculty-pill:hover,
+.faculty-pill:focus-visible {
+    border-color: var(--blue-tint-65);
+    background: var(--white);
+}
+
+.faculty-pill.active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: var(--white);
+}
+
+.faculty-search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-top: 12px;
+    border-top: 1px solid var(--blue-tint-15);
+}
+
+.faculty-search-icon {
+    position: absolute;
+    left: 12px;
+    top: calc(50% + 6px);
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+#faculty-search-input {
+    width: 100%;
+    padding: 9px 14px 9px 36px;
+    border: 1px solid var(--blue-tint-20);
+    border-radius: 7px;
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#faculty-search-input:focus {
+    border-color: var(--blue);
+    background: var(--white);
+    box-shadow: 0 0 0 3px var(--blue-tint-10);
+}
+
+/* ==========================================================================
+   2. Faculty Sections & Program-Style Cards (Exact Spacing Match to programs.css)
+   ========================================================================== */
+
+.faculty-section {
+    max-width: 1120px;
+    margin: 56px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faculty-section[hidden],
+.faculty-note-section[hidden] {
+    display: none;
+}
+
+.faculty-section .section-label {
+    margin-bottom: 6px;
+}
+
+.faculty-section-desc {
+    margin: 0 0 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--muted);
+}
+
+.faculty-subtier-heading {
+    margin: 15px 0 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--blue-tint-65);
+}
+
+.program-faculty-grid + .faculty-subtier-heading {
+    margin-top: 28px;
+}
+
+.program-faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 24px;
+    margin-top: 4px;
+}
+
+.program-faculty-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 18px;
+    border: 1px solid var(--blue-tint-15);
+    border-radius: 8px;
+    background: var(--white);
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.program-faculty-card:hover,
+.program-faculty-card:focus-visible {
+    border-color: var(--blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 33, 69, 0.06);
+}
+
+.program-faculty-name {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.25;
+    color: var(--blue);
+}
+
+.program-faculty-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--muted);
+}
+
+/* ==========================================================================
+   3. Engagement Tiers Note Block (Exact Match to .apply-footnotes)
+   ========================================================================== */
+
+.faculty-note-section {
+    max-width: 1120px;
+    margin: 56px auto 0;
+}
+
+.faculty-note-section[hidden] {
+    display: none;
+}
+
+.faculty-footnotes {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px 24px;
+    border: 1px solid var(--blue);
+    border-radius: 8px;
+    background: #fffffff2;
+}
+
+.faculty-footnotes .faculty-note {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.faculty-footnotes strong {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.faculty-note-card {
+    padding: 32px 36px;
+    border: 1px solid var(--blue);
+    border-radius: 10px;
+    background: transparent;
+}
+
+.faculty-note-card .section-label {
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.faculty-note-lead {
+    max-width: 780px;
+    margin: 0 auto 24px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text);
+    text-align: center;
+}
+
+.faculty-tier-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 32px;
+    margin: 0;
+    padding-top: 22px;
+    border-top: 1px solid var(--blue-tint-20);
+    text-align: center;
+}
+
+.faculty-tier-item dt {
+    margin: 0 0 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.faculty-tier-item dd {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+}
+
+/* ==========================================================================
+   4. Empty State & Responsive Breakpoints
+   ========================================================================== */
+
+.faculty-empty-state {
+    max-width: 1120px;
+    margin: 48px auto 0;
+    padding: 28px;
+    border: 1px solid var(--blue-tint-15);
+    border-radius: 10px;
+    background: var(--white);
+    text-align: center;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+@media (max-width: 900px) {
+    .program-faculty-grid,
+    .faculty-tier-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .faculty-search-box {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .program-faculty-grid,
+    .faculty-tier-list {
+        grid-template-columns: 1fr;
+    }
+
+    .faculty-note-card {
+        padding: 20px;
+    }
+}
